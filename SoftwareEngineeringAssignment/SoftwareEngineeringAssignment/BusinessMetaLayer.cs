@@ -24,9 +24,9 @@ namespace SoftwareEngineeringAssignment
         }
 
         // Could just have a set of static helper methods rather than a singleton!
-        public List<Person> getPatient()
+        public List<Patient> getPatient()
         {
-            List<Customer> customers = new List<Person>();
+            List<Patient> patientList = new List<Patient>();
 
             DbConection con = DbFactory.instance();
             if (con.OpenConnection())
@@ -36,14 +36,14 @@ namespace SoftwareEngineeringAssignment
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
-                    Person patient = new Person();
-                    patient.ID = dr.GetInt32(0);
-                    patient.Name = dr.GetString(1);
-                    patient.Address = dr.GetString(2);
-                    patient.City = dr.GetString(3);
+                    Patient patient = new Patient();
+                    //patient.ID = dr.GetInt32(0);
+                    //patient.Name = dr.GetString(1);
+                    //patient.Address = dr.GetString(2);
+                    //patient.City = dr.GetString(3);
                     // etc.....
 
-                    customers.Add(customer);
+                    patientList.Add(patient);
                 }
 
                 //close Data Reader
@@ -51,7 +51,7 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
 
-            return patients;
+            return patientList;
         }
     }
 }
