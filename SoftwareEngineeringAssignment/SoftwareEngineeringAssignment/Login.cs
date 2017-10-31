@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -15,6 +16,12 @@ namespace SoftwareEngineeringAssignment
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            UTF8Encoding utf8 = new UTF8Encoding();
         }
     }
 }
