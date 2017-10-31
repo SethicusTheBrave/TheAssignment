@@ -1,27 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.IO;
-using System.Diagnostics;
-using System.Windows.Forms;
-using System.Data.Common;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Data;
+using System.Data.Common;
 
 namespace SoftwareEngineeringAssignment
 {
-    class OleDbConnection : DbConection
+    class OleDatabaseConnection : DbConection
     {
         private Dictionary<string, string> m_properties;
         private OleDbConnection connection;
-        public OleDbConnection(Dictionary<string, string> properties)
+        public OleDatabaseConnection(Dictionary<string, string> properties)
         {
             m_properties = properties;
             initialize();
         }
-
 
         private void initialize()
         {

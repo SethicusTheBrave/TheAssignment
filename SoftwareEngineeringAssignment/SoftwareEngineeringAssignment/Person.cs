@@ -13,8 +13,6 @@ namespace SoftwareEngineeringAssignment
          string m_email;
          string m_phoneNumber;
          string m_address;
-
-        private m_firstName1,m_lastName1;
     }
     class Patient : Person
     {
