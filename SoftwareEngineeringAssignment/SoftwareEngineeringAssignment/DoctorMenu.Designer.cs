@@ -79,6 +79,7 @@
             this.btnConsoltation.TabIndex = 21;
             this.btnConsoltation.Text = "Consoltation";
             this.btnConsoltation.UseVisualStyleBackColor = true;
+            this.btnConsoltation.Click += new System.EventHandler(this.btnConsoltation_Click);
             // 
             // btnPatientSearch
             // 

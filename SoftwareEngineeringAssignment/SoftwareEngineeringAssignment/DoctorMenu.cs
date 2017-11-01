@@ -14,6 +14,7 @@ namespace SoftwareEngineeringAssignment
     {
         PatientSearch frmPatientSearch = new PatientSearch();
         DoctorTODO frmTODO = new DoctorTODO();
+        PatientMenu frmPatientMenu = new PatientMenu();
         public DoctorMenu()
         {
             InitializeComponent();
@@ -30,6 +31,13 @@ namespace SoftwareEngineeringAssignment
         {
             this.Hide();
             frmTODO.ShowDialog();
+            this.Show();
+        }
+
+        private void btnConsoltation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPatientMenu.ShowDialog();
             this.Show();
         }
     }
