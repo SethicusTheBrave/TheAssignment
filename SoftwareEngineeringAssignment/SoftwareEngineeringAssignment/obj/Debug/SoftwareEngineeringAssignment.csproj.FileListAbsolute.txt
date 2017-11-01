@@ -30,3 +30,22 @@ F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignmen
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csproj.GenerateResource.Cache
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csprojResolveAssemblyReference.cache
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorMenu.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorTODO.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ExtendPrescription.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.Login.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ManagerMenu.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.PatientMenu.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.PatientSearch.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.Main_Menu.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.Properties.Resources.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.RegisterPatient.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.StaffSchedule.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csproj.GenerateResource.Cache
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe.config
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml

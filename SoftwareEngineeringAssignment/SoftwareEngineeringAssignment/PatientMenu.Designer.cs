@@ -250,6 +250,7 @@
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBookAppointment
             // 
@@ -290,7 +291,7 @@
             this.button3.Text = "New";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // Patient
+            // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,7 +315,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
-            this.Name = "Patient";
+            this.Name = "PatientMenu";
             this.Text = "Patient";
             ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).EndInit();

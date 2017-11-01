@@ -13,12 +13,14 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Login : Form
     {
+        BusinessMetaLayer instance;
         //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         //UTF8Encoding utf8 = new UTF8Encoding();
         //TripleDESCryptoServiceProvider tDES = new TripleDESCryptoServiceProvider();
         public Login()
         {
             InitializeComponent();
+            instance = BusinessMetaLayer.instance();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace SoftwareEngineeringAssignment
             //tDES.Padding = PaddingMode.PKCS7;
             //ICryptoTransform trans = tDES.CreateEncryptor();
             //DO MORE ENCRYPTION LATER
-
+            instance.Login(txtStaffID.Text, txtPassword.Text);
         }
     }
 }

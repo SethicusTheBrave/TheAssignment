@@ -20,7 +20,6 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            instance.registerPatient(txtFirstName.Text, txtLastName.Text)
         }
     }
 }

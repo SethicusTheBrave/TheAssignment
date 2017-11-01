@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -24,7 +25,7 @@ namespace SoftwareEngineeringAssignment
         }
 
         // Could just have a set of static helper methods rather than a singleton!
-        public List<Patient> getPatient()
+        /*public List<Patient> getPatient()
         {
             List<Patient> patientList = new List<Patient>();
 
@@ -50,8 +51,35 @@ namespace SoftwareEngineeringAssignment
                 dr.Close();
                 con.CloseConnection();
             }
-
             return patientList;
+        }*/
+        public bool Login(string p_StaffID, string p_Password)
+        {
+            List<Staff> staffList = new List<Staff>();
+            DbConection con = DbFactory.instance();
+            if(con.OpenConnection())
+            {
+                //LOOKING FOR THE FUCKING COLUMNS OR SOME SHIT!?
+                DbDataReader dr = con.Select("SELECT StaffID, Password FROM Staff");
+                while(dr.Read())
+                {
+                    Staff s = new Staff();
+                    s.getStaffID = dr.GetString(0);
+                    s.getpassword = dr.GetString(1);
+                    staffList.Add(s);
+                }
+                if (staffList.Count() > 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
+                return false;
+            }
         }
     }
 }
