@@ -68,6 +68,7 @@
             this.btnTodoList.TabIndex = 22;
             this.btnTodoList.Text = "Todo List";
             this.btnTodoList.UseVisualStyleBackColor = true;
+            this.btnTodoList.Click += new System.EventHandler(this.btnTodoList_Click);
             // 
             // btnConsoltation
             // 
