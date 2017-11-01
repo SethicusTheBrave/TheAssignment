@@ -55,6 +55,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTests)).BeginInit();
@@ -250,7 +251,6 @@
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBookAppointment
             // 
@@ -291,12 +291,22 @@
             this.button3.Text = "New";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(408, 542);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(85, 29);
+            this.btnNext.TabIndex = 56;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(596, 579);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -354,5 +364,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNext;
     }
 }

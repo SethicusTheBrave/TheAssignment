@@ -13,6 +13,8 @@ namespace SoftwareEngineeringAssignment
     public partial class DoctorMenu : Form
     {
         PatientSearch frmPatientSearch = new PatientSearch();
+        DoctorTODO frmTODO = new DoctorTODO();
+        PatientMenu frmPatientMenu = new PatientMenu();
         public DoctorMenu()
         {
             InitializeComponent();
@@ -22,6 +24,20 @@ namespace SoftwareEngineeringAssignment
         {
             this.Hide();
             frmPatientSearch.ShowDialog();
+            this.Show();
+        }
+
+        private void btnTodoList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTODO.ShowDialog();
+            this.Show();
+        }
+
+        private void btnConsoltation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPatientMenu.ShowDialog();
             this.Show();
         }
     }

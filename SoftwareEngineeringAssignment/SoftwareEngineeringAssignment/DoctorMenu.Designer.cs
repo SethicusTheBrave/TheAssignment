@@ -68,6 +68,7 @@
             this.btnTodoList.TabIndex = 22;
             this.btnTodoList.Text = "Todo List";
             this.btnTodoList.UseVisualStyleBackColor = true;
+            this.btnTodoList.Click += new System.EventHandler(this.btnTodoList_Click);
             // 
             // btnConsoltation
             // 
@@ -78,6 +79,7 @@
             this.btnConsoltation.TabIndex = 21;
             this.btnConsoltation.Text = "Consoltation";
             this.btnConsoltation.UseVisualStyleBackColor = true;
+            this.btnConsoltation.Click += new System.EventHandler(this.btnConsoltation_Click);
             // 
             // btnPatientSearch
             // 
