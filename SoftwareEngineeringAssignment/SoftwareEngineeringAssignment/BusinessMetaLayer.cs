@@ -22,6 +22,7 @@ namespace SoftwareEngineeringAssignment
                 m_instance = new BusinessMetaLayer();
             }
             return m_instance;
+
         }
 
         // Could just have a set of static helper methods rather than a singleton!
@@ -81,5 +82,14 @@ namespace SoftwareEngineeringAssignment
                 return false;
             }
         }
+
+
+        SavePacientDetails()
+        {
+
+        }
+
+
+        
     }
 }
