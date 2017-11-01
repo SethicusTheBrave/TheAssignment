@@ -12,9 +12,15 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class RegisterPatient : Form
     {
+        BusinessMetaLayer instance;
         public RegisterPatient()
         {
             InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            instance.registerPatient(txtFirstName.Text, txtLastName.Text)
         }
     }
 }
