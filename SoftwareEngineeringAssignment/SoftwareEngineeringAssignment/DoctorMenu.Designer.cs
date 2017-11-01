@@ -88,6 +88,7 @@
             this.btnPatientSearch.TabIndex = 20;
             this.btnPatientSearch.Text = "Patient Search";
             this.btnPatientSearch.UseVisualStyleBackColor = true;
+            this.btnPatientSearch.Click += new System.EventHandler(this.btnPatientSearch_Click);
             // 
             // btnExit
             // 
