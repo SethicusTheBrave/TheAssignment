@@ -102,12 +102,18 @@ namespace SoftwareEngineeringAssignment
 
         }
 
-        /*
+        
         //Insert statement
-        public void Insert()
+        public void Insert(string query)
         {
+            if (this.OpenConnection() == true)
+            {    
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+         
+                cmd.ExecuteNonQuery();        
+            }
         }
-
+        /*
         //Update statement
         public void Update()
         {

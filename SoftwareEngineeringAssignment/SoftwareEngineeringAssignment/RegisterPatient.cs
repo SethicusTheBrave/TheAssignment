@@ -20,7 +20,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            instance.registerPatient(txtFirstName.Text, txtLastName.Text)
+            instance.registerPatient(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtAddress.Text, txtPostcode.Text, txtPhone.Text);
         }
     }
 }

@@ -51,6 +51,15 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
 
+            public void RegisterPatient(string firstName, string lastName, string email, string address, string postcode, string phoneNumber) {
+
+             string query = "Insert patient (PatientID, LastName, FirstName, Address, Postcode,DoctorID) VALUES ('firstName', 'lastName', 'email', 'address', 'postcode', 'phoneNumber')";
+                MySQLCon vv = new MySQLCon();
+                vv.Insert(query);
+                
+
+            }
+
             return patientList;
         }
     }

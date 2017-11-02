@@ -40,9 +40,9 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDoctor = new System.Windows.Forms.Label();
@@ -157,13 +157,13 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtPhone
             // 
-            this.textBox1.Location = new System.Drawing.Point(362, 123);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 28);
-            this.textBox1.TabIndex = 55;
+            this.txtPhone.Location = new System.Drawing.Point(362, 123);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(136, 28);
+            this.txtPhone.TabIndex = 55;
             // 
             // lblPhoneNumber
             // 
@@ -175,13 +175,13 @@
             this.lblPhoneNumber.TabIndex = 54;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(362, 68);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 28);
-            this.textBox2.TabIndex = 53;
+            this.txtEmail.Location = new System.Drawing.Point(362, 68);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(136, 28);
+            this.txtEmail.TabIndex = 53;
             // 
             // lblEmail
             // 
@@ -223,9 +223,9 @@
             this.ClientSize = new System.Drawing.Size(510, 378);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhoneNumber);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
@@ -260,9 +260,9 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhoneNumber;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDoctor;
