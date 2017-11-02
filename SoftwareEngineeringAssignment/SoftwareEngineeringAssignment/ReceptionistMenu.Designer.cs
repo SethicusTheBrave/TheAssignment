@@ -1,6 +1,6 @@
 ﻿namespace SoftwareEngineeringAssignment
 {
-    partial class Main_Menu
+    partial class ReceptionistMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -123,6 +123,7 @@
             this.btnLogOut.TabIndex = 46;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Main_Menu
             // 
