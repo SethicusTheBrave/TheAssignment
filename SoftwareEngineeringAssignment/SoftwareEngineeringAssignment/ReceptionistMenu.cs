@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
-    public partial class Main_Menu : Form
+    public partial class ReceptionistMenu : Form
     {
-        public Main_Menu()
+        public ReceptionistMenu()
         {
             InitializeComponent();
         }
@@ -52,6 +52,11 @@ namespace SoftwareEngineeringAssignment
         private void btnExtendPerscription_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

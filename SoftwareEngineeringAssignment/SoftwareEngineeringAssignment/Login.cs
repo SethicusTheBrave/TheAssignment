@@ -25,12 +25,47 @@ namespace SoftwareEngineeringAssignment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //tDES.Key = md5.ComputeHash(utf8.GetBytes(txtPassword));
-            //tDES.Mode = CipherMode.ECB;
-            //tDES.Padding = PaddingMode.PKCS7;
-            //ICryptoTransform trans = tDES.CreateEncryptor();
-            //DO MORE ENCRYPTION LATER
-            instance.Login(txtStaffID.Text, txtPassword.Text);
+            //required variables and objects to make the below code work correctly.
+            DoctorMenu dm = new DoctorMenu();
+            ReceptionistMenu rm = new ReceptionistMenu();
+            ManagerMenu mm = new ManagerMenu();
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            UTF8Encoding utf8 = new UTF8Encoding();
+            AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
+            string result,encryptedPassword;
+
+            //Encrypts the password using our super secure encryption key
+            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
+            AES.Mode = CipherMode.ECB;
+            AES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform trans = AES.CreateEncryptor();
+            encryptedPassword = BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(txtPassword.Text), 0, utf8.GetBytes(txtPassword.Text).Length));
+
+            //Attempts to login with the provided StaffID and the encrypted version of the provided password.
+            result = instance.Login(txtStaffID.Text, encryptedPassword);
+            //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
+            if (result == "Doctor")
+            {
+                this.Hide();
+                dm.ShowDialog();
+                this.Show();
+            }
+            else if (result == "Receptionist")
+            {
+                this.Hide();
+                rm.ShowDialog();
+                this.Show();
+            }
+            else if (result == "Manager")
+            {
+                this.Hide();
+                mm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+            }
         }
     }
 }

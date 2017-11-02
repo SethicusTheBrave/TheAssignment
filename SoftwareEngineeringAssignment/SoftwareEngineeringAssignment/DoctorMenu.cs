@@ -40,5 +40,10 @@ namespace SoftwareEngineeringAssignment
             frmPatientMenu.ShowDialog();
             this.Show();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
