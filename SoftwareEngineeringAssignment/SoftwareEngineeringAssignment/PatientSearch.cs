@@ -24,7 +24,8 @@ namespace SoftwareEngineeringAssignment
         private void btnSearch1_Click(object sender, EventArgs e)
         {
             patientList = instance.patientSearch();
-            foreach(Patient p in patientList)
+            //checks to see if the textbox results match any of the database records
+            foreach (Patient p in patientList)
             {
                 if(p.getPatientID == txtPatientNumber.Text)
                 {
@@ -43,7 +44,7 @@ namespace SoftwareEngineeringAssignment
         private void btnSearch2_Click(object sender, EventArgs e)
         {
             patientList = instance.patientSearch();
-            //checks to see if the textbox results match the 
+            //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
                 if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart.ToString())
@@ -63,7 +64,7 @@ namespace SoftwareEngineeringAssignment
         private void btnSearch3_Click(object sender, EventArgs e)
         {
             patientList = instance.patientSearch();
-            //checks to see if the textbox results match the 
+            //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
                 if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
