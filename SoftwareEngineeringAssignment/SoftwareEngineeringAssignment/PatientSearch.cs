@@ -43,14 +43,11 @@ namespace SoftwareEngineeringAssignment
         private void btnSearch2_Click(object sender, EventArgs e)
         {
             //CURRENTLY NOT WORKING. DATE FORMAT DOES NOT MATCH THAT IN THE DATABASE
-
-            //Converts the date to the short date DD/MM/YYYY
-            DateTime date = (DateTime)calDOB.SelectionStart;
             patientList = instance.patientSearch();
             //checks to see if the textbox results match the 
             foreach (Patient p in patientList)
             {
-                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == date.ToShortDateString())
+                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart.ToString())
                 {
                     pm = new PatientMenu(p);
                     this.Hide();
