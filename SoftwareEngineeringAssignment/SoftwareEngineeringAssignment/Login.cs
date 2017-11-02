@@ -13,6 +13,12 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Login : Form
     {
+        DoctorMenu dm = new DoctorMenu();
+        ReceptionistMenu rm = new ReceptionistMenu();
+        ManagerMenu mm = new ManagerMenu();
+        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+        UTF8Encoding utf8 = new UTF8Encoding();
+        AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
         BusinessMetaLayer instance;
         //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         //UTF8Encoding utf8 = new UTF8Encoding();
@@ -26,12 +32,7 @@ namespace SoftwareEngineeringAssignment
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //required variables and objects to make the below code work correctly.
-            DoctorMenu dm = new DoctorMenu();
-            ReceptionistMenu rm = new ReceptionistMenu();
-            ManagerMenu mm = new ManagerMenu();
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            UTF8Encoding utf8 = new UTF8Encoding();
-            AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
+            
             string result,encryptedPassword;
 
             //Encrypts the password using our super secure encryption key
