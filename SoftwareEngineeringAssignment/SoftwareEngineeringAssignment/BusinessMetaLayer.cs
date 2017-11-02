@@ -56,7 +56,7 @@ namespace SoftwareEngineeringAssignment
             return patientList;
         }*/
         //The code used to query the database to compare a given ID and password with the results in the database and return their staffType.
-        public string Login(string p_StaffID, string p_Password)
+        public Staff Login(string p_StaffID, string p_Password)
         {
             List<Staff> staffList = new List<Staff>();
             //Will attempt to make a connection with the database.
@@ -80,12 +80,14 @@ namespace SoftwareEngineeringAssignment
                 //Compares the password from the textbox with each entry in the database. 
                 if (staffList.Count() > 0)
                 {
-                 
                     foreach (Staff s in staffList)
                     {
                         if (p_StaffID == s.getStaffID && p_Password == s.getpassword)
                         {
-                            return s.getType;
+                            Staff loginStaff = new Staff();
+                            loginStaff.getStaffID = s.getStaffID;
+                            loginStaff.getType = s.getType;
+                            return loginStaff;
                         }
                     }
                 }

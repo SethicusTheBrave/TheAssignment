@@ -12,9 +12,12 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ReceptionistMenu : Form
     {
-        public ReceptionistMenu()
+        Staff m_s;
+        public ReceptionistMenu(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         /// <summary>
