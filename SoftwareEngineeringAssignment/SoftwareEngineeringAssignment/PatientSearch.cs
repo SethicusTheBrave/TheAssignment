@@ -35,14 +35,13 @@ namespace SoftwareEngineeringAssignment
                 }
                 else
                 {
-                    MessageBox.Show("PatientID not found.","The PatientID you have entered could not be found.");
+                    MessageBox.Show("Patient not found.","A Patient with the provided details could not be found");
                 }
             }
         }
 
         private void btnSearch2_Click(object sender, EventArgs e)
         {
-            //CURRENTLY NOT WORKING. DATE FORMAT DOES NOT MATCH THAT IN THE DATABASE
             patientList = instance.patientSearch();
             //checks to see if the textbox results match the 
             foreach (Patient p in patientList)
@@ -56,14 +55,29 @@ namespace SoftwareEngineeringAssignment
                 }
                 else
                 {
-                    MessageBox.Show("PatientID not found.", "The PatientID you have entered could not be found.");
+                    MessageBox.Show("Patient not found.", "A Patient with the provided details could not be found");
                 }
             }
         }
 
         private void btnSearch3_Click(object sender, EventArgs e)
         {
-
+            patientList = instance.patientSearch();
+            //checks to see if the textbox results match the 
+            foreach (Patient p in patientList)
+            {
+                if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
+                {
+                    pm = new PatientMenu(p);
+                    this.Hide();
+                    pm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("PatientID not found.", "A Patient with the provided details could not be found");
+                }
+            }
         }
     }
 }
