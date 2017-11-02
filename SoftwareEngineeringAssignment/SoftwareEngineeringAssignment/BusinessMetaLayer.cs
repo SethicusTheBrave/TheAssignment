@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
     class BusinessMetaLayer
     {
+        private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
 
         private BusinessMetaLayer() { }
@@ -24,7 +27,7 @@ namespace SoftwareEngineeringAssignment
         }
 
         // Could just have a set of static helper methods rather than a singleton!
-        public List<Patient> getPatient()
+        /*public List<Patient> getPatient()
         {
             List<Patient> patientList = new List<Patient>();
 
@@ -50,7 +53,49 @@ namespace SoftwareEngineeringAssignment
                 dr.Close();
                 con.CloseConnection();
             }
+            return patientList;
+        }*/
+        //The code used to query the database to compare a given ID and password with the results in the database and return their staffType.
+        public string Login(string p_StaffID, string p_Password)
+        {
+            List<Staff> staffList = new List<Staff>();
+            //Will attempt to make a connection with the database.
+            if(con.OpenConnection())
+            {
+                //Will select all of the staffID's and Passwords in the Staff table.
+                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM Staff");
+                //Will create a Staff object for each entry in the table.
+                while (dr.Read())
+                {
+                    Staff s = new Staff();
+                    s.getStaffID = dr.GetString(0);
+                    s.getpassword = dr.GetString(1);
+                    s.getType = dr.GetString(2);
+                    staffList.Add(s);
+                }
+                //Closes the database reader and the connection to the database.
+                dr.Close();
+                con.CloseConnection();
 
+                //Compares the password from the textbox with each entry in the database. 
+                if (staffList.Count() > 0)
+                {
+                 
+                    foreach (Staff s in staffList)
+                    {
+                        if (p_StaffID == s.getStaffID && p_Password == s.getpassword)
+                        {
+                            return s.getType;
+                        }
+                    }
+                }
+                return null;
+            }
+            else
+            {
+                MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
+                return null;
+            }
             public void RegisterPatient(string firstName, string lastName, string email, string address, string postcode, string phoneNumber) {
 
              string query = "Insert patient (PatientID, LastName, FirstName, Address, Postcode,DoctorID) VALUES ('firstName', 'lastName', 'email', 'address', 'postcode', 'phoneNumber')";

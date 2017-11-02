@@ -15,7 +15,7 @@ namespace SoftwareEngineeringAssignment
         private static DbConection m_instance = null;
 
         Dictionary<string, string> m_properties;
-        private static string propfile = "properties.dat";
+        private static string propfile = "properties-mysql.dat";
 
         private DbFactory()
         {

@@ -49,7 +49,7 @@ namespace SoftwareEngineeringAssignment
             connectionString = "server=" + server + ";" + "database=" +
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
             //connectionString = "server=127.0.0.1;database=crashcourse;uid=testuser;password=password;";
-            connectionString = "server=127.0.0.1;database=crashcourse;uid=root;";
+            connectionString = "server=localhost;database=mod003263;uid=root;";
             connection = new MySqlConnection(connectionString);
         }
 

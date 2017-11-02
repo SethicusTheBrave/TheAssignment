@@ -36,5 +36,10 @@ namespace SoftwareEngineeringAssignment
         {
 
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
