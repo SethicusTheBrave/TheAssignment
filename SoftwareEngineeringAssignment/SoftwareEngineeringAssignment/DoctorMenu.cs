@@ -22,6 +22,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnPatientSearch_Click(object sender, EventArgs e)
         {
+            //Hides the doctor menu then displays the Patient Search Menu
             this.Hide();
             frmPatientSearch.ShowDialog();
             this.Show();
@@ -29,6 +30,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnTodoList_Click(object sender, EventArgs e)
         {
+            //Hides the doctor menu then displays the To Do list for the doctor
             this.Hide();
             frmTODO.ShowDialog();
             this.Show();
@@ -36,6 +38,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
+            //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
             this.Hide();
             frmPatientMenu.ShowDialog();
             this.Show();
