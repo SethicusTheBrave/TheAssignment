@@ -113,6 +113,7 @@
             this.btnSearch1.TabIndex = 23;
             this.btnSearch1.Text = "Search";
             this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
             // 
             // btnSearch2
             // 
@@ -123,6 +124,7 @@
             this.btnSearch2.TabIndex = 26;
             this.btnSearch2.Text = "Search";
             this.btnSearch2.UseVisualStyleBackColor = true;
+            this.btnSearch2.Click += new System.EventHandler(this.btnSearch2_Click);
             // 
             // txtLastName
             // 
@@ -145,7 +147,9 @@
             // calDOB
             // 
             this.calDOB.Location = new System.Drawing.Point(18, 192);
+            this.calDOB.MaxSelectionCount = 1;
             this.calDOB.Name = "calDOB";
+            this.calDOB.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(1950, 11, 2, 0, 0, 0, 0), new System.DateTime(1950, 11, 8, 0, 0, 0, 0));
             this.calDOB.TabIndex = 29;
             // 
             // label3
@@ -267,6 +271,7 @@
             this.btnSearch3.TabIndex = 42;
             this.btnSearch3.Text = "Search";
             this.btnSearch3.UseVisualStyleBackColor = true;
+            this.btnSearch3.Click += new System.EventHandler(this.btnSearch3_Click);
             // 
             // btnExit
             // 

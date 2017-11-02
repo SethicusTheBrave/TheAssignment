@@ -12,10 +12,61 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class PatientSearch : Form
     {
+        PatientMenu pm;
+        List<Patient> patientList;
+        BusinessMetaLayer instance;
         public PatientSearch()
         {
             InitializeComponent();
+            instance = BusinessMetaLayer.instance();
         }
 
+        private void btnSearch1_Click(object sender, EventArgs e)
+        {
+            patientList = instance.patientSearch();
+            foreach(Patient p in patientList)
+            {
+                if(p.getPatientID == txtPatientNumber.Text)
+                {
+                    pm = new PatientMenu(p);
+                    this.Hide();
+                    pm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("PatientID not found.","The PatientID you have entered could not be found.");
+                }
+            }
+        }
+
+        private void btnSearch2_Click(object sender, EventArgs e)
+        {
+            //CURRENTLY NOT WORKING. DATE FORMAT DOES NOT MATCH THAT IN THE DATABASE
+
+            //Converts the date to the short date DD/MM/YYYY
+            DateTime date = (DateTime)calDOB.SelectionStart;
+            patientList = instance.patientSearch();
+            //checks to see if the textbox results match the 
+            foreach (Patient p in patientList)
+            {
+                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == date.ToShortDateString())
+                {
+                    pm = new PatientMenu(p);
+                    this.Hide();
+                    pm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("PatientID not found.", "The PatientID you have entered could not be found.");
+                }
+            }
+        }
+
+        private void btnSearch3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

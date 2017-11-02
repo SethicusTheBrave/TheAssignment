@@ -56,6 +56,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtPatientNumber = new System.Windows.Forms.TextBox();
+            this.lblPatientNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTests)).BeginInit();
@@ -87,7 +89,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(197, 68);
+            this.lblLastName.Location = new System.Drawing.Point(194, 108);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 38;
@@ -97,7 +99,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(39, 68);
+            this.lblFirstName.Location = new System.Drawing.Point(36, 108);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName.TabIndex = 37;
@@ -105,7 +107,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(12, 87);
+            this.txtFirstName.Location = new System.Drawing.Point(9, 127);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
@@ -114,7 +116,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(173, 87);
+            this.txtLastName.Location = new System.Drawing.Point(170, 127);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
@@ -241,6 +243,7 @@
             this.btnExit.TabIndex = 50;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -300,12 +303,33 @@
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
+            // txtPatientNumber
+            // 
+            this.txtPatientNumber.Location = new System.Drawing.Point(9, 69);
+            this.txtPatientNumber.Multiline = true;
+            this.txtPatientNumber.Name = "txtPatientNumber";
+            this.txtPatientNumber.ReadOnly = true;
+            this.txtPatientNumber.Size = new System.Drawing.Size(136, 28);
+            this.txtPatientNumber.TabIndex = 58;
+            // 
+            // lblPatientNumber
+            // 
+            this.lblPatientNumber.AutoSize = true;
+            this.lblPatientNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientNumber.Location = new System.Drawing.Point(26, 50);
+            this.lblPatientNumber.Name = "lblPatientNumber";
+            this.lblPatientNumber.Size = new System.Drawing.Size(100, 16);
+            this.lblPatientNumber.TabIndex = 57;
+            this.lblPatientNumber.Text = "Patient Number";
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(596, 579);
+            this.Controls.Add(this.txtPatientNumber);
+            this.Controls.Add(this.lblPatientNumber);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -365,5 +389,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtPatientNumber;
+        private System.Windows.Forms.Label lblPatientNumber;
     }
 }

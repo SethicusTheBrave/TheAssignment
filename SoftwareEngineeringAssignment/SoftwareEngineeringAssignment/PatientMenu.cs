@@ -12,14 +12,31 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class PatientMenu : Form
     {
+        Patient m_p;
         public PatientMenu()
         {
             InitializeComponent();
         }
-
+        public PatientMenu(Patient p)
+        {
+            InitializeComponent();
+            m_p = p;
+            loadDetails();
+        }
+        private void loadDetails()
+        {
+            txtPatientNumber.Text = m_p.getPatientID;
+            txtFirstName.Text = m_p.getFirstName;
+            txtLastName.Text = m_p.getLastName;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

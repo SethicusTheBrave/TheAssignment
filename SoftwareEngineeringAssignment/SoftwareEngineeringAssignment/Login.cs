@@ -13,9 +13,9 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Login : Form
     {
-        DoctorMenu dm = new DoctorMenu();
-        ReceptionistMenu rm = new ReceptionistMenu();
-        ManagerMenu mm = new ManagerMenu();
+        DoctorMenu dm;
+        ReceptionistMenu rm;
+        ManagerMenu mm;
         MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         UTF8Encoding utf8 = new UTF8Encoding();
         AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
@@ -47,18 +47,21 @@ namespace SoftwareEngineeringAssignment
             //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
             if (result == "Doctor")
             {
+                dm = new DoctorMenu();
                 this.Hide();
                 dm.ShowDialog();
                 this.Show();
             }
             else if (result == "Receptionist")
             {
+                rm = new ReceptionistMenu();
                 this.Hide();
                 rm.ShowDialog();
                 this.Show();
             }
             else if (result == "Manager")
             {
+                mm = new ManagerMenu();
                 this.Hide();
                 mm.ShowDialog();
                 this.Show();

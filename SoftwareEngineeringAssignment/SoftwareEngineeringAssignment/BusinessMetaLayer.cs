@@ -97,5 +97,33 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
+        public List<Patient> patientSearch()
+        {
+            List<Patient> patientList = new List<Patient>();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB FROM Patient");
+                //Will create a Staff object for each entry in the table.
+                while (dr.Read())
+                {
+                    Patient p = new Patient();
+                    p.getPatientID = dr.GetString(0);
+                    p.getLastName = dr.GetString(1);
+                    p.getFirstName = dr.GetString(2);
+                    p.getAddress = dr.GetString(3);
+                    p.getPostcode = dr.GetString(4);
+                    p.getDOB = Convert.ToString(dr.GetDateTime(5));
+                    patientList.Add(p);
+                }
+                con.CloseConnection();
+                dr.Close();
+                return patientList;
+            }
+            else
+            {
+                MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
+                return null;
+            }
+        }
     }
 }
