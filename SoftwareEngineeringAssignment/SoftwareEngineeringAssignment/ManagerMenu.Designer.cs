@@ -87,11 +87,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(283, 9);
+            this.lblName.Location = new System.Drawing.Point(346, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 17;
-            this.lblName.Text = "Logged In: Name";
+            this.lblName.Text = "StaffID: 0";
             // 
             // lblManager
             // 
@@ -123,6 +123,7 @@
             this.btnLogOut.TabIndex = 46;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // ManagerMenu
             // 

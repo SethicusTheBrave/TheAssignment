@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.dgSchedule = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblManager = new System.Windows.Forms.Label();
             this.clmFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmStaffType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +38,9 @@
             this.clmFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSaturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblManager = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgSchedule)).BeginInit();
             this.SuspendLayout();
@@ -62,38 +62,6 @@
             this.dgSchedule.Name = "dgSchedule";
             this.dgSchedule.Size = new System.Drawing.Size(950, 280);
             this.dgSchedule.TabIndex = 0;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(876, 380);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 29);
-            this.btnSave.TabIndex = 51;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(859, 9);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
-            this.lblName.TabIndex = 53;
-            this.lblName.Text = "Logged In: Name";
-            // 
-            // lblManager
-            // 
-            this.lblManager.AutoSize = true;
-            this.lblManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManager.Location = new System.Drawing.Point(7, 9);
-            this.lblManager.Name = "lblManager";
-            this.lblManager.Size = new System.Drawing.Size(57, 15);
-            this.lblManager.TabIndex = 52;
-            this.lblManager.Text = "Manager";
             // 
             // clmFullName
             // 
@@ -139,6 +107,38 @@
             // 
             this.clmSunday.HeaderText = "Sunday";
             this.clmSunday.Name = "clmSunday";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(876, 380);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 29);
+            this.btnSave.TabIndex = 51;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblName.Location = new System.Drawing.Point(906, 9);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(56, 15);
+            this.lblName.TabIndex = 53;
+            this.lblName.Text = "StaffID: 0";
+            // 
+            // lblManager
+            // 
+            this.lblManager.AutoSize = true;
+            this.lblManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManager.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManager.Location = new System.Drawing.Point(7, 9);
+            this.lblManager.Name = "lblManager";
+            this.lblManager.Size = new System.Drawing.Size(57, 15);
+            this.lblManager.TabIndex = 52;
+            this.lblManager.Text = "Manager";
             // 
             // btnExit
             // 

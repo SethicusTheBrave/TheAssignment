@@ -49,6 +49,25 @@ F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngin
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csprojResolveAssemblyReference.cache
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorMenu.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorTODO.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ExtendPrescription.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.Login.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ManagerMenu.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.PatientMenu.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.PatientSearch.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.Properties.Resources.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.RegisterPatient.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.StaffSchedule.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csproj.GenerateResource.Cache
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe.config
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ReceptionistMenu.resources
 C:\Users\matas\Desktop\mokslas\YEAR2\Software engineering\git assignment software engineering\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe.config
 C:\Users\matas\Desktop\mokslas\YEAR2\Software engineering\git assignment software engineering\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
 C:\Users\matas\Desktop\mokslas\YEAR2\Software engineering\git assignment software engineering\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb

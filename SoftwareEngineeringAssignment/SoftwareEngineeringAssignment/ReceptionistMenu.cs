@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
-    public partial class Main_Menu : Form
+    public partial class ReceptionistMenu : Form
     {
-        public Main_Menu()
+        Staff m_s;
+        public ReceptionistMenu(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         /// <summary>
@@ -52,6 +55,11 @@ namespace SoftwareEngineeringAssignment
         private void btnExtendPerscription_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
