@@ -127,15 +127,14 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
-        }
+        } 
+        //// Just some experiments
+        //public void RegisterPatients()
+        //{
+        //    var medicine = "new med";
+        //          string query = "Insert medicine (MedicineName) VALUES ('" + medicine + "')";
+        //          con.Insert(query);
+        //}
 
-
-        SavePacientDetails()
-        {
-
-        }
-
-
-        
     }
 }
