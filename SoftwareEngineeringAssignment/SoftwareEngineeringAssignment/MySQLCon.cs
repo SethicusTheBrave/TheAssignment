@@ -138,7 +138,6 @@ namespace SoftwareEngineeringAssignment
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
-                
             }
         }
          
