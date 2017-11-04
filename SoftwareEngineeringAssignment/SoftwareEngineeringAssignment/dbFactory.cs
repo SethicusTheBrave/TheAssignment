@@ -21,6 +21,7 @@ namespace SoftwareEngineeringAssignment
         {
             m_properties = new Dictionary<string, string>();
         }
+
         public static DbConection instance()
         {
             if (null == m_instance)
@@ -86,6 +87,8 @@ namespace SoftwareEngineeringAssignment
         public DBException(string message) : base(message) { }
     }
 
+    
+
     public interface DbConection
     {
         bool OpenConnection();
@@ -93,6 +96,10 @@ namespace SoftwareEngineeringAssignment
         bool CloseConnection();
 
         void executeQuery(string query);
+
+        bool CheckIfQuerySuccessful();
+
+        void Delete(string query);
 
         /*
         //Update statement
