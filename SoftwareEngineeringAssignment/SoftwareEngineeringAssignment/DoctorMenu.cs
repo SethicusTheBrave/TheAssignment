@@ -27,7 +27,7 @@ namespace SoftwareEngineeringAssignment
         {
             //Hides the doctor menu then displays the Patient Search Menu
             this.Hide();
-            frmPatientSearch.ShowDialog();
+            frmPatientSearch.ShowDialog(m_s);
             this.Show();
         }
 
