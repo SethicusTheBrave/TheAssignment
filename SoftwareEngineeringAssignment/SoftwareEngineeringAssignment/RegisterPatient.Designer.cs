@@ -157,7 +157,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(879, 555);
+            this.btnSave.Location = new System.Drawing.Point(930, 555);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 29);
@@ -169,7 +169,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(879, 612);
+            this.btnExit.Location = new System.Drawing.Point(930, 611);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 29);
@@ -222,7 +222,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(997, 9);
+            this.lblName.Location = new System.Drawing.Point(981, 9);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 57;
@@ -251,7 +251,7 @@
             // 
             this.lblTown.AutoSize = true;
             this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTown.Location = new System.Drawing.Point(536, 107);
+            this.lblTown.Location = new System.Drawing.Point(552, 108);
             this.lblTown.Name = "lblTown";
             this.lblTown.Size = new System.Drawing.Size(41, 16);
             this.lblTown.TabIndex = 59;

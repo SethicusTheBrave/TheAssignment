@@ -110,7 +110,6 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
 
         //Insert statement
