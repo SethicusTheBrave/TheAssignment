@@ -110,5 +110,15 @@ namespace SoftwareEngineeringAssignment
         {
 
         }
+
+        public bool CheckIfQuerySuccessful()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,6 +24,17 @@ namespace SoftwareEngineeringAssignment
         private string database;
         private string uid;
         private string password;
+        private int howManyRowsAffected;
+
+        public bool CheckIfQuerySuccessful()
+        {
+            if (howManyRowsAffected > 0)
+            {
+                return true;
+            }
+               
+            return false;
+        }
 
         //Constructor
         public MySQLCon(Dictionary<string, string> properties)
@@ -102,30 +113,40 @@ namespace SoftwareEngineeringAssignment
 
         }
 
-
         //Insert statement
         public void Insert(string query)
         {
-            if (this.OpenConnection() == true)
+            
+            if (OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                cmd.ExecuteNonQuery();
+                howManyRowsAffected = cmd.ExecuteNonQuery();
+             //   this.CloseConnection();
             }
+            
+
         }
+
 
         /*
         //Update statement
         public void Update()
         {
         }
+        */
 
         //Delete statement
-        public void Delete()
+        public void Delete(string query)
         {
+            if (OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                howManyRowsAffected = cmd.ExecuteNonQuery();
+                
+            }
         }
          
-        */
+        
 
 
         //Select statement
