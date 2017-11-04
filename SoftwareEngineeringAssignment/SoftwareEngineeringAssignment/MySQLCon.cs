@@ -131,7 +131,6 @@ namespace SoftwareEngineeringAssignment
         }
         */
 
-        /*
         //Delete statement
         public void Delete(string query)
         {
@@ -141,7 +140,7 @@ namespace SoftwareEngineeringAssignment
                 howManyRowsAffected = cmd.ExecuteNonQuery();
                 
             }
-        }*/
+        }
          
         
 
