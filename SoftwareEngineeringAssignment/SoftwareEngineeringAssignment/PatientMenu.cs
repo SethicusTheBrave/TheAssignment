@@ -20,6 +20,7 @@ namespace SoftwareEngineeringAssignment
         {
             InitializeComponent();
             m_patientList = p_patientList;
+            m_p = p_patientList.ElementAt(0);
             m_s = p_s;
             loadDetails();
         }
@@ -72,7 +73,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            instance.updatePatientStatus(m_patientList.ElementAt(0).getPatientID);
             //Remove from patientList
             //Update that patientsCurrentStatus
             //display new patients details

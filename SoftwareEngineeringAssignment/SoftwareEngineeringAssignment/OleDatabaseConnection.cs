@@ -106,7 +106,7 @@ namespace SoftwareEngineeringAssignment
         }
 
         // For testing not finished..matas
-        public void Insert(string query)
+        public void executeQuery(string query)
         {
 
         }

@@ -104,9 +104,9 @@ namespace SoftwareEngineeringAssignment
 
 
         //Insert statement
-        public void Insert(string query)
+        public void executeQuery(string query)
         {
-            if (this.OpenConnection() == true)
+            if (null != connection)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 

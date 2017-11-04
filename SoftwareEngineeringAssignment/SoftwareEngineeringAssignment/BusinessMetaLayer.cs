@@ -45,9 +45,8 @@ namespace SoftwareEngineeringAssignment
                     staffList.Add(s);
                 }
                 //Closes the database reader and the connection to the database.
-                dr.Close();
                 con.CloseConnection();
-
+                dr.Close();
                 //Compares the password from the textbox with each entry in the database. 
                 if (staffList.Count() > 0)
                 {
@@ -75,7 +74,6 @@ namespace SoftwareEngineeringAssignment
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
             {
-                con.Insert("UPDATE Staff FirstName = HACKEDLOL");
                 DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB FROM Patient");
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
@@ -95,15 +93,18 @@ namespace SoftwareEngineeringAssignment
             }
             else
             {
+                //Closes the database reader and the connection to the database.
+                con.CloseConnection();
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
         }
-        public void updatePatientStatus(int patientID)
+        public void updatePatientStatus(string patientID)
         {
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("UPDATE Patient SET ");
+                con.executeQuery("UPDATE Patient SET FirstName = 'Test' WHERE PatientID = 2");
+                con.CloseConnection();
             }
         }
         //// Just some experiments

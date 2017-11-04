@@ -92,7 +92,7 @@ namespace SoftwareEngineeringAssignment
 
         bool CloseConnection();
 
-        void Insert(string query);
+        void executeQuery(string query);
 
         /*
         //Update statement
