@@ -68,9 +68,10 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(528, 9);
+            this.lblName.Location = new System.Drawing.Point(704, 11);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 15);
+            this.lblName.Size = new System.Drawing.Size(68, 18);
             this.lblName.TabIndex = 21;
             this.lblName.Text = "StaffID: 0";
             // 
@@ -79,9 +80,10 @@
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDoctor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDoctor.Location = new System.Drawing.Point(12, 9);
+            this.lblDoctor.Location = new System.Drawing.Point(16, 11);
+            this.lblDoctor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(43, 15);
+            this.lblDoctor.Size = new System.Drawing.Size(54, 18);
             this.lblDoctor.TabIndex = 20;
             this.lblDoctor.Text = "Doctor";
             // 
@@ -89,9 +91,10 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(194, 108);
+            this.lblLastName.Location = new System.Drawing.Point(259, 133);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(73, 16);
+            this.lblLastName.Size = new System.Drawing.Size(91, 20);
             this.lblLastName.TabIndex = 38;
             this.lblLastName.Text = "Last Name";
             // 
@@ -99,28 +102,31 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(36, 108);
+            this.lblFirstName.Location = new System.Drawing.Point(48, 133);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(73, 16);
+            this.lblFirstName.Size = new System.Drawing.Size(92, 20);
             this.lblFirstName.TabIndex = 37;
             this.lblFirstName.Text = "First Name";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(9, 127);
+            this.txtFirstName.Location = new System.Drawing.Point(12, 156);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
-            this.txtFirstName.Size = new System.Drawing.Size(136, 28);
+            this.txtFirstName.Size = new System.Drawing.Size(180, 34);
             this.txtFirstName.TabIndex = 43;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(170, 127);
+            this.txtLastName.Location = new System.Drawing.Point(227, 156);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(136, 28);
+            this.txtLastName.Size = new System.Drawing.Size(180, 34);
             this.txtLastName.TabIndex = 42;
             // 
             // dgNotes
@@ -129,9 +135,10 @@
             this.dgNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmDate,
             this.clmNotes});
-            this.dgNotes.Location = new System.Drawing.Point(12, 197);
+            this.dgNotes.Location = new System.Drawing.Point(16, 242);
+            this.dgNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgNotes.Name = "dgNotes";
-            this.dgNotes.Size = new System.Drawing.Size(243, 76);
+            this.dgNotes.Size = new System.Drawing.Size(324, 94);
             this.dgNotes.TabIndex = 44;
             // 
             // clmDate
@@ -148,9 +155,10 @@
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(96, 178);
+            this.lblNotes.Location = new System.Drawing.Point(128, 219);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(44, 16);
+            this.lblNotes.Size = new System.Drawing.Size(53, 20);
             this.lblNotes.TabIndex = 45;
             this.lblNotes.Text = "Notes";
             // 
@@ -158,9 +166,10 @@
             // 
             this.lblPrescriptions.AutoSize = true;
             this.lblPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrescriptions.Location = new System.Drawing.Point(99, 291);
+            this.lblPrescriptions.Location = new System.Drawing.Point(132, 358);
+            this.lblPrescriptions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrescriptions.Name = "lblPrescriptions";
-            this.lblPrescriptions.Size = new System.Drawing.Size(86, 16);
+            this.lblPrescriptions.Size = new System.Drawing.Size(108, 20);
             this.lblPrescriptions.TabIndex = 47;
             this.lblPrescriptions.Text = "Prescriptions";
             // 
@@ -171,9 +180,10 @@
             this.dataGridViewTextBoxColumn1,
             this.clmPrescriptions,
             this.dataGridViewTextBoxColumn2});
-            this.dgPrescriptions.Location = new System.Drawing.Point(15, 310);
+            this.dgPrescriptions.Location = new System.Drawing.Point(20, 382);
+            this.dgPrescriptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgPrescriptions.Name = "dgPrescriptions";
-            this.dgPrescriptions.Size = new System.Drawing.Size(345, 76);
+            this.dgPrescriptions.Size = new System.Drawing.Size(460, 94);
             this.dgPrescriptions.TabIndex = 46;
             // 
             // dataGridViewTextBoxColumn1
@@ -195,9 +205,10 @@
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(106, 394);
+            this.lblTests.Location = new System.Drawing.Point(141, 485);
+            this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTests.Name = "lblTests";
-            this.lblTests.Size = new System.Drawing.Size(42, 16);
+            this.lblTests.Size = new System.Drawing.Size(51, 20);
             this.lblTests.TabIndex = 49;
             this.lblTests.Text = "Tests";
             // 
@@ -209,9 +220,10 @@
             this.clmTest,
             this.clmResults,
             this.dataGridViewTextBoxColumn4});
-            this.dgTests.Location = new System.Drawing.Point(15, 413);
+            this.dgTests.Location = new System.Drawing.Point(20, 508);
+            this.dgTests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgTests.Name = "dgTests";
-            this.dgTests.Size = new System.Drawing.Size(446, 76);
+            this.dgTests.Size = new System.Drawing.Size(595, 94);
             this.dgTests.TabIndex = 48;
             // 
             // dataGridViewTextBoxColumn3
@@ -237,9 +249,10 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(499, 542);
+            this.btnExit.Location = new System.Drawing.Point(665, 667);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 29);
+            this.btnExit.Size = new System.Drawing.Size(113, 36);
             this.btnExit.TabIndex = 50;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -248,9 +261,10 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(499, 507);
+            this.btnSave.Location = new System.Drawing.Point(665, 624);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 29);
+            this.btnSave.Size = new System.Drawing.Size(113, 36);
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -258,9 +272,10 @@
             // 
             // btnBookAppointment
             // 
-            this.btnBookAppointment.Location = new System.Drawing.Point(499, 69);
+            this.btnBookAppointment.Location = new System.Drawing.Point(665, 85);
+            this.btnBookAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBookAppointment.Name = "btnBookAppointment";
-            this.btnBookAppointment.Size = new System.Drawing.Size(85, 55);
+            this.btnBookAppointment.Size = new System.Drawing.Size(113, 68);
             this.btnBookAppointment.TabIndex = 52;
             this.btnBookAppointment.Text = "Book Appointment";
             this.btnBookAppointment.UseVisualStyleBackColor = true;
@@ -268,9 +283,10 @@
             // btnNewNote
             // 
             this.btnNewNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewNote.Location = new System.Drawing.Point(287, 244);
+            this.btnNewNote.Location = new System.Drawing.Point(383, 300);
+            this.btnNewNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewNote.Name = "btnNewNote";
-            this.btnNewNote.Size = new System.Drawing.Size(85, 29);
+            this.btnNewNote.Size = new System.Drawing.Size(113, 36);
             this.btnNewNote.TabIndex = 53;
             this.btnNewNote.Text = "New";
             this.btnNewNote.UseVisualStyleBackColor = true;
@@ -278,9 +294,10 @@
             // btnNewPrescription
             // 
             this.btnNewPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewPrescription.Location = new System.Drawing.Point(376, 357);
+            this.btnNewPrescription.Location = new System.Drawing.Point(501, 439);
+            this.btnNewPrescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewPrescription.Name = "btnNewPrescription";
-            this.btnNewPrescription.Size = new System.Drawing.Size(85, 29);
+            this.btnNewPrescription.Size = new System.Drawing.Size(113, 36);
             this.btnNewPrescription.TabIndex = 54;
             this.btnNewPrescription.Text = "New";
             this.btnNewPrescription.UseVisualStyleBackColor = true;
@@ -288,18 +305,20 @@
             // btnNewTest
             // 
             this.btnNewTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewTest.Location = new System.Drawing.Point(499, 451);
+            this.btnNewTest.Location = new System.Drawing.Point(665, 555);
+            this.btnNewTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewTest.Name = "btnNewTest";
-            this.btnNewTest.Size = new System.Drawing.Size(85, 29);
+            this.btnNewTest.Size = new System.Drawing.Size(113, 36);
             this.btnNewTest.TabIndex = 55;
             this.btnNewTest.Text = "New";
             this.btnNewTest.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(408, 542);
+            this.btnNext.Location = new System.Drawing.Point(544, 667);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(85, 29);
+            this.btnNext.Size = new System.Drawing.Size(113, 36);
             this.btnNext.TabIndex = 56;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -307,29 +326,31 @@
             // 
             // txtPatientNumber
             // 
-            this.txtPatientNumber.Location = new System.Drawing.Point(9, 69);
+            this.txtPatientNumber.Location = new System.Drawing.Point(12, 85);
+            this.txtPatientNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPatientNumber.Multiline = true;
             this.txtPatientNumber.Name = "txtPatientNumber";
             this.txtPatientNumber.ReadOnly = true;
-            this.txtPatientNumber.Size = new System.Drawing.Size(136, 28);
+            this.txtPatientNumber.Size = new System.Drawing.Size(180, 34);
             this.txtPatientNumber.TabIndex = 58;
             // 
             // lblPatientNumber
             // 
             this.lblPatientNumber.AutoSize = true;
             this.lblPatientNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientNumber.Location = new System.Drawing.Point(26, 50);
+            this.lblPatientNumber.Location = new System.Drawing.Point(35, 62);
+            this.lblPatientNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPatientNumber.Name = "lblPatientNumber";
-            this.lblPatientNumber.Size = new System.Drawing.Size(100, 16);
+            this.lblPatientNumber.Size = new System.Drawing.Size(125, 20);
             this.lblPatientNumber.TabIndex = 57;
             this.lblPatientNumber.Text = "Patient Number";
             // 
             // PatientMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(596, 579);
+            this.ClientSize = new System.Drawing.Size(798, 555);
             this.Controls.Add(this.txtPatientNumber);
             this.Controls.Add(this.lblPatientNumber);
             this.Controls.Add(this.btnNext);
@@ -351,6 +372,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PatientMenu";
             this.Text = "Patient";
             ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).EndInit();
