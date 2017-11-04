@@ -12,13 +12,15 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class PatientSearch : Form
     {
+        Staff m_s;
         PatientMenu pm;
         List<Patient> patientList;
         BusinessMetaLayer instance;
-        public PatientSearch()
+        public PatientSearch(Staff p_s)
         {
             InitializeComponent();
             instance = BusinessMetaLayer.instance();
+            m_s = p_s;
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace SoftwareEngineeringAssignment
             {
                 if(p.getPatientID == txtPatientNumber.Text)
                 {
-                    pm = new PatientMenu(p);
+                    pm = new PatientMenu(p, m_s);
                     this.Hide();
                     pm.ShowDialog();
                     this.Close();

@@ -52,9 +52,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBookAppointment = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnNewNote = new System.Windows.Forms.Button();
+            this.btnNewPrescription = new System.Windows.Forms.Button();
+            this.btnNewTest = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.lblPatientNumber = new System.Windows.Forms.Label();
@@ -254,6 +254,7 @@
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // btnBookAppointment
             // 
@@ -264,35 +265,35 @@
             this.btnBookAppointment.Text = "Book Appointment";
             this.btnBookAppointment.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNewNote
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(287, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 29);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewNote.Location = new System.Drawing.Point(287, 244);
+            this.btnNewNote.Name = "btnNewNote";
+            this.btnNewNote.Size = new System.Drawing.Size(85, 29);
+            this.btnNewNote.TabIndex = 53;
+            this.btnNewNote.Text = "New";
+            this.btnNewNote.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnNewPrescription
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(376, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 29);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnNewPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewPrescription.Location = new System.Drawing.Point(376, 357);
+            this.btnNewPrescription.Name = "btnNewPrescription";
+            this.btnNewPrescription.Size = new System.Drawing.Size(85, 29);
+            this.btnNewPrescription.TabIndex = 54;
+            this.btnNewPrescription.Text = "New";
+            this.btnNewPrescription.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnNewTest
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(499, 451);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 29);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "New";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNewTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewTest.Location = new System.Drawing.Point(499, 451);
+            this.btnNewTest.Name = "btnNewTest";
+            this.btnNewTest.Size = new System.Drawing.Size(85, 29);
+            this.btnNewTest.TabIndex = 55;
+            this.btnNewTest.Text = "New";
+            this.btnNewTest.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
@@ -302,6 +303,7 @@
             this.btnNext.TabIndex = 56;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // txtPatientNumber
             // 
@@ -331,9 +333,9 @@
             this.Controls.Add(this.txtPatientNumber);
             this.Controls.Add(this.lblPatientNumber);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNewTest);
+            this.Controls.Add(this.btnNewPrescription);
+            this.Controls.Add(this.btnNewNote);
             this.Controls.Add(this.btnBookAppointment);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
@@ -385,9 +387,9 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBookAppointment;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNewNote;
+        private System.Windows.Forms.Button btnNewPrescription;
+        private System.Windows.Forms.Button btnNewTest;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtPatientNumber;
         private System.Windows.Forms.Label lblPatientNumber;
