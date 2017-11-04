@@ -27,6 +27,7 @@ namespace SoftwareEngineeringAssignment
         {
             InitializeComponent();
             instance = BusinessMetaLayer.instance();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

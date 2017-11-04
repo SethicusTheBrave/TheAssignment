@@ -104,5 +104,11 @@ namespace SoftwareEngineeringAssignment
             //return the dataSet
             return dataSet;
         }
+
+        // For testing not finished..matas
+        public void Insert(string query)
+        {
+
+        }
     }
 }

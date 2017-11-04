@@ -24,6 +24,7 @@ namespace SoftwareEngineeringAssignment
                 m_instance = new BusinessMetaLayer();
             }
             return m_instance;
+
         }
 
         // Could just have a set of static helper methods rather than a singleton!
@@ -126,6 +127,14 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
-        }
+        } 
+        //// Just some experiments
+        //public void RegisterPatients()
+        //{
+        //    var medicine = "new med";
+        //          string query = "Insert medicine (MedicineName) VALUES ('" + medicine + "')";
+        //          con.Insert(query);
+        //}
+
     }
 }
