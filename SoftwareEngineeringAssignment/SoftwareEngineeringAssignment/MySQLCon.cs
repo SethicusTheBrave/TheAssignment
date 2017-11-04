@@ -120,10 +120,7 @@ namespace SoftwareEngineeringAssignment
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
-             //   this.CloseConnection();
             }
-            
-
         }
 
 
@@ -132,8 +129,6 @@ namespace SoftwareEngineeringAssignment
         public void Delete()
         {
         }
-        */
-
         */
 
         /*
@@ -146,7 +141,7 @@ namespace SoftwareEngineeringAssignment
                 howManyRowsAffected = cmd.ExecuteNonQuery();
                 
             }
-        }
+        }*/
          
         
 
