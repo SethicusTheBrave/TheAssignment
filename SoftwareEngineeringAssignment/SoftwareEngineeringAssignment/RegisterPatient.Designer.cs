@@ -481,7 +481,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblDOB;
-      //  private System.Windows.Forms.MonthCalendar calDOB;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtLastName;
