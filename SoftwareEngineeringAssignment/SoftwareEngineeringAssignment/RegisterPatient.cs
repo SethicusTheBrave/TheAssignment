@@ -79,7 +79,7 @@ namespace SoftwareEngineeringAssignment
             int count = txtMedicalHistory.TextLength;
             int medHistoryLenght = 2500 - count;
             lblMedHistoryCount.Text = medHistoryLenght.ToString() ;
-
+           
         }
 
         private void txtNotes_TextChanged(object sender, EventArgs e)

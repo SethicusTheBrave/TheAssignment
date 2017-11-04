@@ -44,12 +44,25 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
-            m_patientList = instance.patientList();
-            frmPatientMenu = new PatientMenu(m_patientList, m_s);
-            //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
-            this.Hide();
-            frmPatientMenu.ShowDialog();
-            this.Show();
+            //UPDATE TO ONLY SHOW PATIENT WHO ARE HERE AND HAVE THE SAME DOCTORID
+            List<Patient> temp = instance.patientList();
+            foreach(Patient p in temp)
+            {
+                if(p.getPresent)
+                {
+                    m_patientList.Add(p);
+                }
+            }
+            if (null != m_patientList)
+            {
+                frmPatientMenu = new PatientMenu(m_patientList, m_s);
+                //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
+                this.Hide();
+                frmPatientMenu.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("There are no Patients currently waiting to be seen", "No Patients");
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

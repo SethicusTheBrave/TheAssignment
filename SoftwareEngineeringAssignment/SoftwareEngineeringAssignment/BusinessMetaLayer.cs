@@ -46,9 +46,8 @@ namespace SoftwareEngineeringAssignment
                     staffList.Add(s);
                 }
                 //Closes the database reader and the connection to the database.
-                dr.Close();
                 con.CloseConnection();
-
+                dr.Close();
                 //Compares the password from the textbox with each entry in the database. 
                 if (staffList.Count() > 0)
                 {
@@ -76,7 +75,7 @@ namespace SoftwareEngineeringAssignment
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB FROM Patient");
+                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB, CurrentlyPresent FROM Patient");
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
@@ -87,6 +86,7 @@ namespace SoftwareEngineeringAssignment
                     p.getAddress = dr.GetString(3);
                     p.getPostcode = dr.GetString(4);
                     p.getDOB = Convert.ToString(dr.GetDateTime(5));
+                    p.getPresent = dr.GetBoolean(6);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
@@ -95,10 +95,29 @@ namespace SoftwareEngineeringAssignment
             }
             else
             {
+                //Closes the database reader and the connection to the database.
+                con.CloseConnection();
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
         }
+        public void updatePatientStatus(string patientID)
+        {
+            if (con.OpenConnection())
+            {
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = 0 WHERE PatientID=" + patientID);
+                con.CloseConnection();
+            }
+        }
+        //// Just some experiments
+        //public void RegisterPatients(string firstName, string lastName, DateTime DOB, string religion, string email, string houseNumber, string street,
+        //                             string town, string country, string postcode, string phone, string NIN, string tests, string allergies,
+        //                             string notes)
+        //{
+        //    var format = "yyyy-MM-dd";
+        //    var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + houseNumber + "', '" + street + "', '" + town + "', '" + country + "', '" + postcode + "')";
+        //    con.Insert(queryAddress);
+        //    DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + houseNumber + "' AND StreetName = '" + street + "' AND Town = '" + town + "' AND Country = '" + country + "' AND PostCode = '" + postcode + "'");
 
 
 

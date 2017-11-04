@@ -110,27 +110,22 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
 
         //Insert statement
-        public void Insert(string query)
+        public void executeQuery(string query)
         {
-            
-            if (OpenConnection())
+            if (null != connection)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
-             //   this.CloseConnection();
             }
-            
-
         }
 
 
         /*
         //Update statement
-        public void Update()
+        public void Delete()
         {
         }
         */
@@ -142,7 +137,6 @@ namespace SoftwareEngineeringAssignment
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
-                
             }
         }
          

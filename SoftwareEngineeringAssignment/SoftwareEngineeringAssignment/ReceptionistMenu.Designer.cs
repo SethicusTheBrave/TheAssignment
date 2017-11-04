@@ -41,10 +41,9 @@
             // btnCreateAppointment
             // 
             this.btnCreateAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAppointment.Location = new System.Drawing.Point(16, 133);
-            this.btnCreateAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateAppointment.Location = new System.Drawing.Point(12, 108);
             this.btnCreateAppointment.Name = "btnCreateAppointment";
-            this.btnCreateAppointment.Size = new System.Drawing.Size(155, 53);
+            this.btnCreateAppointment.Size = new System.Drawing.Size(116, 43);
             this.btnCreateAppointment.TabIndex = 0;
             this.btnCreateAppointment.Text = "Book Appointment";
             this.btnCreateAppointment.UseVisualStyleBackColor = true;
@@ -53,10 +52,9 @@
             // btnEditAppointment
             // 
             this.btnEditAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAppointment.Location = new System.Drawing.Point(381, 133);
-            this.btnEditAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAppointment.Location = new System.Drawing.Point(286, 108);
             this.btnEditAppointment.Name = "btnEditAppointment";
-            this.btnEditAppointment.Size = new System.Drawing.Size(155, 53);
+            this.btnEditAppointment.Size = new System.Drawing.Size(116, 43);
             this.btnEditAppointment.TabIndex = 1;
             this.btnEditAppointment.Text = "Edit Appointment";
             this.btnEditAppointment.UseVisualStyleBackColor = true;
@@ -65,10 +63,9 @@
             // btnRegisterPatient
             // 
             this.btnRegisterPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterPatient.Location = new System.Drawing.Point(16, 265);
-            this.btnRegisterPatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegisterPatient.Location = new System.Drawing.Point(12, 215);
             this.btnRegisterPatient.Name = "btnRegisterPatient";
-            this.btnRegisterPatient.Size = new System.Drawing.Size(155, 53);
+            this.btnRegisterPatient.Size = new System.Drawing.Size(116, 43);
             this.btnRegisterPatient.TabIndex = 2;
             this.btnRegisterPatient.Text = "Register Patient";
             this.btnRegisterPatient.UseVisualStyleBackColor = true;
@@ -77,10 +74,9 @@
             // btnExtendPerscription
             // 
             this.btnExtendPerscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtendPerscription.Location = new System.Drawing.Point(381, 265);
-            this.btnExtendPerscription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExtendPerscription.Location = new System.Drawing.Point(286, 215);
             this.btnExtendPerscription.Name = "btnExtendPerscription";
-            this.btnExtendPerscription.Size = new System.Drawing.Size(155, 53);
+            this.btnExtendPerscription.Size = new System.Drawing.Size(116, 43);
             this.btnExtendPerscription.TabIndex = 3;
             this.btnExtendPerscription.Text = "Extend Perscription";
             this.btnExtendPerscription.UseVisualStyleBackColor = true;
@@ -91,10 +87,9 @@
             this.lblReceptionist.AutoSize = true;
             this.lblReceptionist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReceptionist.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblReceptionist.Location = new System.Drawing.Point(12, 11);
-            this.lblReceptionist.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReceptionist.Location = new System.Drawing.Point(9, 9);
             this.lblReceptionist.Name = "lblReceptionist";
-            this.lblReceptionist.Size = new System.Drawing.Size(90, 18);
+            this.lblReceptionist.Size = new System.Drawing.Size(75, 15);
             this.lblReceptionist.TabIndex = 4;
             this.lblReceptionist.Text = "Receptionist";
             // 
@@ -104,6 +99,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblName.Location = new System.Drawing.Point(346, 9);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 5;
@@ -112,10 +108,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(16, 341);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(12, 277);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(113, 36);
+            this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 44;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -123,10 +118,9 @@
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(423, 341);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Location = new System.Drawing.Point(317, 277);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(113, 36);
+            this.btnLogOut.Size = new System.Drawing.Size(85, 29);
             this.btnLogOut.TabIndex = 46;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -134,10 +128,10 @@
             // 
             // ReceptionistMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(552, 391);
+            this.ClientSize = new System.Drawing.Size(414, 318);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
@@ -146,6 +140,7 @@
             this.Controls.Add(this.btnRegisterPatient);
             this.Controls.Add(this.btnEditAppointment);
             this.Controls.Add(this.btnCreateAppointment);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReceptionistMenu";
             this.Text = "Receptionist Menu";
             this.ResumeLayout(false);
