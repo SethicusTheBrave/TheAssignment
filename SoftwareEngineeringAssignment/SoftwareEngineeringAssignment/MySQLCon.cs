@@ -114,16 +114,14 @@ namespace SoftwareEngineeringAssignment
             }
         }
 
-        
+        /*
         //Update statement
-        public void Update(String query)
+        public void Delete()
         {
-            if(null != connection)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-            }
         }
+
+        */
+
         /*
         //Delete statement
         public void Delete()

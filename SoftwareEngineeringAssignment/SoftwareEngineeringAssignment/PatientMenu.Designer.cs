@@ -264,6 +264,7 @@
             this.btnBookAppointment.TabIndex = 52;
             this.btnBookAppointment.Text = "Book Appointment";
             this.btnBookAppointment.UseVisualStyleBackColor = true;
+            this.btnBookAppointment.Click += new System.EventHandler(this.btnBookAppointment_Click);
             // 
             // btnNewNote
             // 

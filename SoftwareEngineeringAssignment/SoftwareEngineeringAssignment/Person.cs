@@ -27,6 +27,8 @@ namespace SoftwareEngineeringAssignment
     {
         string m_patientID;
         public string getPatientID { get { return m_patientID; } set { m_patientID = value; } }
+        bool m_present;
+        public bool getPresent { get { return m_present; } set { m_present = value; } }
     }
     public class Staff : Person
     {

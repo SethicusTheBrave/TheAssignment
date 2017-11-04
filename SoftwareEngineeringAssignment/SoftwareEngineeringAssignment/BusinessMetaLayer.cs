@@ -74,7 +74,7 @@ namespace SoftwareEngineeringAssignment
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB FROM Patient");
+                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB, CurrentlyPresent FROM Patient");
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
@@ -85,6 +85,7 @@ namespace SoftwareEngineeringAssignment
                     p.getAddress = dr.GetString(3);
                     p.getPostcode = dr.GetString(4);
                     p.getDOB = Convert.ToString(dr.GetDateTime(5));
+                    p.getPresent = dr.GetBoolean(6);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
@@ -103,7 +104,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE Patient SET FirstName = 'Test' WHERE PatientID = 2");
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = 0 WHERE PatientID=" + patientID);
                 con.CloseConnection();
             }
         }

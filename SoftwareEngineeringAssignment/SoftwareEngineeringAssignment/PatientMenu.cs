@@ -79,5 +79,10 @@ namespace SoftwareEngineeringAssignment
             //display new patients details
             //-Ryan
         }
+
+        private void btnBookAppointment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
