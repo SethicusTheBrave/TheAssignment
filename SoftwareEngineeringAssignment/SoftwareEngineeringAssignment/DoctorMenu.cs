@@ -13,9 +13,11 @@ namespace SoftwareEngineeringAssignment
     public partial class DoctorMenu : Form
     {
         Staff m_s;
-        PatientSearch frmPatientSearch = new PatientSearch();
+        List<Patient> m_patientList;
+        PatientSearch frmPatientSearch;
         DoctorTODO frmTODO = new DoctorTODO();
-        PatientMenu frmPatientMenu = new PatientMenu();
+        PatientMenu frmPatientMenu;
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         public DoctorMenu(Staff p_s)
         {
             InitializeComponent();
@@ -25,9 +27,10 @@ namespace SoftwareEngineeringAssignment
 
         private void btnPatientSearch_Click(object sender, EventArgs e)
         {
+            frmPatientSearch = new PatientSearch(m_s);
             //Hides the doctor menu then displays the Patient Search Menu
             this.Hide();
-            frmPatientSearch.ShowDialog(m_s);
+            frmPatientSearch.ShowDialog();
             this.Show();
         }
 
@@ -41,6 +44,8 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
+            m_patientList = instance.patientList();
+            frmPatientMenu = new PatientMenu(m_patientList, m_s);
             //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
             this.Hide();
             frmPatientMenu.ShowDialog();

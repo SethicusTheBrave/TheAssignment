@@ -27,36 +27,6 @@ namespace SoftwareEngineeringAssignment
 
         }
 
-        // Could just have a set of static helper methods rather than a singleton!
-        /*public List<Patient> getPatient()
-        {
-            List<Patient> patientList = new List<Patient>();
-
-            DbConection con = DbFactory.instance();
-            if (con.OpenConnection())
-            {
-                DbDataReader dr = con.Select("SELECT CUST_ID, cust_name, cust_address, cust_city FROM customers;");
-
-                //Read the data and store them in the list
-                while (dr.Read())
-                {
-                    Patient patient = new Patient();
-                    //patient.ID = dr.GetInt32(0);
-                    //patient.Name = dr.GetString(1);
-                    //patient.Address = dr.GetString(2);
-                    //patient.City = dr.GetString(3);
-                    // etc.....
-
-                    patientList.Add(patient);
-                }
-
-                //close Data Reader
-                dr.Close();
-                con.CloseConnection();
-            }
-            return patientList;
-        }*/
-        //The code used to query the database to compare a given ID and password with the results in the database and return their staffType.
         public Staff Login(string p_StaffID, string p_Password)
         {
             List<Staff> staffList = new List<Staff>();
@@ -100,7 +70,7 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
-        public List<Patient> patientSearch()
+        public List<Patient> patientList()
         {
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
@@ -127,13 +97,14 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
-        } 
+        }
         //// Just some experiments
         //public void RegisterPatients()
         //{
         //    var medicine = "new med";
         //          string query = "Insert medicine (MedicineName) VALUES ('" + medicine + "')";
         //          con.Insert(query);
+        //      WHO'S NOTES!? - Ryan
         //}
 
     }

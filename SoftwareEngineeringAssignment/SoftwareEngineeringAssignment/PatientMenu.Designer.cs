@@ -303,6 +303,7 @@
             this.btnNext.TabIndex = 56;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // txtPatientNumber
             // 

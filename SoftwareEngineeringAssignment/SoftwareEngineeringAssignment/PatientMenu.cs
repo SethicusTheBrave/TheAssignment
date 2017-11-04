@@ -14,9 +14,13 @@ namespace SoftwareEngineeringAssignment
     {
         Patient m_p;
         Staff m_s;
-        public PatientMenu()
+        List<Patient> m_patientList;
+        public PatientMenu(List<Patient> p_patientList, Staff p_s)
         {
             InitializeComponent();
+            m_patientList = p_patientList;
+            m_s = p_s;
+            loadDetails();
         }
         public PatientMenu(Patient p_p, Staff p_s)
         {
@@ -36,6 +40,9 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = true;
                 btnNewTest.Visible = true;
+                if (m_patientList != null)
+                    btnNext.Visible = true;
+                else
                 btnNext.Visible = false;
             }
             else if(m_s.getType == "Receptionist")
@@ -60,6 +67,14 @@ namespace SoftwareEngineeringAssignment
         private void btnSave_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //Remove from patientList
+            //Update that patientsCurrentStatus
+            //display new patients details
+            //-Ryan
         }
     }
 }
