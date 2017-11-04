@@ -62,7 +62,6 @@
             this.comboReligion = new System.Windows.Forms.ComboBox();
             this.txtMedicalHistory = new System.Windows.Forms.TextBox();
             this.lblMedicalHistory = new System.Windows.Forms.Label();
-            this.lblMedHistoryCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDOB
@@ -419,22 +418,12 @@
             this.lblMedicalHistory.TabIndex = 78;
             this.lblMedicalHistory.Text = "Medical history";
             // 
-            // lblMedHistoryCount
-            // 
-            this.lblMedHistoryCount.AutoSize = true;
-            this.lblMedHistoryCount.Location = new System.Drawing.Point(394, 525);
-            this.lblMedHistoryCount.Name = "lblMedHistoryCount";
-            this.lblMedHistoryCount.Size = new System.Drawing.Size(35, 13);
-            this.lblMedHistoryCount.TabIndex = 79;
-            this.lblMedHistoryCount.Text = "label1";
-            // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1065, 547);
-            this.Controls.Add(this.lblMedHistoryCount);
             this.Controls.Add(this.lblMedicalHistory);
             this.Controls.Add(this.txtMedicalHistory);
             this.Controls.Add(this.comboReligion);
@@ -514,6 +503,5 @@
         private System.Windows.Forms.ComboBox comboReligion;
         private System.Windows.Forms.TextBox txtMedicalHistory;
         private System.Windows.Forms.Label lblMedicalHistory;
-        private System.Windows.Forms.Label lblMedHistoryCount;
     }
 }
