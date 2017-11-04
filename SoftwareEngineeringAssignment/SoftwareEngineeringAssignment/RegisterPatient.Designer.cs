@@ -62,6 +62,7 @@
             this.comboReligion = new System.Windows.Forms.ComboBox();
             this.txtMedicalHistory = new System.Windows.Forms.TextBox();
             this.lblMedicalHistory = new System.Windows.Forms.Label();
+            this.lblMedHistoryCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDOB
@@ -418,12 +419,24 @@
             this.lblMedicalHistory.TabIndex = 78;
             this.lblMedicalHistory.Text = "Medical history";
             // 
+            // lblMedHistoryCount
+            // 
+            this.lblMedHistoryCount.AutoSize = true;
+            this.lblMedHistoryCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedHistoryCount.Location = new System.Drawing.Point(165, 521);
+            this.lblMedHistoryCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMedHistoryCount.Name = "lblMedHistoryCount";
+            this.lblMedHistoryCount.Size = new System.Drawing.Size(219, 16);
+            this.lblMedHistoryCount.TabIndex = 79;
+            this.lblMedHistoryCount.Text = "WHAT IS THIS SUPPOSED TO BE";
+            // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(1065, 547);
+            this.ClientSize = new System.Drawing.Size(1049, 653);
+            this.Controls.Add(this.lblMedHistoryCount);
             this.Controls.Add(this.lblMedicalHistory);
             this.Controls.Add(this.txtMedicalHistory);
             this.Controls.Add(this.comboReligion);
@@ -503,5 +516,6 @@
         private System.Windows.Forms.ComboBox comboReligion;
         private System.Windows.Forms.TextBox txtMedicalHistory;
         private System.Windows.Forms.Label lblMedicalHistory;
+        private System.Windows.Forms.Label lblMedHistoryCount;
     }
 }

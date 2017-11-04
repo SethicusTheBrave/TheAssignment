@@ -88,9 +88,6 @@ namespace SoftwareEngineeringAssignment
             int count = txtMedicalHistory.TextLength;
             int medHistoryLenght = 2500 - count;
             lblMedHistoryCount.Text = medHistoryLenght.ToString() ;
-
-           
-
            
         }
 
