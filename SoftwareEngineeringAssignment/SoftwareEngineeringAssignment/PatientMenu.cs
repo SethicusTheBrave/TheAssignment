@@ -12,6 +12,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class PatientMenu : Form
     {
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         Patient m_p;
         Staff m_s;
         List<Patient> m_patientList;
@@ -71,6 +72,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+
             //Remove from patientList
             //Update that patientsCurrentStatus
             //display new patients details

@@ -25,7 +25,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSearch1_Click(object sender, EventArgs e)
         {
-            patientList = instance.patientSearch();
+            patientList = instance.patientList();
             //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
@@ -45,13 +45,13 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSearch2_Click(object sender, EventArgs e)
         {
-            patientList = instance.patientSearch();
+            patientList = instance.patientList();
             //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
                 if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart.ToString())
                 {
-                    pm = new PatientMenu(p);
+                    pm = new PatientMenu(p,m_s);
                     this.Hide();
                     pm.ShowDialog();
                     this.Close();
@@ -65,13 +65,13 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSearch3_Click(object sender, EventArgs e)
         {
-            patientList = instance.patientSearch();
+            patientList = instance.patientList();
             //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
                 if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
                 {
-                    pm = new PatientMenu(p);
+                    pm = new PatientMenu(p,m_s);
                     this.Hide();
                     pm.ShowDialog();
                     this.Close();
