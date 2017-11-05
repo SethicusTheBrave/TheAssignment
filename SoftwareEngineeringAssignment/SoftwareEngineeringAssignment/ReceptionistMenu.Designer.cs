@@ -34,7 +34,6 @@
             this.btnExtendPerscription = new System.Windows.Forms.Button();
             this.lblReceptionist = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -106,20 +105,10 @@
             this.lblName.TabIndex = 5;
             this.lblName.Text = "StaffID: 0";
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(12, 277);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 29);
-            this.btnExit.TabIndex = 44;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(317, 277);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 277);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(85, 29);
             this.btnLogOut.TabIndex = 46;
@@ -146,7 +135,6 @@
             this.ClientSize = new System.Drawing.Size(414, 318);
             this.Controls.Add(this.btnFindPatient);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblReceptionist);
             this.Controls.Add(this.btnExtendPerscription);
@@ -169,7 +157,6 @@
         private System.Windows.Forms.Button btnExtendPerscription;
         private System.Windows.Forms.Label lblReceptionist;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFindPatient;
     }

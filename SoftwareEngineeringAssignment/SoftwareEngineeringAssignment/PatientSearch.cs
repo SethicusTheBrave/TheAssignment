@@ -21,6 +21,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             instance = BusinessMetaLayer.instance();
             m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)

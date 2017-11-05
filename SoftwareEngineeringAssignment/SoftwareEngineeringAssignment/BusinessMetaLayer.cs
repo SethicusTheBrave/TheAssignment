@@ -117,6 +117,10 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
         }
+        public DataSet getStaff()
+        {
+            return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
+        }
         //// Just some experiments
         //public void RegisterPatients(string firstName, string lastName, DateTime DOB, string religion, string email, string houseNumber, string street,
         //                             string town, string country, string postcode, string phone, string NIN, string tests, string allergies,
