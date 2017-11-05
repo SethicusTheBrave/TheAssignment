@@ -26,48 +26,83 @@ namespace SoftwareEngineeringAssignment
         public Login()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //required variables and objects to make the below code work correctly.
-            Staff s;
-            string encryptedPassword;
-
-            //Encrypts the password using our super secure encryption key
-            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
-            AES.Mode = CipherMode.ECB;
-            AES.Padding = PaddingMode.PKCS7;
-            ICryptoTransform trans = AES.CreateEncryptor();
-            encryptedPassword = BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(txtPassword.Text), 0, utf8.GetBytes(txtPassword.Text).Length));
-
-            //Attempts to login with the provided StaffID and the encrypted version of the provided password.
-            s = instance.Login(txtStaffID.Text, encryptedPassword);
-            //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
-            if (s.getType == "Doctor")
+            Submit();
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                dm = new DoctorMenu(s);
-                this.Hide();
-                dm.ShowDialog();
-                this.Show();
+                Submit();
             }
-            else if (s.getType == "Receptionist")
+            if (e.KeyCode == Keys.Tab)
             {
-                rm = new ReceptionistMenu(s);
-                this.Hide();
-                rm.ShowDialog();
-                this.Show();
+                btnLogin.Focus();
             }
-            else if (s.getType == "Manager")
+        }
+        private void Submit()
+        {
+            if (txtStaffID.Text == null || txtStaffID.Text == "" || txtPassword.Text == null || txtPassword.Text == "")
             {
-                mm = new ManagerMenu(s);
-                this.Hide();
-                mm.ShowDialog();
-                this.Show();
+                MessageBox.Show("Invalid StaffID or Password");
             }
             else
             {
-                MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                //required variables and objects to make the below code work correctly.
+                Staff s;
+                string encryptedPassword;
+
+                //Encrypts the password using our super secure encryption key
+                AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
+                AES.Mode = CipherMode.ECB;
+                AES.Padding = PaddingMode.PKCS7;
+                ICryptoTransform trans = AES.CreateEncryptor();
+                encryptedPassword = BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(txtPassword.Text), 0, utf8.GetBytes(txtPassword.Text).Length));
+
+                //Attempts to login with the provided StaffID and the encrypted version of the provided password.
+                s = instance.Login(txtStaffID.Text, encryptedPassword);
+                //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
+                if (s.getType == "Doctor")
+                {
+                    dm = new DoctorMenu(s);
+                    this.Hide();
+                    dm.ShowDialog();
+                    this.Show();
+                }
+                else if (s.getType == "Receptionist")
+                {
+                    rm = new ReceptionistMenu(s);
+                    this.Hide();
+                    rm.ShowDialog();
+                    this.Show();
+                }
+                else if (s.getType == "Manager")
+                {
+                    mm = new ManagerMenu(s);
+                    this.Hide();
+                    mm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                }
+            }
+        }
+
+        private void txtStaffID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Tab)
+            {
+                txtPassword.Focus();
+            }
+            if(e.KeyCode == Keys.Enter)
+            {
+                Submit();
             }
         }
     }
