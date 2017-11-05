@@ -12,6 +12,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ManagerMenu : Form
     {
+        AddStaff adds;
         ViewStaff vs;
         Staff m_s;
         public ManagerMenu(Staff p_s)
@@ -41,7 +42,10 @@ namespace SoftwareEngineeringAssignment
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-
+            adds = new AddStaff();
+            this.Hide();
+            adds.ShowDialog();
+            this.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
