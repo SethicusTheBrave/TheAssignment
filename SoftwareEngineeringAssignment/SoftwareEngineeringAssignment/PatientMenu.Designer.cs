@@ -58,6 +58,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.lblPatientNumber = new System.Windows.Forms.Label();
+            this.btnPresent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTests)).BeginInit();
@@ -325,12 +326,23 @@
             this.lblPatientNumber.TabIndex = 57;
             this.lblPatientNumber.Text = "Patient Number";
             // 
+            // btnPresent
+            // 
+            this.btnPresent.Location = new System.Drawing.Point(499, 130);
+            this.btnPresent.Name = "btnPresent";
+            this.btnPresent.Size = new System.Drawing.Size(85, 25);
+            this.btnPresent.TabIndex = 59;
+            this.btnPresent.Text = "Present";
+            this.btnPresent.UseVisualStyleBackColor = true;
+            this.btnPresent.Click += new System.EventHandler(this.btnPresent_Click);
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(596, 579);
+            this.Controls.Add(this.btnPresent);
             this.Controls.Add(this.txtPatientNumber);
             this.Controls.Add(this.lblPatientNumber);
             this.Controls.Add(this.btnNext);
@@ -394,5 +406,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtPatientNumber;
         private System.Windows.Forms.Label lblPatientNumber;
+        private System.Windows.Forms.Button btnPresent;
     }
 }

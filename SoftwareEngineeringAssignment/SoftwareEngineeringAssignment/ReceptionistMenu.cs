@@ -13,6 +13,7 @@ namespace SoftwareEngineeringAssignment
     public partial class ReceptionistMenu : Form
     {
         Staff m_s;
+        PatientSearch ps;
         public ReceptionistMenu(Staff p_s)
         {
             InitializeComponent();
@@ -60,6 +61,14 @@ namespace SoftwareEngineeringAssignment
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnFindPatient_Click(object sender, EventArgs e)
+        {
+            ps = new PatientSearch(m_s);
+            this.Hide();
+            ps.ShowDialog();
+            this.Show();
         }
     }
 }

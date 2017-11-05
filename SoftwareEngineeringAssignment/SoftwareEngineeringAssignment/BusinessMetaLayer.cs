@@ -101,11 +101,19 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
-        public void updatePatientStatus(string patientID)
+        public void PatientStatusUpdate(string patientID, bool present)
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE Patient SET CurrentlyPresent = 0 WHERE PatientID=" + patientID);
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.CloseConnection();
+            }
+        }
+        public void AddAppointment(string query)
+        {
+            if (con.OpenConnection())
+            {
+                con.executeQuery(query);
                 con.CloseConnection();
             }
         }

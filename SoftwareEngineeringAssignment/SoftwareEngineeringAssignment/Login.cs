@@ -19,15 +19,13 @@ namespace SoftwareEngineeringAssignment
         MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         UTF8Encoding utf8 = new UTF8Encoding();
         AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
-        BusinessMetaLayer instance;
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         //UTF8Encoding utf8 = new UTF8Encoding();
         //TripleDESCryptoServiceProvider tDES = new TripleDESCryptoServiceProvider();
         public Login()
         {
             InitializeComponent();
-            instance = BusinessMetaLayer.instance();
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

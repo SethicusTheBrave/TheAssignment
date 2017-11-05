@@ -118,6 +118,15 @@ namespace SoftwareEngineeringAssignment
             if (null != connection)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        //MATAS QUERY THING!?
+        public void MatasExecuteQuery(string query)
+        {
+            if (null != connection)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
             }
         }

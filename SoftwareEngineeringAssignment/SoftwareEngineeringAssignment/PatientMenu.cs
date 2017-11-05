@@ -12,6 +12,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class PatientMenu : Form
     {
+        CreateAppointment frmCA;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         Patient m_p;
         Staff m_s;
@@ -73,16 +74,25 @@ namespace SoftwareEngineeringAssignment
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            instance.updatePatientStatus(m_patientList.ElementAt(0).getPatientID);
-            //Remove from patientList
-            //Update that patientsCurrentStatus
+            instance.PatientStatusUpdate(m_patientList.ElementAt(0).getPatientID, false);
+            m_patientList.RemoveAt(0);
+
             //display new patients details
             //-Ryan
         }
 
         private void btnBookAppointment_Click(object sender, EventArgs e)
         {
+            frmCA = new CreateAppointment(m_s, m_p);
+            this.Hide();
+            frmCA.ShowDialog();
+            this.Show();
+        }
 
+        private void btnPresent_Click(object sender, EventArgs e)
+        {
+            m_p.getPresent = true;
+            instance.PatientStatusUpdate(m_p.getPatientID, true);
         }
     }
 }

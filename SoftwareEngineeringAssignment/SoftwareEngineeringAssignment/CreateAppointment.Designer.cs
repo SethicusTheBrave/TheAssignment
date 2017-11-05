@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.calDOB = new System.Windows.Forms.MonthCalendar();
+            this.calDate = new System.Windows.Forms.MonthCalendar();
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.lblPatientNumber = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -37,14 +37,18 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblDoctor = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnCreateAppointment = new System.Windows.Forms.Button();
+            this.cbTime = new System.Windows.Forms.ComboBox();
+            this.lblTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // calDOB
+            // calDate
             // 
-            this.calDOB.Location = new System.Drawing.Point(12, 246);
-            this.calDOB.MaxSelectionCount = 1;
-            this.calDOB.Name = "calDOB";
-            this.calDOB.TabIndex = 30;
+            this.calDate.Location = new System.Drawing.Point(14, 328);
+            this.calDate.MaxSelectionCount = 1;
+            this.calDate.Name = "calDate";
+            this.calDate.TabIndex = 30;
+            this.calDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDate_DateChanged);
             // 
             // txtPatientNumber
             // 
@@ -125,12 +129,43 @@
             this.lblName.TabIndex = 66;
             this.lblName.Text = "StaffID: 0";
             // 
+            // btnCreateAppointment
+            // 
+            this.btnCreateAppointment.Location = new System.Drawing.Point(72, 502);
+            this.btnCreateAppointment.Name = "btnCreateAppointment";
+            this.btnCreateAppointment.Size = new System.Drawing.Size(92, 27);
+            this.btnCreateAppointment.TabIndex = 67;
+            this.btnCreateAppointment.Text = "Create";
+            this.btnCreateAppointment.UseVisualStyleBackColor = true;
+            this.btnCreateAppointment.Click += new System.EventHandler(this.btnCreateAppointment_Click);
+            // 
+            // cbTime
+            // 
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Location = new System.Drawing.Point(52, 275);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(136, 21);
+            this.cbTime.TabIndex = 68;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(76, 256);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 16);
+            this.lblTime.TabIndex = 69;
+            this.lblTime.Text = "Time Slot";
+            // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(253, 427);
+            this.ClientSize = new System.Drawing.Size(253, 538);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.cbTime);
+            this.Controls.Add(this.btnCreateAppointment);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
             this.Controls.Add(this.txtPatientNumber);
@@ -139,7 +174,7 @@
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.calDOB);
+            this.Controls.Add(this.calDate);
             this.Name = "CreateAppointment";
             this.Text = "CreateAppointment";
             this.ResumeLayout(false);
@@ -149,7 +184,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar calDOB;
+        private System.Windows.Forms.MonthCalendar calDate;
         private System.Windows.Forms.TextBox txtPatientNumber;
         private System.Windows.Forms.Label lblPatientNumber;
         private System.Windows.Forms.TextBox txtFirstName;
@@ -158,5 +193,8 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblDoctor;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnCreateAppointment;
+        private System.Windows.Forms.ComboBox cbTime;
+        private System.Windows.Forms.Label lblTime;
     }
 }
