@@ -34,16 +34,18 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPostcode = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblStaffType = new System.Windows.Forms.Label();
+            this.cbStaffType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnBack
@@ -65,6 +67,7 @@
             this.btnAdd.TabIndex = 48;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtFirstName
             // 
@@ -102,13 +105,13 @@
             this.lblFirstName.TabIndex = 49;
             this.lblFirstName.Text = "First Name";
             // 
-            // textBox1
+            // txtAddress
             // 
-            this.textBox1.Location = new System.Drawing.Point(392, 92);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 65);
-            this.textBox1.TabIndex = 54;
+            this.txtAddress.Location = new System.Drawing.Point(392, 92);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(182, 65);
+            this.txtAddress.TabIndex = 54;
             // 
             // lblAddress
             // 
@@ -130,21 +133,21 @@
             this.lblPostcode.TabIndex = 55;
             this.lblPostcode.Text = "Postcode";
             // 
-            // textBox2
+            // txtPostcode
             // 
-            this.textBox2.Location = new System.Drawing.Point(392, 188);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 28);
-            this.textBox2.TabIndex = 56;
+            this.txtPostcode.Location = new System.Drawing.Point(392, 188);
+            this.txtPostcode.Multiline = true;
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(182, 28);
+            this.txtPostcode.TabIndex = 56;
             // 
-            // textBox3
+            // txtEmailAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 157);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 28);
-            this.textBox3.TabIndex = 58;
+            this.txtEmailAddress.Location = new System.Drawing.Point(12, 157);
+            this.txtEmailAddress.Multiline = true;
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(298, 28);
+            this.txtEmailAddress.TabIndex = 58;
             // 
             // lblEmail
             // 
@@ -156,13 +159,13 @@
             this.lblEmail.TabIndex = 57;
             this.lblEmail.Text = "Email Address";
             // 
-            // textBox4
+            // txtPhoneNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 220);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 28);
-            this.textBox4.TabIndex = 59;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(12, 220);
+            this.txtPhoneNumber.Multiline = true;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(298, 28);
+            this.txtPhoneNumber.TabIndex = 59;
             // 
             // lblPhoneNumber
             // 
@@ -178,20 +181,38 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 251);
+            this.label1.Location = new System.Drawing.Point(122, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 61;
             this.label1.Text = "Password";
             // 
-            // textBox5
+            // txtPassword
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 270);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(298, 28);
-            this.textBox5.TabIndex = 62;
-            this.textBox5.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(12, 280);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(298, 28);
+            this.txtPassword.TabIndex = 62;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblStaffType
+            // 
+            this.lblStaffType.AutoSize = true;
+            this.lblStaffType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffType.Location = new System.Drawing.Point(456, 230);
+            this.lblStaffType.Name = "lblStaffType";
+            this.lblStaffType.Size = new System.Drawing.Size(69, 16);
+            this.lblStaffType.TabIndex = 63;
+            this.lblStaffType.Text = "Staff Type";
+            // 
+            // cbStaffType
+            // 
+            this.cbStaffType.FormattingEnabled = true;
+            this.cbStaffType.Location = new System.Drawing.Point(392, 249);
+            this.cbStaffType.Name = "cbStaffType";
+            this.cbStaffType.Size = new System.Drawing.Size(182, 21);
+            this.cbStaffType.TabIndex = 64;
             // 
             // AddStaff
             // 
@@ -199,15 +220,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(586, 386);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.cbStaffType);
+            this.Controls.Add(this.lblStaffType);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPhoneNumber);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.txtEmailAddress);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPostcode);
             this.Controls.Add(this.lblPostcode);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
@@ -230,15 +253,17 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPostcode;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPostcode;
+        private System.Windows.Forms.TextBox txtEmailAddress;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblStaffType;
+        private System.Windows.Forms.ComboBox cbStaffType;
     }
 }

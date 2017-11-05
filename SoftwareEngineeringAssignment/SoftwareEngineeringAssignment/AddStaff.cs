@@ -12,9 +12,18 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class AddStaff : Form
     {
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         public AddStaff()
         {
             InitializeComponent();
+            cbStaffType.Items.Add("Doctor");
+            cbStaffType.Items.Add("Receptionist");
+            cbStaffType.Items.Add("Manager");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            instance.ExecuteQuery("INSERT INTO Staff(StaffID, FirstName, LastName, Address, Postcode, Password, EmailAddress, StaffType, PhoneNumber) VALUES(NULL,",txtFirstName.Text + "," + txtLastName.Text + "," + txtAddress.Text + "," + txtPostcode.Text + "," + encryptedPassword + "," + txtEmailAddress.Text + "," + cbStaffType.Text);
         }
     }
 }
