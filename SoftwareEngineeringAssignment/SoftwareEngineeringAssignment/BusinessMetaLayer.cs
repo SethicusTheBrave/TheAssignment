@@ -109,7 +109,7 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
         }
-        public void AddAppointment(string query)
+        public void ExecuteQuery(string query)
         {
             if (con.OpenConnection())
             {

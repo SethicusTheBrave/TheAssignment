@@ -13,7 +13,7 @@ namespace SoftwareEngineeringAssignment
     public partial class DoctorMenu : Form
     {
         Staff m_s;
-        List<Patient> m_patientList;
+        List<Patient> m_patientList = new List<Patient>();
         PatientSearch frmPatientSearch;
         DoctorTODO frmTODO = new DoctorTODO();
         PatientMenu frmPatientMenu;
@@ -44,7 +44,6 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
-            //UPDATE TO ONLY SHOW PATIENT WHO ARE HERE AND HAVE THE SAME DOCTORID
             List<Patient> temp = instance.patientList();
             foreach(Patient p in temp)
             {
@@ -53,7 +52,7 @@ namespace SoftwareEngineeringAssignment
                     m_patientList.Add(p);
                 }
             }
-            if (null != m_patientList)
+            if (m_patientList.Count != 0)
             {
                 frmPatientMenu = new PatientMenu(m_patientList, m_s);
                 //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing

@@ -43,6 +43,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = true;
                 btnNewTest.Visible = true;
+                btnPresent.Visible = false;
                 if (m_patientList != null)
                     btnNext.Visible = true;
                 else
@@ -55,6 +56,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewPrescription.Visible = false;
                 btnNewTest.Visible = false;
                 btnNext.Visible = false;
+                btnPresent.Visible = true;
             }
         }
         private void btnSave_Click(object sender, EventArgs e)

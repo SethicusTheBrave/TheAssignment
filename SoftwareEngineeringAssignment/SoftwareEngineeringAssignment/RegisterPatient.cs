@@ -57,7 +57,7 @@ namespace SoftwareEngineeringAssignment
             //     patientInformation.Add(raktai[1], txtLastName.Text);
 
             //  patientInformation = informaation;
-            instance.trinti();
+            //instance.trinti();
           
           //  instance.zodynas(patientInformation, raktai);
 
