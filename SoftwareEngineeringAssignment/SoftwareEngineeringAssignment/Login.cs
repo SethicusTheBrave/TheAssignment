@@ -46,6 +46,12 @@ namespace SoftwareEngineeringAssignment
             //Attempts to login with the provided StaffID and the encrypted version of the provided password.
             s = instance.Login(txtStaffID.Text, encryptedPassword);
             //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
+
+            if (s == null)
+            {
+                MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                return;
+            }
             if (s.getType == "Doctor")
             {
                 dm = new DoctorMenu(s);
@@ -67,10 +73,10 @@ namespace SoftwareEngineeringAssignment
                 mm.ShowDialog();
                 this.Show();
             }
-            else
-            {
-                MessageBox.Show("Login Failed", "Invalid StaffID or Password");
-            }
+            //else
+            //{
+            //    MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+            //}
         }
     }
 }

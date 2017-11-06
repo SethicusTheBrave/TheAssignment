@@ -99,8 +99,6 @@ namespace SoftwareEngineeringAssignment
 
         bool CheckIfQuerySuccessful();
 
-        void Delete(string query);
-
         /*
         //Update statement
         public void Update();

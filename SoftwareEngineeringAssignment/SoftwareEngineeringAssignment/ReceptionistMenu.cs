@@ -45,7 +45,10 @@ namespace SoftwareEngineeringAssignment
         /// <param name="e"></param>
         private void btnRegisterPatient_Click(object sender, EventArgs e)
         {
-
+            RegisterPatient regPatient = new RegisterPatient();
+            this.Hide();
+            regPatient.ShowDialog();
+            this.Show();
         }
         /// <summary>
         /// Will take you to the form to extend a perscription

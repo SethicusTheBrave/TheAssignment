@@ -20,12 +20,12 @@ namespace SoftwareEngineeringAssignment
         }
 
         private void AddToDictionary(string firstName, string lastName, DateTime DOB, string religion, string email, string houseNumber, string street,
-                                     string town, string country, string postcode, string phone, string NIN, string tests, string allergies,
+                                     string town, string country, string postcode, string phone, string tests, string allergies,
                                      string medicalHistory, string notes)
         {
             Dictionary<string, string> patientInformation = new Dictionary<string, string>();
             var format = "yyyy-MM-dd";
-            var values = new string[] {"firstName","lastName","DOB","religion","email","houseNumber","street","town","country","postcode","phone","NIN","tests","allergies","medicalHistory","notes"};
+            var values = new string[] {"firstName","lastName","DOB","religion","email","houseNumber","street","town","country","postcode","phone","tests","allergies","medicalHistory","notes"};
             patientInformation.Add(values[0], firstName);
             patientInformation.Add(values[1], lastName);
             patientInformation.Add(values[2], DOB.ToString(format));
@@ -37,11 +37,10 @@ namespace SoftwareEngineeringAssignment
             patientInformation.Add(values[8], country);
             patientInformation.Add(values[9], postcode);
             patientInformation.Add(values[10], phone);
-            patientInformation.Add(values[11], NIN);
-            patientInformation.Add(values[12], tests);
-            patientInformation.Add(values[13], allergies);
-            patientInformation.Add(values[14], medicalHistory);
-            patientInformation.Add(values[15], notes);
+            patientInformation.Add(values[11], tests);
+            patientInformation.Add(values[12], allergies);
+            patientInformation.Add(values[13], medicalHistory);
+            patientInformation.Add(values[14], notes);
            
             instance.RegisterPatients(patientInformation, values);
             
@@ -49,9 +48,9 @@ namespace SoftwareEngineeringAssignment
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-                AddToDictionary(txtFirstName.Text, txtLastName.Text, dateTimePickerDOB.Value, comboReligion.Text, txtEmail.Text, txtHouseNumber.Text, txtStreet.Text, txtTown.Text, txtCountry.Text, txtPostcode.Text, txtPhone.Text, txtNIN.Text, txtTests.Text, txtAllergies.Text, txtMedicalHistory.Text, txtNotes.Text);
-            
+            AddToDictionary(txtFirstName.Text, txtLastName.Text, dateTimePickerDOB.Value, comboReligion.Text, txtEmail.Text, txtHouseNumber.Text, txtStreet.Text, txtTown.Text, txtCountry.Text, txtPostcode.Text, txtPhone.Text,txtTests.Text, txtAllergies.Text, txtMedicalHistory.Text, txtNotes.Text);
 
+            
 
 
 
