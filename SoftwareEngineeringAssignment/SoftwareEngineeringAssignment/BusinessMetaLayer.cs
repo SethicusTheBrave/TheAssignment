@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -15,6 +16,10 @@ namespace SoftwareEngineeringAssignment
         private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
         private DisplayMessages message = new DisplayMessages();
+
+        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+        UTF8Encoding utf8 = new UTF8Encoding();
+        AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
 
         private BusinessMetaLayer() { }
 
@@ -27,13 +32,18 @@ namespace SoftwareEngineeringAssignment
             return m_instance;
 
         }
-
-
-
-        
-
+        public string encrypt(string toBeEncrypted)
+        {
+            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
+            AES.Mode = CipherMode.ECB;
+            AES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform trans = AES.CreateEncryptor();
+            return (BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(toBeEncrypted), 0, utf8.GetBytes(toBeEncrypted).Length)));
+        }
         public Staff Login(string p_StaffID, string p_Password)
         {
+            string encrypted;
+            encrypted = encrypt(p_Password);
             List<Staff> staffList = new List<Staff>();
             //Will attempt to make a connection with the database.
             if (con.OpenConnection())
@@ -58,9 +68,7 @@ namespace SoftwareEngineeringAssignment
                 {
                     foreach (Staff s in staffList)
                     {
-                      
-                        if (p_StaffID == s.getStaffID && p_Password == s.getpassword) //del sito 
-                       // if (p_StaffID == s.getStaffID && "Kilo" == "Kilo")
+                        if (p_StaffID == s.getStaffID && p_Password == s.getpassword)
                         {
                             Staff loginStaff = new Staff();
                             loginStaff.getStaffID = s.getStaffID;
@@ -108,13 +116,25 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
-        public void updatePatientStatus(string patientID)
+        public void PatientStatusUpdate(string patientID, bool present)
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE Patient SET CurrentlyPresent = 0 WHERE PatientID=" + patientID);
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
                 con.CloseConnection();
             }
+        }
+        public void ExecuteQuery(string query)
+        {
+            if (con.OpenConnection())
+            {
+                con.executeQuery(query);
+                con.CloseConnection();
+            }
+        }
+        public DataSet getStaff()
+        {
+            return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
         }
        
         // Patient registration not finished but working. will be improved.

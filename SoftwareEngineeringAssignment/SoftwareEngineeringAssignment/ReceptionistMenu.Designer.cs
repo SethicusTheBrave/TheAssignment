@@ -34,8 +34,8 @@
             this.btnExtendPerscription = new System.Windows.Forms.Button();
             this.lblReceptionist = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnFindPatient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateAppointment
@@ -105,20 +105,10 @@
             this.lblName.TabIndex = 5;
             this.lblName.Text = "StaffID: 0";
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(12, 277);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 29);
-            this.btnExit.TabIndex = 44;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(317, 277);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 277);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(85, 29);
             this.btnLogOut.TabIndex = 46;
@@ -126,21 +116,32 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnFindPatient
+            // 
+            this.btnFindPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindPatient.Location = new System.Drawing.Point(148, 108);
+            this.btnFindPatient.Name = "btnFindPatient";
+            this.btnFindPatient.Size = new System.Drawing.Size(116, 43);
+            this.btnFindPatient.TabIndex = 47;
+            this.btnFindPatient.Text = "Find Patient";
+            this.btnFindPatient.UseVisualStyleBackColor = true;
+            this.btnFindPatient.Click += new System.EventHandler(this.btnFindPatient_Click);
+            // 
             // ReceptionistMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 318);
+            this.Controls.Add(this.btnFindPatient);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblReceptionist);
             this.Controls.Add(this.btnExtendPerscription);
             this.Controls.Add(this.btnRegisterPatient);
             this.Controls.Add(this.btnEditAppointment);
             this.Controls.Add(this.btnCreateAppointment);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReceptionistMenu";
             this.Text = "Receptionist Menu";
             this.ResumeLayout(false);
@@ -156,7 +157,7 @@
         private System.Windows.Forms.Button btnExtendPerscription;
         private System.Windows.Forms.Label lblReceptionist;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnFindPatient;
     }
 }

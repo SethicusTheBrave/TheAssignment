@@ -21,6 +21,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             instance = BusinessMetaLayer.instance();
             m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)
@@ -81,6 +82,11 @@ namespace SoftwareEngineeringAssignment
                     MessageBox.Show("PatientID not found.", "A Patient with the provided details could not be found");
                 }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
