@@ -28,7 +28,7 @@ namespace SoftwareEngineeringAssignment
         /// <param name="e"></param>
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
-
+         
         }
         /// <summary>
         /// Will take you to the form to edit an existing appointment

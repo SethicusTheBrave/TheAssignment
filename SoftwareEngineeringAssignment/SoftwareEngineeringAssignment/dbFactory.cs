@@ -97,6 +97,8 @@ namespace SoftwareEngineeringAssignment
 
         void executeQuery(string query);
 
+        void MatasExecuteQuery(string query);
+
         bool CheckIfQuerySuccessful();
 
         /*
@@ -105,7 +107,7 @@ namespace SoftwareEngineeringAssignment
         //Delete statement
         public void Delete();
         */
-
+       void Insert(string query);
 
         //Select statement
         DbDataReader Select(String query);
