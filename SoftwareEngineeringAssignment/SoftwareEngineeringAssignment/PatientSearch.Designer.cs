@@ -77,11 +77,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(366, 9);
+            this.lblName.Location = new System.Drawing.Point(412, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 21;
-            this.lblName.Text = "Logged In: Name";
+            this.lblName.Text = "StaffID: 0";
             // 
             // lblStaffType
             // 
@@ -113,6 +113,7 @@
             this.btnSearch1.TabIndex = 23;
             this.btnSearch1.Text = "Search";
             this.btnSearch1.UseVisualStyleBackColor = true;
+            //this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
             // 
             // btnSearch2
             // 
@@ -123,6 +124,7 @@
             this.btnSearch2.TabIndex = 26;
             this.btnSearch2.Text = "Search";
             this.btnSearch2.UseVisualStyleBackColor = true;
+            this.btnSearch2.Click += new System.EventHandler(this.btnSearch2_Click);
             // 
             // txtLastName
             // 
@@ -145,6 +147,7 @@
             // calDOB
             // 
             this.calDOB.Location = new System.Drawing.Point(18, 192);
+            this.calDOB.MaxSelectionCount = 1;
             this.calDOB.Name = "calDOB";
             this.calDOB.TabIndex = 29;
             // 
@@ -267,6 +270,7 @@
             this.btnSearch3.TabIndex = 42;
             this.btnSearch3.Text = "Search";
             this.btnSearch3.UseVisualStyleBackColor = true;
+            this.btnSearch3.Click += new System.EventHandler(this.btnSearch3_Click);
             // 
             // btnExit
             // 
@@ -277,13 +281,14 @@
             this.btnExit.TabIndex = 43;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // PatientSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(480, 569);
+            this.ClientSize = new System.Drawing.Size(475, 569);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearch3);
             this.Controls.Add(this.txtFirstName);

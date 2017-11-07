@@ -32,8 +32,8 @@
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.lblStaffID = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -49,11 +49,13 @@
             // 
             // txtStaffID
             // 
+            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStaffID.Location = new System.Drawing.Point(135, 81);
             this.txtStaffID.Multiline = true;
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(177, 26);
             this.txtStaffID.TabIndex = 1;
+            this.txtStaffID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStaffID_KeyDown);
             // 
             // lblStaffID
             // 
@@ -77,15 +79,6 @@
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(135, 131);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(177, 26);
-            this.txtPassword.TabIndex = 3;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
@@ -96,15 +89,26 @@
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Login";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(135, 131);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(177, 26);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(445, 221);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblStaffID);
             this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.btnLogin);
@@ -121,8 +125,8 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
 

@@ -33,7 +33,6 @@
             this.btnTodoList = new System.Windows.Forms.Button();
             this.btnConsoltation = new System.Windows.Forms.Button();
             this.btnPatientSearch = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,11 +41,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(283, 9);
+            this.lblName.Location = new System.Drawing.Point(346, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 19;
-            this.lblName.Text = "Logged In: Name";
+            this.lblName.Text = "StaffID: 0";
             // 
             // lblDoctor
             // 
@@ -92,20 +91,10 @@
             this.btnPatientSearch.UseVisualStyleBackColor = true;
             this.btnPatientSearch.Click += new System.EventHandler(this.btnPatientSearch_Click);
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(12, 280);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 29);
-            this.btnExit.TabIndex = 44;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(317, 280);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 280);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(85, 29);
             this.btnLogOut.TabIndex = 45;
@@ -120,7 +109,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 321);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTodoList);
             this.Controls.Add(this.btnConsoltation);
             this.Controls.Add(this.btnPatientSearch);
@@ -140,7 +128,6 @@
         private System.Windows.Forms.Button btnTodoList;
         private System.Windows.Forms.Button btnConsoltation;
         private System.Windows.Forms.Button btnPatientSearch;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogOut;
     }
 }

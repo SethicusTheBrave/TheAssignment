@@ -24,6 +24,17 @@ namespace SoftwareEngineeringAssignment
         private string database;
         private string uid;
         private string password;
+        private int howManyRowsAffected;
+
+        public bool CheckIfQuerySuccessful()
+        {
+            if (howManyRowsAffected > 0)
+            {
+                return true;
+            }
+               
+            return false;
+        }
 
         //Constructor
         public MySQLCon(Dictionary<string, string> properties)
@@ -99,26 +110,47 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
+
+        //Insert statement
+        public void executeQuery(string query)
+        {
+         //   if (null != connection) does not work this way at least for me
+         if(OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        //MATAS QUERY THING!?
+        public void MatasExecuteQuery(string query)
+        {
+            if (null != connection)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                howManyRowsAffected = cmd.ExecuteNonQuery();
+            }
+        }
+
 
         /*
-        //Insert statement
-        public void Insert()
-        {
-        }
-
         //Update statement
-        public void Update()
-        {
-        }
-
-        //Delete statement
         public void Delete()
         {
         }
-         
         */
+
+        //Delete statement
+        public void Delete(string query)
+        {
+            if (OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                howManyRowsAffected = cmd.ExecuteNonQuery();
+            }
+        }
+         
+        
 
 
         //Select statement
