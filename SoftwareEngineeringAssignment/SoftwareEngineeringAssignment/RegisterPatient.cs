@@ -75,9 +75,10 @@ namespace SoftwareEngineeringAssignment
 
         private void txtMedicalHistory_TextChanged(object sender, EventArgs e)
         {
-            int count = txtMedicalHistory.TextLength;
-            int medHistoryLenght = 2500 - count;
-            lblMedHistoryCount.Text = medHistoryLenght.ToString() ;
+            lblMedHistoryCount.Text = txtMedicalHistory.TextLength.ToString() + "/" + txtMedicalHistory.MaxLength;
+            //int count = txtMedicalHistory.TextLength;
+            //int medHistoryLenght = 2500 - count;
+            //lblMedHistoryCount.Text = medHistoryLenght.ToString() ;
            
         }
 

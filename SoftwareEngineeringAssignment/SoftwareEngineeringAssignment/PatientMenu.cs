@@ -97,5 +97,10 @@ namespace SoftwareEngineeringAssignment
             m_p.getPresent = true;
             instance.PatientStatusUpdate(m_p.getPatientID, true);
         }
+
+        private void btnNewNote_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
