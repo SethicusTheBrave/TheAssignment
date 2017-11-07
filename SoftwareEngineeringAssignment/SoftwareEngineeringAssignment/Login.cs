@@ -13,64 +13,90 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Login : Form
     {
-        DoctorMenu dm = new DoctorMenu();
-        ReceptionistMenu rm = new ReceptionistMenu();
-        ManagerMenu mm = new ManagerMenu();
-        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        UTF8Encoding utf8 = new UTF8Encoding();
-        AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
-        BusinessMetaLayer instance;
-        //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        //UTF8Encoding utf8 = new UTF8Encoding();
-        //TripleDESCryptoServiceProvider tDES = new TripleDESCryptoServiceProvider();
+        DoctorMenu dm;
+        ReceptionistMenu rm;
+        ManagerMenu mm;
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         public Login()
         {
             InitializeComponent();
-            instance = BusinessMetaLayer.instance();
-            BusinessMetaLayer.RegisterPatients("wwww");
-           
-         
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-           
-            //required variables and objects to make the below code work correctly.
-            
-            string result,encryptedPassword;
-
-            //Encrypts the password using our super secure encryption key
-            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
-            AES.Mode = CipherMode.ECB;
-            AES.Padding = PaddingMode.PKCS7;
-            ICryptoTransform trans = AES.CreateEncryptor();
-            encryptedPassword = BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(txtPassword.Text), 0, utf8.GetBytes(txtPassword.Text).Length));
-
-            //Attempts to login with the provided StaffID and the encrypted version of the provided password.
-            result = instance.Login(txtStaffID.Text, encryptedPassword);
-            //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
-            if (result == "Doctor")
+            Submit();
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                this.Hide();
-                dm.ShowDialog();
-                this.Show();
+                Submit();
             }
-            else if (result == "Receptionist")
+            if (e.KeyCode == Keys.Tab)
             {
-                this.Hide();
-                rm.ShowDialog();
-                this.Show();
+                btnLogin.Focus();
             }
-            else if (result == "Manager")
+        }
+        private void Submit()
+        {
+            if (txtStaffID.Text == null || txtStaffID.Text == "" || txtPassword.Text == null || txtPassword.Text == "")
             {
-                this.Hide();
-                mm.ShowDialog();
-                this.Show();
+                MessageBox.Show("Invalid StaffID or Password");
             }
             else
             {
-                MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                //required variables and objects to make the below code work correctly.
+                Staff s;
+                
+                //Attempts to login with the provided StaffID and the encrypted version of the provided password.
+                s = instance.Login(txtStaffID.Text, txtPassword.Text);
+                //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
+                if (s.getType == "Doctor")
+                {
+                    dm = new DoctorMenu(s);
+                    this.Hide();
+                    dm.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                    txtStaffID.Clear();
+                    txtStaffID.Focus();
+                }
+                else if (s.getType == "Receptionist")
+                {
+                    rm = new ReceptionistMenu(s);
+                    this.Hide();
+                    rm.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                    txtStaffID.Clear();
+                    txtStaffID.Focus();
+                }
+                else if (s.getType == "Manager")
+                {
+                    mm = new ManagerMenu(s);
+                    this.Hide();
+                    mm.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                    txtStaffID.Clear();
+                    txtStaffID.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                }
+            }
+        }
+
+        private void txtStaffID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Tab)
+            {
+                txtPassword.Focus();
+            }
+            if(e.KeyCode == Keys.Enter)
+            {
+                Submit();
             }
         }
     }

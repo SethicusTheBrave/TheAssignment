@@ -7,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace SoftwareEngineeringAssignment
 {
     class BusinessMetaLayer
     {
-        static DbConection con = DbFactory.instance();
+        private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
+        private DisplayMessages message = new DisplayMessages();
+
+        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+        UTF8Encoding utf8 = new UTF8Encoding();
+        AesCryptoServiceProvider AES = new AesCryptoServiceProvider();
 
         private BusinessMetaLayer() { }
-        // static just for testing need to change it
+
         static public BusinessMetaLayer instance()
         {
             if (null == m_instance)
@@ -24,51 +30,27 @@ namespace SoftwareEngineeringAssignment
                 m_instance = new BusinessMetaLayer();
             }
             return m_instance;
+
         }
-
-        internal void RegisterPatient(string text1, string text2, string text3, string text4, string text5, string text6)
+        public string encrypt(string toBeEncrypted)
         {
-            throw new NotImplementedException();
+            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
+            AES.Mode = CipherMode.ECB;
+            AES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform trans = AES.CreateEncryptor();
+            return (BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(toBeEncrypted), 0, utf8.GetBytes(toBeEncrypted).Length)));
         }
-
-        // Could just have a set of static helper methods rather than a singleton!
-        /*public List<Patient> getPatient()
+        public Staff Login(string p_StaffID, string p_Password)
         {
-            List<Patient> patientList = new List<Patient>();
-
-            DbConection con = DbFactory.instance();
-            if (con.OpenConnection())
-            {
-                DbDataReader dr = con.Select("SELECT CUST_ID, cust_name, cust_address, cust_city FROM customers;");
-
-                //Read the data and store them in the list
-                while (dr.Read())
-                {
-                    Patient patient = new Patient();
-                    //patient.ID = dr.GetInt32(0);
-                    //patient.Name = dr.GetString(1);
-                    //patient.Address = dr.GetString(2);
-                    //patient.City = dr.GetString(3);
-                    // etc.....
-
-                    patientList.Add(patient);
-                }
-
-                //close Data Reader
-                dr.Close();
-                con.CloseConnection();
-            }
-            return patientList;
-        }*/
-        //The code used to query the database to compare a given ID and password with the results in the database and return their staffType.
-        public string Login(string p_StaffID, string p_Password)
-        {
+            string encrypted;
+            encrypted = encrypt(p_Password);
             List<Staff> staffList = new List<Staff>();
             //Will attempt to make a connection with the database.
-            if(con.OpenConnection())
+            if (con.OpenConnection())
             {
                 //Will select all of the staffID's and Passwords in the Staff table.
-                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM Staff"); 
+                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM staff"); 
+
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
@@ -79,18 +61,19 @@ namespace SoftwareEngineeringAssignment
                     staffList.Add(s);
                 }
                 //Closes the database reader and the connection to the database.
-                dr.Close();
                 con.CloseConnection();
-
+                dr.Close();
                 //Compares the password from the textbox with each entry in the database. 
                 if (staffList.Count() > 0)
                 {
-                 
                     foreach (Staff s in staffList)
                     {
-                        if (p_StaffID == s.getStaffID && p_Password == s.getpassword)
+                        if (p_StaffID == s.getStaffID && encrypted == s.getpassword)
                         {
-                            return s.getType;
+                            Staff loginStaff = new Staff();
+                            loginStaff.getStaffID = s.getStaffID;
+                            loginStaff.getType = s.getType;
+                            return loginStaff;
                         }
                     }
                 }
@@ -101,24 +84,118 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
-
-           // return patientList;
         }
-
-        public void RegisterPatients(string PatientFName, string PatientLName, string PatientEmail, string PatientAddress, )
+        public List<Patient> patientList()
         {
-
+            List<Patient> patientList = new List<Patient>();
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB, CurrentlyPresent FROM Patient");
+                //Will create a Staff object for each entry in the table.
+                while (dr.Read())
+                {
+                    Patient p = new Patient();
+                    p.getPatientID = dr.GetString(0);
+                    p.getLastName = dr.GetString(1);
+                    p.getFirstName = dr.GetString(2);
+                    p.getAddress = dr.GetString(3);
+                    p.getPostcode = dr.GetString(4);
+                    p.getDOB = Convert.ToString(dr.GetDateTime(5));
+                    p.getPresent = dr.GetBoolean(6);
+                    patientList.Add(p);
+                }
+                con.CloseConnection();
+                dr.Close();
+                return patientList;
+            }
+            else
+            {
+                //Closes the database reader and the connection to the database.
+                con.CloseConnection();
+                MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
+                return null;
+            }
         }
+        public void PatientStatusUpdate(string patientID, bool present)
+        {
+            if (con.OpenConnection())
+            {
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.CloseConnection();
+            }
+        }
+        public void ExecuteQuery(string query)
+        {
+            if (con.OpenConnection())
+            {
+                con.executeQuery(query);
+                con.CloseConnection();
+            }
+        }
+        public DataSet getStaff()
+        {
+            return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
+        }
+       
+        // Patient registration not finished but working. will be improved.
+        public void RegisterPatients(Dictionary<string, string> patientInfo, string[] keys)
+        {
+            var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + patientInfo["houseNumber"] + "', '" + patientInfo["street"] + "', '" + patientInfo["town"] + "', '" + patientInfo["country"] + "', '" + patientInfo["postcode"] + "')";
+            con.executeQuery(queryAddress);
 
-      //  // just a testing
-      //static public void RegisterPatients(string medicine)
-      //  {
+            if (con.CheckIfQuerySuccessful())
+            {
 
-      //      string query = "Insert medicine (MedicineName) VALUES ('SomeMedicine')";
 
-      //      //MySQLCon vv = new MySQLCon();
-      //      //vv.Insert(query);
-      //      con.Insert(query);
-      //  }
+                DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '" + patientInfo["street"] + "' AND Town = '" + patientInfo["town"] + "' AND Country = '" + patientInfo["country"] + "' AND PostCode = '" + patientInfo["postcode"] + "'");
+
+                if (getAddressID.Read())
+                {
+
+                    var addressID = getAddressID.GetString(0);
+                    MessageBox.Show("AddressID found" + addressID); con.CloseConnection();
+                    var queryDetails = "Insert patient_details (FirstName, LastName, DateOfBirth, Religion, Email, PhoneNumber, AddressID) VALUES('" + patientInfo["firstName"] + "', '" + patientInfo["lastName"] + "', '" + patientInfo["DOB"] + "', '" + patientInfo["religion"] + "', '" + patientInfo["email"] + "', '" + patientInfo["phone"] + "',  '" + addressID + "')";
+                    con.executeQuery (queryDetails);
+                    if (con.CheckIfQuerySuccessful())
+                    {
+                        DbDataReader getPatientID = con.Select("SELECT PatientID FROM patient_details WHERE AddressID = '" + addressID + "'");
+                        if (getPatientID.Read())
+                        {
+                            var patientID = getPatientID.GetString(0);
+
+                            MessageBox.Show("PatientID found" + patientID);
+                            var queryAdditionalInfo = "Insert patient_additional_info (PatientID, Tests, Allergies, MedicalHistory, Notes) VALUES ('" + patientID + "', '" + patientInfo["tests"] + "', '" + patientInfo["allergies"] + "', '" + patientInfo["medicalHistory"] + "', '" + patientInfo["notes"] + "')";
+                            con.CloseConnection();
+                            con.executeQuery(queryAdditionalInfo);
+                            if (con.CheckIfQuerySuccessful())
+                            {
+
+                                message.RegistrationSuccessfull();
+                            }
+                            else
+                            {
+
+                                message.RegistrationFailed();
+                            }
+                        }
+                        else
+                        {
+                            message.RegistrationFailed(); //
+                        }
+                    }
+                    else { message.RegistrationFailed(); }
+                }
+                else
+                {
+                    message.RegistrationFailed(); ;
+
+                }
+            }
+            else { message.RegistrationFailed(); }
+        }
     }
 }
+
+
+    
+

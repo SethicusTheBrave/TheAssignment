@@ -12,9 +12,13 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ReceptionistMenu : Form
     {
-        public ReceptionistMenu()
+        Staff m_s;
+        PatientSearch ps;
+        public ReceptionistMenu(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         /// <summary>
@@ -42,7 +46,10 @@ namespace SoftwareEngineeringAssignment
         /// <param name="e"></param>
         private void btnRegisterPatient_Click(object sender, EventArgs e)
         {
-
+            RegisterPatient regPatient = new RegisterPatient();
+            this.Hide();
+            regPatient.ShowDialog();
+            this.Show();
         }
         /// <summary>
         /// Will take you to the form to extend a perscription
@@ -57,6 +64,14 @@ namespace SoftwareEngineeringAssignment
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnFindPatient_Click(object sender, EventArgs e)
+        {
+            ps = new PatientSearch(m_s);
+            this.Hide();
+            ps.ShowDialog();
+            this.Show();
         }
     }
 }

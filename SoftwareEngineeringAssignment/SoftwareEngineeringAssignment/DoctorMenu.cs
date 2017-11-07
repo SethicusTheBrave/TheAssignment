@@ -12,16 +12,22 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class DoctorMenu : Form
     {
-        PatientSearch frmPatientSearch = new PatientSearch();
+        Staff m_s;
+        List<Patient> m_patientList = new List<Patient>();
+        PatientSearch frmPatientSearch;
         DoctorTODO frmTODO = new DoctorTODO();
-        PatientMenu frmPatientMenu = new PatientMenu();
-        public DoctorMenu()
+        PatientMenu frmPatientMenu;
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
+        public DoctorMenu(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         private void btnPatientSearch_Click(object sender, EventArgs e)
         {
+            frmPatientSearch = new PatientSearch(m_s);
             //Hides the doctor menu then displays the Patient Search Menu
             this.Hide();
             frmPatientSearch.ShowDialog();
@@ -38,10 +44,24 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
-            //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
-            this.Hide();
-            frmPatientMenu.ShowDialog();
-            this.Show();
+            List<Patient> temp = instance.patientList();
+            foreach(Patient p in temp)
+            {
+                if(p.getPresent)
+                {
+                    m_patientList.Add(p);
+                }
+            }
+            if (m_patientList.Count != 0)
+            {
+                frmPatientMenu = new PatientMenu(m_patientList, m_s);
+                //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
+                this.Hide();
+                frmPatientMenu.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("There are no Patients currently waiting to be seen", "No Patients");
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
