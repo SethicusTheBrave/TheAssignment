@@ -105,7 +105,6 @@ namespace SoftwareEngineeringAssignment
             return dataSet;
         }
 
-        // For testing not finished..matas
         public void executeQuery(string query)
         {
 

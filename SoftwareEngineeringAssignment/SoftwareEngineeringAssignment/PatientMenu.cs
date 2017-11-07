@@ -17,6 +17,7 @@ namespace SoftwareEngineeringAssignment
         Patient m_p;
         Staff m_s;
         List<Patient> m_patientList;
+        AddNote an;
         public PatientMenu(List<Patient> p_patientList, Staff p_s)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace SoftwareEngineeringAssignment
             m_p = p_p;
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            lblDoctor.Text = m_s.getType;
             loadDetails();
         }
         private void loadDetails()
@@ -100,7 +102,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnNewNote_Click(object sender, EventArgs e)
         {
-
+            an = new AddNote(m_s, m_p);
         }
     }
 }

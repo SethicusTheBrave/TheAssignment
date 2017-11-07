@@ -34,6 +34,7 @@
             this.btnConsoltation = new System.Windows.Forms.Button();
             this.btnPatientSearch = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnAddDrug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -102,12 +103,23 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnAddDrug
+            // 
+            this.btnAddDrug.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDrug.Location = new System.Drawing.Point(286, 215);
+            this.btnAddDrug.Name = "btnAddDrug";
+            this.btnAddDrug.Size = new System.Drawing.Size(116, 43);
+            this.btnAddDrug.TabIndex = 46;
+            this.btnAddDrug.Text = "Drugs";
+            this.btnAddDrug.UseVisualStyleBackColor = true;
+            // 
             // DoctorMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 321);
+            this.Controls.Add(this.btnAddDrug);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnTodoList);
             this.Controls.Add(this.btnConsoltation);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button btnConsoltation;
         private System.Windows.Forms.Button btnPatientSearch;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnAddDrug;
     }
 }

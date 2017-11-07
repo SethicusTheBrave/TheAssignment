@@ -90,18 +90,18 @@ namespace SoftwareEngineeringAssignment
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB, CurrentlyPresent FROM Patient");
+                DbDataReader dr = con.Select("SELECT PatientID, FirstName, LastName, DateOfBirth, CurrentlyPresent, HouseNumber, StreetName, Postcode FROM Patient_details, patient_address");
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
                     Patient p = new Patient();
                     p.getPatientID = dr.GetString(0);
-                    p.getLastName = dr.GetString(1);
-                    p.getFirstName = dr.GetString(2);
-                    p.getAddress = dr.GetString(3);
-                    p.getPostcode = dr.GetString(4);
-                    p.getDOB = Convert.ToString(dr.GetDateTime(5));
-                    p.getPresent = dr.GetBoolean(6);
+                    p.getFirstName = dr.GetString(1);
+                    p.getLastName = dr.GetString(2);
+                    p.getDOB = Convert.ToString(dr.GetDateTime(3));
+                    p.getPresent = dr.GetBoolean(4);
+                    p.getAddress = dr.GetString(5) + " " + dr.GetString(6);
+                    p.getPostcode = dr.GetString(7);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
@@ -120,7 +120,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.executeQuery("UPDATE patient_details SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
                 con.CloseConnection();
             }
         }

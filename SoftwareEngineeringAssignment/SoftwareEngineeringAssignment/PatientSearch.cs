@@ -22,6 +22,7 @@ namespace SoftwareEngineeringAssignment
             instance = BusinessMetaLayer.instance();
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            lblStaffType.Text = m_s.getType;
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)
@@ -87,6 +88,11 @@ namespace SoftwareEngineeringAssignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
