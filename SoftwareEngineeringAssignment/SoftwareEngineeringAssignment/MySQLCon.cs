@@ -124,7 +124,7 @@ namespace SoftwareEngineeringAssignment
         //MATAS QUERY THING!?
         public void MatasExecuteQuery(string query)
         {
-            if (null != connection)
+            if (OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
@@ -195,6 +195,11 @@ namespace SoftwareEngineeringAssignment
             dataAdapter.Fill(dataSet);
             //return the dataSet
             return dataSet;
+        }
+
+        public void Insert(string query)
+        {
+            throw new NotImplementedException();
         }
     }
 }

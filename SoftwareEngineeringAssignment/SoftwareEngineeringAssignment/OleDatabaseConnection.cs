@@ -120,5 +120,15 @@ namespace SoftwareEngineeringAssignment
         {
             throw new NotImplementedException();
         }
+
+        public void Insert(string query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MatasExecuteQuery(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

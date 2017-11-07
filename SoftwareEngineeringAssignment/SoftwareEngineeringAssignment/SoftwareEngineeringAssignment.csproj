@@ -63,7 +63,6 @@
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="DbFactory.cs" />
-    <Compile Include="DisplayMessages.cs" />
     <Compile Include="DoctorMenu.cs">
       <SubType>Form</SubType>
     </Compile>
