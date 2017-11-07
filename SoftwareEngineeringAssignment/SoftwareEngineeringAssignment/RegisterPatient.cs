@@ -20,6 +20,8 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            calDOB.ToString();
+
         }
     }
 }
