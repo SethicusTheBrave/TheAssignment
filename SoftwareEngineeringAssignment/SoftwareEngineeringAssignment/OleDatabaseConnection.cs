@@ -105,16 +105,20 @@ namespace SoftwareEngineeringAssignment
             return dataSet;
         }
 
-        public void Insert(string query)
+        // For testing not finished..matas
+        public void executeQuery(string query)
         {
-            try
-            {
-                
-            }
-            catch
-            {
 
-            }
+        }
+
+        public bool CheckIfQuerySuccessful()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string query)
+        {
+            throw new NotImplementedException();
         }
     }
 }
