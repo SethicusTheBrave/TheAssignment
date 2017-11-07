@@ -220,7 +220,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(510, 378);
+            this.ClientSize = new System.Drawing.Size(515, 378);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
             this.Controls.Add(this.txtPhone);

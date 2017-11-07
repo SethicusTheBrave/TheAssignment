@@ -100,7 +100,7 @@ namespace SoftwareEngineeringAssignment
         //Delete statement
         public void Delete();
         */
-
+       void Insert(string query);
 
         //Select statement
         DbDataReader Select(String query);

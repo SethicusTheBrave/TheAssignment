@@ -104,5 +104,17 @@ namespace SoftwareEngineeringAssignment
             //return the dataSet
             return dataSet;
         }
+
+        public void Insert(string query)
+        {
+            try
+            {
+                
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

@@ -27,10 +27,15 @@ namespace SoftwareEngineeringAssignment
         {
             InitializeComponent();
             instance = BusinessMetaLayer.instance();
+            BusinessMetaLayer.RegisterPatients("wwww");
+           
+         
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+           
             //required variables and objects to make the below code work correctly.
             
             string result,encryptedPassword;

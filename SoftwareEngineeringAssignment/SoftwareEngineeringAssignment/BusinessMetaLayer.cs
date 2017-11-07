@@ -12,11 +12,11 @@ namespace SoftwareEngineeringAssignment
 {
     class BusinessMetaLayer
     {
-        private DbConection con = DbFactory.instance();
+        static DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
 
         private BusinessMetaLayer() { }
-
+        // static just for testing need to change it
         static public BusinessMetaLayer instance()
         {
             if (null == m_instance)
@@ -24,6 +24,11 @@ namespace SoftwareEngineeringAssignment
                 m_instance = new BusinessMetaLayer();
             }
             return m_instance;
+        }
+
+        internal void RegisterPatient(string text1, string text2, string text3, string text4, string text5, string text6)
+        {
+            throw new NotImplementedException();
         }
 
         // Could just have a set of static helper methods rather than a singleton!
@@ -63,7 +68,7 @@ namespace SoftwareEngineeringAssignment
             if(con.OpenConnection())
             {
                 //Will select all of the staffID's and Passwords in the Staff table.
-                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM Staff");
+                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM Staff"); 
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
@@ -96,16 +101,24 @@ namespace SoftwareEngineeringAssignment
                 MessageBox.Show("Database Connection Error!", "An Error has occured when attempting to connect to the database. Please contact your network administrator.");
                 return null;
             }
-            public void RegisterPatient(string firstName, string lastName, string email, string address, string postcode, string phoneNumber) {
 
-             string query = "Insert patient (PatientID, LastName, FirstName, Address, Postcode,DoctorID) VALUES ('firstName', 'lastName', 'email', 'address', 'postcode', 'phoneNumber')";
-                MySQLCon vv = new MySQLCon();
-                vv.Insert(query);
-                
-
-            }
-
-            return patientList;
+           // return patientList;
         }
+
+        public void RegisterPatients(string PatientFName, string PatientLName, string PatientEmail, string PatientAddress, )
+        {
+
+        }
+
+      //  // just a testing
+      //static public void RegisterPatients(string medicine)
+      //  {
+
+      //      string query = "Insert medicine (MedicineName) VALUES ('SomeMedicine')";
+
+      //      //MySQLCon vv = new MySQLCon();
+      //      //vv.Insert(query);
+      //      con.Insert(query);
+      //  }
     }
 }
