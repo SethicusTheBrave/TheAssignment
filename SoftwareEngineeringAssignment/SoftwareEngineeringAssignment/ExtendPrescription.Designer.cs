@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgExtention = new System.Windows.Forms.DataGridView();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblStaffType = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmExtend = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblStaffType = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgExtention)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,16 +53,36 @@
             this.dgExtention.Size = new System.Drawing.Size(445, 150);
             this.dgExtention.TabIndex = 0;
             // 
+            // clmDate
+            // 
+            this.clmDate.HeaderText = "Date";
+            this.clmDate.Name = "clmDate";
+            // 
+            // clmName
+            // 
+            this.clmName.HeaderText = "Name";
+            this.clmName.Name = "clmName";
+            // 
+            // clmMedicine
+            // 
+            this.clmMedicine.HeaderText = "Medicine";
+            this.clmMedicine.Name = "clmMedicine";
+            // 
+            // clmExtend
+            // 
+            this.clmExtend.HeaderText = "RequestExtention";
+            this.clmExtend.Name = "clmExtend";
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(452, 9);
+            this.lblName.Location = new System.Drawing.Point(498, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 23;
-            this.lblName.Text = "Logged In: Name";
+            this.lblName.Text = "StaffID: 0";
             // 
             // lblStaffType
             // 
@@ -94,26 +114,6 @@
             this.btnExit.TabIndex = 26;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // clmDate
-            // 
-            this.clmDate.HeaderText = "Date";
-            this.clmDate.Name = "clmDate";
-            // 
-            // clmName
-            // 
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            // 
-            // clmMedicine
-            // 
-            this.clmMedicine.HeaderText = "Medicine";
-            this.clmMedicine.Name = "clmMedicine";
-            // 
-            // clmExtend
-            // 
-            this.clmExtend.HeaderText = "RequestExtention";
-            this.clmExtend.Name = "clmExtend";
             // 
             // ExtendPrescription
             // 

@@ -104,5 +104,21 @@ namespace SoftwareEngineeringAssignment
             //return the dataSet
             return dataSet;
         }
+
+        // For testing not finished..matas
+        public void executeQuery(string query)
+        {
+
+        }
+
+        public bool CheckIfQuerySuccessful()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

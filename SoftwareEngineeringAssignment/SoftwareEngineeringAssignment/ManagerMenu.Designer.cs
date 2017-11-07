@@ -31,11 +31,10 @@
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.btnEditStaffSchedule = new System.Windows.Forms.Button();
             this.btnViewStaffSchedule = new System.Windows.Forms.Button();
+            this.lblManager = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnViewCurrentStaff = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblManager = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddStaff
@@ -71,6 +70,28 @@
             this.btnViewStaffSchedule.UseVisualStyleBackColor = true;
             this.btnViewStaffSchedule.Click += new System.EventHandler(this.btnViewStaffSchedule_Click);
             // 
+            // lblManager
+            // 
+            this.lblManager.AutoSize = true;
+            this.lblManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManager.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManager.Location = new System.Drawing.Point(9, 9);
+            this.lblManager.Name = "lblManager";
+            this.lblManager.Size = new System.Drawing.Size(57, 15);
+            this.lblManager.TabIndex = 16;
+            this.lblManager.Text = "Manager";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(12, 274);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(85, 29);
+            this.btnLogOut.TabIndex = 46;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // btnViewCurrentStaff
             // 
             this.btnViewCurrentStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,43 +108,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(283, 9);
+            this.lblName.Location = new System.Drawing.Point(346, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 17;
-            this.lblName.Text = "Logged In: Name";
-            // 
-            // lblManager
-            // 
-            this.lblManager.AutoSize = true;
-            this.lblManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManager.Location = new System.Drawing.Point(9, 9);
-            this.lblManager.Name = "lblManager";
-            this.lblManager.Size = new System.Drawing.Size(57, 15);
-            this.lblManager.TabIndex = 16;
-            this.lblManager.Text = "Manager";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(12, 274);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 29);
-            this.btnExit.TabIndex = 44;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(317, 274);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(85, 29);
-            this.btnLogOut.TabIndex = 46;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.lblName.Text = "StaffID: 0";
             // 
             // ManagerMenu
             // 
@@ -132,7 +121,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 315);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.btnAddStaff);
@@ -150,10 +138,9 @@
         private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.Button btnEditStaffSchedule;
         private System.Windows.Forms.Button btnViewStaffSchedule;
+        private System.Windows.Forms.Label lblManager;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnViewCurrentStaff;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblManager;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnLogOut;
     }
 }

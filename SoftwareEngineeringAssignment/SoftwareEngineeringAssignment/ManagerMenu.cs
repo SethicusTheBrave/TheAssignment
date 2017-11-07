@@ -12,14 +12,22 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ManagerMenu : Form
     {
-        public ManagerMenu()
+        AddStaff adds;
+        ViewStaff vs;
+        Staff m_s;
+        public ManagerMenu(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
         }
 
         private void btnViewCurrentStaff_Click(object sender, EventArgs e)
         {
-
+            vs = new ViewStaff(m_s);
+            this.Hide();
+            vs.ShowDialog();
+            this.Show();
         }
 
         private void btnViewStaffSchedule_Click(object sender, EventArgs e)
@@ -34,7 +42,10 @@ namespace SoftwareEngineeringAssignment
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-
+            adds = new AddStaff();
+            this.Hide();
+            adds.ShowDialog();
+            this.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
