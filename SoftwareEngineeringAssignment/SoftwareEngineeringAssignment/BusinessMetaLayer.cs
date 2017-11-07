@@ -68,7 +68,7 @@ namespace SoftwareEngineeringAssignment
                 {
                     foreach (Staff s in staffList)
                     {
-                        if (p_StaffID == s.getStaffID && p_Password == s.getpassword)
+                        if (p_StaffID == s.getStaffID && encrypted == s.getpassword)
                         {
                             Staff loginStaff = new Staff();
                             loginStaff.getStaffID = s.getStaffID;

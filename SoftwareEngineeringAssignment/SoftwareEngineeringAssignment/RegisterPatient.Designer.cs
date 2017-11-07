@@ -69,90 +69,81 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(54, 198);
-            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDOB.Location = new System.Drawing.Point(40, 161);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(105, 20);
+            this.lblDOB.Size = new System.Drawing.Size(80, 16);
             this.lblDOB.TabIndex = 32;
             this.lblDOB.Text = "Date of Birth";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(24, 70);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFirstName.Location = new System.Drawing.Point(18, 57);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(180, 34);
+            this.txtFirstName.Size = new System.Drawing.Size(136, 28);
             this.txtFirstName.TabIndex = 45;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(54, 46);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstName.Location = new System.Drawing.Point(40, 37);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(92, 20);
+            this.lblFirstName.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName.TabIndex = 44;
             this.lblFirstName.Text = "First Name";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(263, 70);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLastName.Location = new System.Drawing.Point(197, 57);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(180, 34);
+            this.txtLastName.Size = new System.Drawing.Size(136, 28);
             this.txtLastName.TabIndex = 43;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(280, 46);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName.Location = new System.Drawing.Point(210, 37);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(91, 20);
+            this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 42;
             this.lblLastName.Text = "Last Name";
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(263, 218);
-            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPostcode.Location = new System.Drawing.Point(197, 177);
             this.txtPostcode.Multiline = true;
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(180, 34);
+            this.txtPostcode.Size = new System.Drawing.Size(136, 28);
             this.txtPostcode.TabIndex = 49;
             // 
             // lblPostcode
             // 
             this.lblPostcode.AutoSize = true;
             this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostcode.Location = new System.Drawing.Point(296, 198);
-            this.lblPostcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPostcode.Location = new System.Drawing.Point(222, 161);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(79, 20);
+            this.lblPostcode.Size = new System.Drawing.Size(66, 16);
             this.lblPostcode.TabIndex = 48;
             this.lblPostcode.Text = "Postcode";
             // 
             // txtStreet
             // 
-            this.txtStreet.Location = new System.Drawing.Point(263, 151);
-            this.txtStreet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStreet.Location = new System.Drawing.Point(197, 123);
             this.txtStreet.Multiline = true;
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(180, 34);
+            this.txtStreet.Size = new System.Drawing.Size(136, 28);
             this.txtStreet.TabIndex = 47;
             // 
             // lblStreetName
             // 
             this.lblStreetName.AutoSize = true;
             this.lblStreetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreetName.Location = new System.Drawing.Point(283, 127);
-            this.lblStreetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStreetName.Location = new System.Drawing.Point(212, 103);
             this.lblStreetName.Name = "lblStreetName";
-            this.lblStreetName.Size = new System.Drawing.Size(103, 20);
+            this.lblStreetName.Size = new System.Drawing.Size(83, 16);
             this.lblStreetName.TabIndex = 46;
             this.lblStreetName.Text = "Street Name";
             this.lblStreetName.Click += new System.EventHandler(this.lblAddress_Click);
@@ -160,10 +151,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(930, 612);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(920, 593);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 36);
+            this.btnSave.Size = new System.Drawing.Size(85, 29);
             this.btnSave.TabIndex = 50;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -172,10 +162,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(930, 681);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(920, 649);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(113, 36);
+            this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 51;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -183,41 +172,37 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(478, 222);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.Location = new System.Drawing.Point(358, 180);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(180, 34);
+            this.txtPhone.Size = new System.Drawing.Size(136, 28);
             this.txtPhone.TabIndex = 55;
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(534, 198);
-            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(400, 161);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(120, 20);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(98, 16);
             this.lblPhoneNumber.TabIndex = 54;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(748, 70);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(561, 57);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(180, 34);
+            this.txtEmail.Size = new System.Drawing.Size(136, 28);
             this.txtEmail.TabIndex = 53;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(736, 46);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Location = new System.Drawing.Point(552, 37);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 20);
+            this.lblEmail.Size = new System.Drawing.Size(42, 16);
             this.lblEmail.TabIndex = 52;
             this.lblEmail.Text = "Email";
             // 
@@ -226,10 +211,9 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(936, 11);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Location = new System.Drawing.Point(702, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(68, 18);
+            this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 57;
             this.lblName.Text = "StaffID: 0";
             // 
@@ -238,70 +222,63 @@
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDoctor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDoctor.Location = new System.Drawing.Point(28, 11);
-            this.lblDoctor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDoctor.Location = new System.Drawing.Point(21, 9);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(54, 18);
+            this.lblDoctor.Size = new System.Drawing.Size(43, 15);
             this.lblDoctor.TabIndex = 56;
             this.lblDoctor.Text = "Doctor";
             // 
             // txtTown
             // 
-            this.txtTown.Location = new System.Drawing.Point(478, 151);
-            this.txtTown.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTown.Location = new System.Drawing.Point(358, 123);
             this.txtTown.Multiline = true;
             this.txtTown.Name = "txtTown";
-            this.txtTown.Size = new System.Drawing.Size(180, 34);
+            this.txtTown.Size = new System.Drawing.Size(136, 28);
             this.txtTown.TabIndex = 58;
             // 
             // lblTown
             // 
             this.lblTown.AutoSize = true;
             this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTown.Location = new System.Drawing.Point(500, 127);
-            this.lblTown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTown.Location = new System.Drawing.Point(375, 103);
             this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(49, 20);
+            this.lblTown.Size = new System.Drawing.Size(41, 16);
             this.lblTown.TabIndex = 59;
             this.lblTown.Text = "Town";
             // 
             // txtHouseNumber
             // 
-            this.txtHouseNumber.Location = new System.Drawing.Point(24, 151);
-            this.txtHouseNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHouseNumber.Location = new System.Drawing.Point(18, 123);
             this.txtHouseNumber.Multiline = true;
             this.txtHouseNumber.Name = "txtHouseNumber";
-            this.txtHouseNumber.Size = new System.Drawing.Size(180, 34);
+            this.txtHouseNumber.Size = new System.Drawing.Size(136, 28);
             this.txtHouseNumber.TabIndex = 60;
             // 
             // lblHouseNo
             // 
             this.lblHouseNo.AutoSize = true;
             this.lblHouseNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHouseNo.Location = new System.Drawing.Point(54, 127);
-            this.lblHouseNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHouseNo.Location = new System.Drawing.Point(40, 103);
             this.lblHouseNo.Name = "lblHouseNo";
-            this.lblHouseNo.Size = new System.Drawing.Size(119, 20);
+            this.lblHouseNo.Size = new System.Drawing.Size(96, 16);
             this.lblHouseNo.TabIndex = 61;
             this.lblHouseNo.Text = "House number";
             // 
             // txtCountry
             // 
-            this.txtCountry.Location = new System.Drawing.Point(748, 153);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCountry.Location = new System.Drawing.Point(561, 124);
             this.txtCountry.Multiline = true;
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(180, 34);
+            this.txtCountry.Size = new System.Drawing.Size(136, 28);
             this.txtCountry.TabIndex = 62;
             // 
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
             this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(746, 129);
-            this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCountry.Location = new System.Drawing.Point(560, 105);
             this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(67, 20);
+            this.lblCountry.Size = new System.Drawing.Size(53, 16);
             this.lblCountry.TabIndex = 63;
             this.lblCountry.Text = "Country";
             // 
@@ -309,10 +286,9 @@
             // 
             this.lvlReligion.AutoSize = true;
             this.lvlReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlReligion.Location = new System.Drawing.Point(512, 46);
-            this.lvlReligion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lvlReligion.Location = new System.Drawing.Point(384, 37);
             this.lvlReligion.Name = "lvlReligion";
-            this.lvlReligion.Size = new System.Drawing.Size(69, 20);
+            this.lvlReligion.Size = new System.Drawing.Size(58, 16);
             this.lvlReligion.TabIndex = 67;
             this.lvlReligion.Text = "Religion";
             // 
@@ -320,21 +296,19 @@
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(212, 275);
-            this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTests.Location = new System.Drawing.Point(159, 223);
             this.lblTests.Name = "lblTests";
-            this.lblTests.Size = new System.Drawing.Size(51, 20);
+            this.lblTests.Size = new System.Drawing.Size(42, 16);
             this.lblTests.TabIndex = 69;
             this.lblTests.Text = "Tests";
             // 
             // txtTests
             // 
-            this.txtTests.Location = new System.Drawing.Point(13, 308);
-            this.txtTests.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTests.Location = new System.Drawing.Point(10, 250);
             this.txtTests.Multiline = true;
             this.txtTests.Name = "txtTests";
             this.txtTests.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTests.Size = new System.Drawing.Size(568, 98);
+            this.txtTests.Size = new System.Drawing.Size(427, 80);
             this.txtTests.TabIndex = 70;
             this.txtTests.Text = "None";
             // 
@@ -342,21 +316,19 @@
             // 
             this.lblAllergies.AutoSize = true;
             this.lblAllergies.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllergies.Location = new System.Drawing.Point(823, 275);
-            this.lblAllergies.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAllergies.Location = new System.Drawing.Point(617, 223);
             this.lblAllergies.Name = "lblAllergies";
-            this.lblAllergies.Size = new System.Drawing.Size(74, 20);
+            this.lblAllergies.Size = new System.Drawing.Size(61, 16);
             this.lblAllergies.TabIndex = 71;
             this.lblAllergies.Text = "Allergies";
             // 
             // txtAllergies
             // 
-            this.txtAllergies.Location = new System.Drawing.Point(619, 308);
-            this.txtAllergies.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAllergies.Location = new System.Drawing.Point(464, 250);
             this.txtAllergies.Multiline = true;
             this.txtAllergies.Name = "txtAllergies";
             this.txtAllergies.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAllergies.Size = new System.Drawing.Size(591, 98);
+            this.txtAllergies.Size = new System.Drawing.Size(444, 80);
             this.txtAllergies.TabIndex = 72;
             this.txtAllergies.Text = "None";
             // 
@@ -364,21 +336,21 @@
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(823, 422);
-            this.lblNotes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNotes.Location = new System.Drawing.Point(617, 343);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(128, 20);
+            this.lblNotes.Size = new System.Drawing.Size(104, 16);
             this.lblNotes.TabIndex = 73;
             this.lblNotes.Text = "Additional notes";
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(619, 458);
-            this.txtNotes.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNotes.Location = new System.Drawing.Point(464, 372);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNotes.Size = new System.Drawing.Size(591, 98);
+            this.txtNotes.Size = new System.Drawing.Size(444, 80);
             this.txtNotes.TabIndex = 74;
             this.txtNotes.Text = "None";
             this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
@@ -386,39 +358,37 @@
             // dateTimePickerDOB
             // 
             this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDOB.Location = new System.Drawing.Point(24, 230);
-            this.dateTimePickerDOB.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(18, 187);
             this.dateTimePickerDOB.Name = "dateTimePickerDOB";
-            this.dateTimePickerDOB.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDOB.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerDOB.TabIndex = 75;
             // 
             // comboReligion
             // 
             this.comboReligion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F);
-            this.comboReligion.ItemHeight = 18;
+            this.comboReligion.ItemHeight = 15;
             this.comboReligion.Items.AddRange(new object[] {
             "Cristian",
             "Islamist",
             "Atheist",
             "Buddhist",
             "Other"});
-            this.comboReligion.Location = new System.Drawing.Point(478, 78);
-            this.comboReligion.Margin = new System.Windows.Forms.Padding(4);
+            this.comboReligion.Location = new System.Drawing.Point(358, 63);
             this.comboReligion.Name = "comboReligion";
-            this.comboReligion.Size = new System.Drawing.Size(239, 26);
+            this.comboReligion.Size = new System.Drawing.Size(180, 23);
             this.comboReligion.TabIndex = 76;
             this.comboReligion.Text = "None";
             // 
             // txtMedicalHistory
             // 
-            this.txtMedicalHistory.Location = new System.Drawing.Point(4, 458);
-            this.txtMedicalHistory.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMedicalHistory.Location = new System.Drawing.Point(3, 372);
+            this.txtMedicalHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMedicalHistory.MaxLength = 2500;
             this.txtMedicalHistory.Multiline = true;
             this.txtMedicalHistory.Name = "txtMedicalHistory";
             this.txtMedicalHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMedicalHistory.Size = new System.Drawing.Size(577, 98);
+            this.txtMedicalHistory.Size = new System.Drawing.Size(434, 80);
             this.txtMedicalHistory.TabIndex = 77;
             this.txtMedicalHistory.Text = "None";
             this.txtMedicalHistory.TextChanged += new System.EventHandler(this.txtMedicalHistory_TextChanged);
@@ -427,10 +397,10 @@
             // 
             this.lblMedicalHistory.AutoSize = true;
             this.lblMedicalHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicalHistory.Location = new System.Drawing.Point(212, 422);
-            this.lblMedicalHistory.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblMedicalHistory.Location = new System.Drawing.Point(159, 343);
+            this.lblMedicalHistory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMedicalHistory.Name = "lblMedicalHistory";
-            this.lblMedicalHistory.Size = new System.Drawing.Size(122, 20);
+            this.lblMedicalHistory.Size = new System.Drawing.Size(98, 16);
             this.lblMedicalHistory.TabIndex = 78;
             this.lblMedicalHistory.Text = "Medical history";
             // 
@@ -438,19 +408,18 @@
             // 
             this.lblMedHistoryCount.AutoSize = true;
             this.lblMedHistoryCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedHistoryCount.Location = new System.Drawing.Point(259, 585);
-            this.lblMedHistoryCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMedHistoryCount.Location = new System.Drawing.Point(338, 352);
             this.lblMedHistoryCount.Name = "lblMedHistoryCount";
-            this.lblMedHistoryCount.Size = new System.Drawing.Size(53, 20);
+            this.lblMedHistoryCount.Size = new System.Drawing.Size(45, 16);
             this.lblMedHistoryCount.TabIndex = 79;
             this.lblMedHistoryCount.Text = "label1";
             // 
             // RegisterPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(1356, 849);
+            this.ClientSize = new System.Drawing.Size(1017, 690);
             this.Controls.Add(this.lblMedHistoryCount);
             this.Controls.Add(this.lblMedicalHistory);
             this.Controls.Add(this.txtMedicalHistory);
@@ -487,7 +456,7 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblDOB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterPatient";
             this.Text = "RegisterPatient";
             this.Load += new System.EventHandler(this.RegisterPatient_Load);

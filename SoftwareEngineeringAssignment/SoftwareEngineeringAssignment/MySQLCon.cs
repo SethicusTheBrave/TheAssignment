@@ -115,8 +115,7 @@ namespace SoftwareEngineeringAssignment
         //Insert statement
         public void executeQuery(string query)
         {
-         //   if (null != connection) does not work this way at least for me
-         if(OpenConnection())
+            if (null != connection)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();

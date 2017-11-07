@@ -276,6 +276,7 @@
             this.btnNewNote.TabIndex = 53;
             this.btnNewNote.Text = "New";
             this.btnNewNote.UseVisualStyleBackColor = true;
+            this.btnNewNote.Click += new System.EventHandler(this.btnNewNote_Click);
             // 
             // btnNewPrescription
             // 
@@ -328,10 +329,10 @@
             // 
             // btnPresent
             // 
-            this.btnPresent.Location = new System.Drawing.Point(374, 106);
+            this.btnPresent.Location = new System.Drawing.Point(499, 129);
             this.btnPresent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPresent.Name = "btnPresent";
-            this.btnPresent.Size = new System.Drawing.Size(64, 20);
+            this.btnPresent.Size = new System.Drawing.Size(85, 20);
             this.btnPresent.TabIndex = 59;
             this.btnPresent.Text = "Present";
             this.btnPresent.UseVisualStyleBackColor = true;
@@ -342,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(476, 513);
+            this.ClientSize = new System.Drawing.Size(597, 581);
             this.Controls.Add(this.btnPresent);
             this.Controls.Add(this.txtPatientNumber);
             this.Controls.Add(this.lblPatientNumber);
