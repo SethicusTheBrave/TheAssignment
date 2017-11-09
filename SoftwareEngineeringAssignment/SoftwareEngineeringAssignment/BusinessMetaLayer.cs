@@ -15,7 +15,6 @@ namespace SoftwareEngineeringAssignment
     {
         private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
-        private DisplayMessages message = new DisplayMessages();
 
         MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         UTF8Encoding utf8 = new UTF8Encoding();
@@ -49,7 +48,8 @@ namespace SoftwareEngineeringAssignment
             if (con.OpenConnection())
             {
                 //Will select all of the staffID's and Passwords in the Staff table.
-                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM Staff");
+                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM staff"); 
+
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
@@ -89,18 +89,18 @@ namespace SoftwareEngineeringAssignment
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT patientID, LastName, FirstName, Address, Postcode, DOB, CurrentlyPresent FROM Patient");
+                DbDataReader dr = con.Select("SELECT PatientID, FirstName, LastName, DateOfBirth, CurrentlyPresent, HouseNumber, StreetName, Postcode FROM Patient_details, patient_address");
                 //Will create a Staff object for each entry in the table.
                 while (dr.Read())
                 {
                     Patient p = new Patient();
                     p.getPatientID = dr.GetString(0);
-                    p.getLastName = dr.GetString(1);
-                    p.getFirstName = dr.GetString(2);
-                    p.getAddress = dr.GetString(3);
-                    p.getPostcode = dr.GetString(4);
-                    p.getDOB = Convert.ToString(dr.GetDateTime(5));
-                    p.getPresent = dr.GetBoolean(6);
+                    p.getFirstName = dr.GetString(1);
+                    p.getLastName = dr.GetString(2);
+                    p.getDOB = Convert.ToString(dr.GetDateTime(3));
+                    p.getPresent = dr.GetBoolean(4);
+                    p.getAddress = dr.GetString(5) + " " + dr.GetString(6);
+                    p.getPostcode = dr.GetString(7);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
@@ -119,7 +119,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.executeQuery("UPDATE patient_details SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
                 con.CloseConnection();
             }
         }
@@ -135,148 +135,67 @@ namespace SoftwareEngineeringAssignment
         {
             return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
         }
-        //// Just some experiments
-        //public void RegisterPatients(string firstName, string lastName, DateTime DOB, string religion, string email, string houseNumber, string street,
-        //                             string town, string country, string postcode, string phone, string NIN, string tests, string allergies,
-        //                             string notes)
-        //{
-        //    var format = "yyyy-MM-dd";
-        //    var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + houseNumber + "', '" + street + "', '" + town + "', '" + country + "', '" + postcode + "')";
-        //    con.Insert(queryAddress);
-        //    DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + houseNumber + "' AND StreetName = '" + street + "' AND Town = '" + town + "' AND Country = '" + country + "' AND PostCode = '" + postcode + "'");
-
-        //    if (getAddressID.Read())
-        //    {
-
-        //        var addressID = getAddressID.GetString(0);
-        //        MessageBox.Show("AddressID found" + addressID); con.CloseConnection();
-        //        var queryDetails = "Insert patient_details (FirstName, LastName, DateOfBirth, Religion, Email, PhoneNumber, NationalInsuranceNumber, AddressID) VALUES('" + firstName + "', '" + lastName + "', '" + DOB.ToString(format) + "', '" + religion + "', '" + email + "', '" + phone + "', '" + NIN + "', '" + addressID + "')";
-        //        con.Insert(queryDetails);
-        //        DbDataReader getPatientID = con.Select("SELECT PatientID FROM patient_details WHERE AddressID = '" + addressID + "'");
-        //        if (getPatientID.Read())
-        //        {
-        //            var patientID = getPatientID.GetString(0);
-
-        //            MessageBox.Show("PatientID found" + patientID);
-        //            var queryAdditionalInfo = "Insert patient_additional_info (PatientID, Tests, Allergies, Notes) VALUES ('" + patientID + "', '" + tests + "', '" + allergies + "', '" + notes + "')";
-        //            con.CloseConnection();
-        //            con.Insert(queryAdditionalInfo);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("PatientID NOT found");
-        //        }
-
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("AddressID do not exist");
-
-        //    }
-        //}
-
-
-        //public void patientDob(DateTime dob)
-        //{
-        //    var format = "yyyy-MM-dd";
-        //    var query = "Insert patient_details (DateOfBirth, AddressID) VALUES ('" + dob.ToString(format) + "', '114')";
-        //    con.Insert(query);
-        //    MessageBox.Show("Date of birth: " + dob);
-        //}
-
-
-        /// <summary>
-        ///  tas pats dik su dictionary
-        /// </summary>
-        /// <param name="patientInfo"></param>
-        /// <param name="keys"></param>
-        /// //
-        //public void zodynas(Dictionary<string, string> patientInfo, string[] keys)
-        //{
-        //    //var query = "Insert patient_address (HouseNumber, StreetName) VALUES ('"+ patientInfo["firstname"]   + "', '" + patientInfo["lastname"] + "')";
-        //    //con.Insert(query);
-        //    //patientInfo = null;
-        //    //// var arpavyko = 
-        //    //if (con.CheckIfQuerySuccessful())
-        //    //{
-        //    //    MessageBox.Show("its ok");
-        //    //}
-        //    //else
-        //    //{
-        //    //    MessageBox.Show("smth wnet wrong");
-        //    //}
-        //    //foreach (string key in keys)
-        //    //{
-        //    //   MessageBox.Show("Got value " + patientInfo[key]);
-        //    //}
-
-        //    // var format = "yyyy-MM-dd";
-        //    var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + patientInfo["houseNumber"] + "', '" + patientInfo["street"] + "', '" + patientInfo["town"] + "', '" + patientInfo["country"] + "', '" + patientInfo["postcode"] + "')";
-        //    con.Insert(queryAddress);
-
-        //    if (con.CheckIfQuerySuccessful())
-        //    {
-
-
-        //        DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '" + patientInfo["street"] + "' AND Town = '" + patientInfo["town"] + "' AND Country = '" + patientInfo["country"] + "' AND PostCode = '" + patientInfo["postcode"] + "'");
-
-        //        if (getAddressID.Read())
-        //        {
-
-        //            var addressID = getAddressID.GetString(0);
-        //            MessageBox.Show("AddressID found" + addressID); con.CloseConnection();
-        //            var queryDetails = "Insert patient_details (FirstName, LastName, DateOfBirth, Religion, Email, PhoneNumber, NationalInsuranceNumber, AddressID) VALUES('" + patientInfo["firstName"] + "', '" + patientInfo["lastName"] + "', '" + patientInfo["DOB"] + "', '" + patientInfo["religion"] + "', '" + patientInfo["email"] + "', '" + patientInfo["phone"] + "', '" + patientInfo["NIN"] + "',  '" + addressID + "')";
-        //            con.Insert(queryDetails);
-        //            if (con.CheckIfQuerySuccessful())
-        //            {
-        //                DbDataReader getPatientID = con.Select("SELECT PatientID FROM patient_details WHERE AddressID = '" + addressID + "'");
-        //                if (getPatientID.Read())
-        //                {
-        //                    var patientID = getPatientID.GetString(0);
-
-        //                    MessageBox.Show("PatientID found" + patientID);
-        //                    var queryAdditionalInfo = "Insert patient_additional_info (PatientID, Tests, Allergies, MedicalHistory, Notes) VALUES ('" + patientID + "', '" + patientInfo["tests"] + "', '" + patientInfo["allergies"] + "', '" + patientInfo["medicalHistory"] + "', '" + patientInfo["notes"] + "')";
-        //                    con.CloseConnection();
-        //                    con.Insert(queryAdditionalInfo);
-        //                    if (con.CheckIfQuerySuccessful())
-        //                    {
-
-        //                        message.RegistrationSuccessfull();
-        //                    }
-        //                    else
-        //                    {
-
-        //                        message.RegistrationFailed();
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    message.RegistrationFailed();
-        //                }
-        //            }
-        //            else { message.RegistrationFailed(); }
-        //        }
-        //        else
-        //        {
-        //            message.RegistrationFailed(); ;
-
-        //        }
-        //    }
-        //    else { message.RegistrationFailed(); }
-
-
-        //    var medicine = "new med";
-        //          string query = "Insert medicine (MedicineName) VALUES ('" + medicine + "')";
-        //          con.Insert(query);
-        //      WHO'S NOTES!? - Ryan
-        //}
-
-        public void trinti()
+       
+        // Patient registration not finished but working. will be improved.
+        public void RegisterPatients(Dictionary<string, string> patientInfo, string[] keys)
         {
-            string query = "DELETE FROM patient_address WHERE AddressID='51'";
-            con.Delete(query);
+            var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + patientInfo["houseNumber"] + "', '" + patientInfo["street"] + "', '" + patientInfo["town"] + "', '" + patientInfo["country"] + "', '" + patientInfo["postcode"] + "')";
+            con.MatasExecuteQuery(queryAddress);
+
+                DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '" + patientInfo["street"] + "' AND Town = '" + patientInfo["town"] + "' AND Country = '" + patientInfo["country"] + "' AND PostCode = '" + patientInfo["postcode"] + "'");
+
+                if (getAddressID.Read())
+                {
+           
+                    var addressID = getAddressID.GetString(0);
+                    MessageBox.Show("AddressID found" + addressID); con.CloseConnection();
+                    var queryDetails = "Insert patient_details (FirstName, LastName, DateOfBirth, Religion, Email, PhoneNumber, AddressID) VALUES('" + patientInfo["firstName"] + "', '" + patientInfo["lastName"] + "', '" + patientInfo["DOB"] + "', '" + patientInfo["religion"] + "', '" + patientInfo["email"] + "', '" + patientInfo["phone"] + "',  '" + addressID + "')";
+                    con.MatasExecuteQuery(queryDetails);
+
+                        DbDataReader getPatientID = con.Select("SELECT PatientID FROM patient_details WHERE AddressID = '" + addressID + "'");
+                        if (getPatientID.Read())
+                        {
+                            var patientID = getPatientID.GetString(0);
+
+                            MessageBox.Show("PatientID found" + patientID);
+                            var queryAdditionalInfo = "Insert patient_additional_info (PatientID, Tests, Allergies, MedicalHistory, Notes) VALUES ('" + patientID + "', '" + patientInfo["tests"] + "', '" + patientInfo["allergies"] + "', '" + patientInfo["medicalHistory"] + "', '" + patientInfo["notes"] + "')";
+                            con.CloseConnection();
+                            con.MatasExecuteQuery(queryAdditionalInfo);
+                            if (con.CheckIfQuerySuccessful())
+                            {
+
+                        MessageBox.Show("The patient was registered successfully!!!");
+                    }
+                            else
+                            {
+
+                        MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
+                    }
+                        }
+                        else
+                        {
+                    string deleteDetails = "DELETE FROM patient_address WHERE AddressID = '" + addressID + "'";
+                    con.MatasExecuteQuery(deleteDetails);
+
+                    MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
+                }
+            }
+                else
+                {
+                MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
+                string deleteAddress = "DELETE FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '"+ patientInfo["street"] + "', Town = '"+ patientInfo["town"] + "' , Country = '" + patientInfo["country"] +"',  PostCode = '"+ patientInfo["postcode"] + "'";
+                con.MatasExecuteQuery(deleteAddress);
+
+                }
         }
 
+
+        public void CreateAppointments(int pID, int dID)
+        {
+            var createAppointments = "Insert appointments (AppointmentID, AppointmentDate, PatientID, DoctorID) VALUES(patientID, doctorID)";
+            con.MatasExecuteQuery(createAppointments);
+        }
+    
 
     }
 }

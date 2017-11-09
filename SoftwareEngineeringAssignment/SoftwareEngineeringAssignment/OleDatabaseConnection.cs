@@ -105,7 +105,6 @@ namespace SoftwareEngineeringAssignment
             return dataSet;
         }
 
-        // For testing not finished..matas
         public void executeQuery(string query)
         {
 
@@ -117,6 +116,16 @@ namespace SoftwareEngineeringAssignment
         }
 
         public void Delete(string query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(string query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MatasExecuteQuery(string query)
         {
             throw new NotImplementedException();
         }
