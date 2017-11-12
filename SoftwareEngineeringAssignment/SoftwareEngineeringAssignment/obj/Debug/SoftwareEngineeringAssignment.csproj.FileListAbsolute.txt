@@ -116,3 +116,4 @@ F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngin
 \\klstu1\1516\HS\406069\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
 \\klstu1\1516\HS\406069\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
 \\klstu1\1516\HS\406069\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AddPrescription.resources

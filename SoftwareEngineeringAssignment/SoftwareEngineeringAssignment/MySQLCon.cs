@@ -121,16 +121,6 @@ namespace SoftwareEngineeringAssignment
                 cmd.ExecuteNonQuery();
             }
         }
-        //MATAS QUERY THING!?
-        public void MatasExecuteQuery(string query)
-        {
-            if (OpenConnection())
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                howManyRowsAffected = cmd.ExecuteNonQuery();
-            }
-        }
-
 
         /*
         //Update statement
@@ -142,7 +132,7 @@ namespace SoftwareEngineeringAssignment
         //Delete statement
         public void Delete(string query)
         {
-            if (OpenConnection())
+            if (null != connection)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 howManyRowsAffected = cmd.ExecuteNonQuery();
@@ -155,7 +145,7 @@ namespace SoftwareEngineeringAssignment
         //Select statement
         public DbDataReader Select(String query)
         {
-            DbDataReader dr = null;
+            DbDataReader dr=null;
 
             if (null != connection)
             {

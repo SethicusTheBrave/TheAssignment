@@ -97,8 +97,6 @@ namespace SoftwareEngineeringAssignment
 
         void executeQuery(string query);
 
-        void MatasExecuteQuery(string query);
-
         bool CheckIfQuerySuccessful();
 
         /*
