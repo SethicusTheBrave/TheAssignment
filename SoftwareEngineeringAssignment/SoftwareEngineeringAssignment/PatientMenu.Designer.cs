@@ -297,6 +297,7 @@
             this.btnNewTest.TabIndex = 55;
             this.btnNewTest.Text = "New";
             this.btnNewTest.UseVisualStyleBackColor = true;
+            this.btnNewTest.Click += new System.EventHandler(this.btnNewTest_Click);
             // 
             // btnNext
             // 
@@ -330,7 +331,7 @@
             // btnPresent
             // 
             this.btnPresent.Location = new System.Drawing.Point(499, 129);
-            this.btnPresent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPresent.Margin = new System.Windows.Forms.Padding(2);
             this.btnPresent.Name = "btnPresent";
             this.btnPresent.Size = new System.Drawing.Size(85, 20);
             this.btnPresent.TabIndex = 59;

@@ -61,6 +61,18 @@ namespace SoftwareEngineeringAssignment
                 btnNext.Visible = false;
                 btnPresent.Visible = true;
             }
+            if (m_s.getType == "Nurse")
+            {
+                btnBookAppointment.Visible = false;
+                btnNewNote.Visible = true;
+                btnNewPrescription.Visible = false;
+                btnNewTest.Visible = true;
+                btnPresent.Visible = false;
+                if (m_patientList != null)
+                    btnNext.Visible = true;
+                else
+                    btnNext.Visible = false;
+            }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -103,6 +115,11 @@ namespace SoftwareEngineeringAssignment
         private void btnNewNote_Click(object sender, EventArgs e)
         {
             an = new AddNote(m_s, m_p);
+        }
+
+        private void btnNewTest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
