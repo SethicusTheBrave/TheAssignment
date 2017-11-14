@@ -23,6 +23,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            lblDoctor.Text = m_s.getType;
         }
 
         private void btnPatientSearch_Click(object sender, EventArgs e)
@@ -44,18 +45,26 @@ namespace SoftwareEngineeringAssignment
 
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
+            //will create a list of all the patients that are currently here and had an appointment with the logged in doctor.
             List<Patient> temp = instance.patientList();
+            List<Appointment> appointmentList = instance.getAppointments();
             foreach(Patient p in temp)
             {
                 if(p.getPresent)
                 {
-                    m_patientList.Add(p);
+                    foreach (Appointment a in appointmentList)
+                    {
+                        if (a.getStaffID == m_s.getStaffID)
+                        {
+                            m_patientList.Add(p);
+                        }
+                    }
                 }
             }
             if (m_patientList.Count != 0)
             {
+                //hides the current form and shows the patientMenu form with the current patients details.
                 frmPatientMenu = new PatientMenu(m_patientList, m_s);
-                //Hides the Doctor menu then opens the patient menu which the doctor is currently seeing
                 this.Hide();
                 frmPatientMenu.ShowDialog();
                 this.Show();
@@ -66,6 +75,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            //will close this menu and go back to the previous menu
             this.Close();
         }
     }

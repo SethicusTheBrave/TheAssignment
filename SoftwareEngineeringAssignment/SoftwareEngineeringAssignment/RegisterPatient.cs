@@ -24,8 +24,8 @@ namespace SoftwareEngineeringAssignment
                                      string medicalHistory, string notes)
         {
             Dictionary<string, string> patientInformation = new Dictionary<string, string>();
-            var format = "yyyy-MM-dd";
-            var values = new string[] {"firstName","lastName","DOB","religion","email","houseNumber","street","town","country","postcode","phone","tests","allergies","medicalHistory","notes"};
+            string format = "yyyy-MM-dd";
+            string[] values = new string[] {"firstName","lastName","DOB","religion","email","houseNumber","street","town","country","postcode","phone","tests","allergies","medicalHistory","notes"};
             patientInformation.Add(values[0], firstName);
             patientInformation.Add(values[1], lastName);
             patientInformation.Add(values[2], DOB.ToString(format));

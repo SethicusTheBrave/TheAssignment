@@ -419,7 +419,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(1017, 690);
+            this.ClientSize = new System.Drawing.Size(1017, 709);
             this.Controls.Add(this.lblMedHistoryCount);
             this.Controls.Add(this.lblMedicalHistory);
             this.Controls.Add(this.txtMedicalHistory);

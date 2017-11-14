@@ -20,20 +20,24 @@ namespace SoftwareEngineeringAssignment
         public string getAddress { get { return m_address; } set { m_address = value; } }
         string m_postcode;
         public string getPostcode { get { return m_postcode; } set { m_postcode = value; } }
-        string m_DOB;
-        public string getDOB { get { return m_DOB; } set { m_DOB = value; } }
+        string m_country;
+        public string getCountry { get { return m_country; } set { m_country = value; } }
+        DateTime m_DOB;
+        public DateTime getDOB { get { return m_DOB; } set { m_DOB = value; } }
     }
     public class Patient : Person
     {
-        string m_patientID;
-        public string getPatientID { get { return m_patientID; } set { m_patientID = value; } }
+        int m_patientID;
+        public int getPatientID { get { return m_patientID; } set { m_patientID = value; } }
         bool m_present;
         public bool getPresent { get { return m_present; } set { m_present = value; } }
+        string m_medicalHistory;
+        public string getMedicalHistory { get { return m_medicalHistory; } set { m_medicalHistory = value; } }
     }
     public class Staff : Person
     {
-        private string m_staffID;
-        public string getStaffID {get{ return m_staffID; }set { m_staffID = value; } }
+        private int m_staffID;
+        public int getStaffID {get{ return m_staffID; }set { m_staffID = value; } }
         private string m_password;
         public string getpassword { get { return m_password; } set { m_password = value; } }
         private string m_staffType;

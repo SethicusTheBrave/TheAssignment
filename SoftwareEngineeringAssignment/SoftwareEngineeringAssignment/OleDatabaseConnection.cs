@@ -73,6 +73,10 @@ namespace SoftwareEngineeringAssignment
             }
             return true;
         }
+        public void MatasExecuteQuery(string query)
+        {
+
+        }
 
         public DbDataReader Select(string query)
         {
@@ -105,7 +109,6 @@ namespace SoftwareEngineeringAssignment
             return dataSet;
         }
 
-        // For testing not finished..matas
         public void executeQuery(string query)
         {
 
@@ -117,6 +120,11 @@ namespace SoftwareEngineeringAssignment
         }
 
         public void Delete(string query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(string query)
         {
             throw new NotImplementedException();
         }
