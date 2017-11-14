@@ -196,10 +196,5 @@ namespace SoftwareEngineeringAssignment
         {
 
         }
-
-        private void btnNewTest_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
