@@ -34,23 +34,10 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.dgNotes = new System.Windows.Forms.DataGridView();
-            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblPrescriptions = new System.Windows.Forms.Label();
-            this.dgPrescriptions = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrescriptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTests = new System.Windows.Forms.Label();
-            this.dgTests = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmResults = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnBookAppointment = new System.Windows.Forms.Button();
             this.btnNewNote = new System.Windows.Forms.Button();
             this.btnNewPrescription = new System.Windows.Forms.Button();
@@ -59,9 +46,19 @@
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.lblPatientNumber = new System.Windows.Forms.Label();
             this.btnPresent = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgTests)).BeginInit();
+            this.txtMedicalHistory = new System.Windows.Forms.TextBox();
+            this.lblMedicalHistory = new System.Windows.Forms.Label();
+            this.lvPrescriptions = new System.Windows.Forms.ListView();
+            this.clmDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmMedicine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvNotes = new System.Windows.Forms.ListView();
+            this.clmDate2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmNote = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvTests = new System.Windows.Forms.ListView();
+            this.clmDate3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmTest2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmNotes2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblName
@@ -69,7 +66,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(528, 9);
+            this.lblName.Location = new System.Drawing.Point(1836, 9);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 21;
@@ -124,32 +121,11 @@
             this.txtLastName.Size = new System.Drawing.Size(136, 28);
             this.txtLastName.TabIndex = 42;
             // 
-            // dgNotes
-            // 
-            this.dgNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmDate,
-            this.clmNotes});
-            this.dgNotes.Location = new System.Drawing.Point(12, 197);
-            this.dgNotes.Name = "dgNotes";
-            this.dgNotes.Size = new System.Drawing.Size(243, 76);
-            this.dgNotes.TabIndex = 44;
-            // 
-            // clmDate
-            // 
-            this.clmDate.HeaderText = "Date";
-            this.clmDate.Name = "clmDate";
-            // 
-            // clmNotes
-            // 
-            this.clmNotes.HeaderText = "Notes";
-            this.clmNotes.Name = "clmNotes";
-            // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(96, 178);
+            this.lblNotes.Location = new System.Drawing.Point(1567, 31);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(44, 16);
             this.lblNotes.TabIndex = 45;
@@ -159,86 +135,26 @@
             // 
             this.lblPrescriptions.AutoSize = true;
             this.lblPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrescriptions.Location = new System.Drawing.Point(99, 291);
+            this.lblPrescriptions.Location = new System.Drawing.Point(456, 31);
             this.lblPrescriptions.Name = "lblPrescriptions";
             this.lblPrescriptions.Size = new System.Drawing.Size(86, 16);
             this.lblPrescriptions.TabIndex = 47;
             this.lblPrescriptions.Text = "Prescriptions";
             // 
-            // dgPrescriptions
-            // 
-            this.dgPrescriptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPrescriptions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.clmPrescriptions,
-            this.dataGridViewTextBoxColumn2});
-            this.dgPrescriptions.Location = new System.Drawing.Point(15, 310);
-            this.dgPrescriptions.Name = "dgPrescriptions";
-            this.dgPrescriptions.Size = new System.Drawing.Size(345, 76);
-            this.dgPrescriptions.TabIndex = 46;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // clmPrescriptions
-            // 
-            this.clmPrescriptions.HeaderText = "Prescription";
-            this.clmPrescriptions.Name = "clmPrescriptions";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Notes";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
             // lblTests
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(106, 394);
+            this.lblTests.Location = new System.Drawing.Point(1053, 31);
             this.lblTests.Name = "lblTests";
             this.lblTests.Size = new System.Drawing.Size(42, 16);
             this.lblTests.TabIndex = 49;
             this.lblTests.Text = "Tests";
             // 
-            // dgTests
-            // 
-            this.dgTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.clmTest,
-            this.clmResults,
-            this.dataGridViewTextBoxColumn4});
-            this.dgTests.Location = new System.Drawing.Point(15, 413);
-            this.dgTests.Name = "dgTests";
-            this.dgTests.Size = new System.Drawing.Size(446, 76);
-            this.dgTests.TabIndex = 48;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // clmTest
-            // 
-            this.clmTest.HeaderText = "Test";
-            this.clmTest.Name = "clmTest";
-            // 
-            // clmResults
-            // 
-            this.clmResults.HeaderText = "Result";
-            this.clmResults.Name = "clmResults";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Notes";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(499, 542);
+            this.btnExit.Location = new System.Drawing.Point(9, 973);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 50;
@@ -246,20 +162,9 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(499, 507);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 29);
-            this.btnSave.TabIndex = 51;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
-            // 
             // btnBookAppointment
             // 
-            this.btnBookAppointment.Location = new System.Drawing.Point(499, 69);
+            this.btnBookAppointment.Location = new System.Drawing.Point(1807, 42);
             this.btnBookAppointment.Name = "btnBookAppointment";
             this.btnBookAppointment.Size = new System.Drawing.Size(85, 55);
             this.btnBookAppointment.TabIndex = 52;
@@ -270,7 +175,7 @@
             // btnNewNote
             // 
             this.btnNewNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewNote.Location = new System.Drawing.Point(287, 244);
+            this.btnNewNote.Location = new System.Drawing.Point(1624, 20);
             this.btnNewNote.Name = "btnNewNote";
             this.btnNewNote.Size = new System.Drawing.Size(85, 29);
             this.btnNewNote.TabIndex = 53;
@@ -281,17 +186,18 @@
             // btnNewPrescription
             // 
             this.btnNewPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewPrescription.Location = new System.Drawing.Point(376, 357);
+            this.btnNewPrescription.Location = new System.Drawing.Point(557, 19);
             this.btnNewPrescription.Name = "btnNewPrescription";
             this.btnNewPrescription.Size = new System.Drawing.Size(85, 29);
             this.btnNewPrescription.TabIndex = 54;
             this.btnNewPrescription.Text = "New";
             this.btnNewPrescription.UseVisualStyleBackColor = true;
+            this.btnNewPrescription.Click += new System.EventHandler(this.btnNewPrescription_Click);
             // 
             // btnNewTest
             // 
             this.btnNewTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewTest.Location = new System.Drawing.Point(499, 451);
+            this.btnNewTest.Location = new System.Drawing.Point(1101, 20);
             this.btnNewTest.Name = "btnNewTest";
             this.btnNewTest.Size = new System.Drawing.Size(85, 29);
             this.btnNewTest.TabIndex = 55;
@@ -301,7 +207,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(408, 542);
+            this.btnNext.Location = new System.Drawing.Point(1807, 1000);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(85, 29);
             this.btnNext.TabIndex = 56;
@@ -330,7 +236,7 @@
             // 
             // btnPresent
             // 
-            this.btnPresent.Location = new System.Drawing.Point(499, 129);
+            this.btnPresent.Location = new System.Drawing.Point(1807, 102);
             this.btnPresent.Margin = new System.Windows.Forms.Padding(2);
             this.btnPresent.Name = "btnPresent";
             this.btnPresent.Size = new System.Drawing.Size(85, 20);
@@ -339,12 +245,106 @@
             this.btnPresent.UseVisualStyleBackColor = true;
             this.btnPresent.Click += new System.EventHandler(this.btnPresent_Click);
             // 
+            // txtMedicalHistory
+            // 
+            this.txtMedicalHistory.Location = new System.Drawing.Point(9, 231);
+            this.txtMedicalHistory.Multiline = true;
+            this.txtMedicalHistory.Name = "txtMedicalHistory";
+            this.txtMedicalHistory.ReadOnly = true;
+            this.txtMedicalHistory.Size = new System.Drawing.Size(297, 167);
+            this.txtMedicalHistory.TabIndex = 60;
+            // 
+            // lblMedicalHistory
+            // 
+            this.lblMedicalHistory.AutoSize = true;
+            this.lblMedicalHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicalHistory.Location = new System.Drawing.Point(95, 212);
+            this.lblMedicalHistory.Name = "lblMedicalHistory";
+            this.lblMedicalHistory.Size = new System.Drawing.Size(101, 16);
+            this.lblMedicalHistory.TabIndex = 61;
+            this.lblMedicalHistory.Text = "Medical History";
+            // 
+            // lvPrescriptions
+            // 
+            this.lvPrescriptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmDate,
+            this.clmMedicine});
+            this.lvPrescriptions.Location = new System.Drawing.Point(387, 58);
+            this.lvPrescriptions.Name = "lvPrescriptions";
+            this.lvPrescriptions.Size = new System.Drawing.Size(392, 393);
+            this.lvPrescriptions.TabIndex = 62;
+            this.lvPrescriptions.UseCompatibleStateImageBehavior = false;
+            this.lvPrescriptions.View = System.Windows.Forms.View.Details;
+            // 
+            // clmDate
+            // 
+            this.clmDate.Text = "Date";
+            // 
+            // clmMedicine
+            // 
+            this.clmMedicine.Text = "Medicine";
+            // 
+            // lvNotes
+            // 
+            this.lvNotes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmDate2,
+            this.clmNote});
+            this.lvNotes.Location = new System.Drawing.Point(1372, 55);
+            this.lvNotes.Name = "lvNotes";
+            this.lvNotes.Size = new System.Drawing.Size(409, 393);
+            this.lvNotes.TabIndex = 63;
+            this.lvNotes.UseCompatibleStateImageBehavior = false;
+            this.lvNotes.View = System.Windows.Forms.View.Details;
+            // 
+            // clmDate2
+            // 
+            this.clmDate2.Text = "Date";
+            // 
+            // clmNote
+            // 
+            this.clmNote.Text = "Note";
+            // 
+            // lvTests
+            // 
+            this.lvTests.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmDate3,
+            this.clmTest2,
+            this.clmResult,
+            this.clmNotes2});
+            this.lvTests.Location = new System.Drawing.Point(843, 58);
+            this.lvTests.Name = "lvTests";
+            this.lvTests.Size = new System.Drawing.Size(446, 390);
+            this.lvTests.TabIndex = 64;
+            this.lvTests.UseCompatibleStateImageBehavior = false;
+            this.lvTests.View = System.Windows.Forms.View.Details;
+            // 
+            // clmDate3
+            // 
+            this.clmDate3.Text = "Date";
+            // 
+            // clmTest2
+            // 
+            this.clmTest2.Text = "Test";
+            // 
+            // clmResult
+            // 
+            this.clmResult.Text = "Result";
+            // 
+            // clmNotes2
+            // 
+            this.clmNotes2.Text = "Notes";
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(597, 581);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.lvTests);
+            this.Controls.Add(this.lvNotes);
+            this.Controls.Add(this.lvPrescriptions);
+            this.Controls.Add(this.lblMedicalHistory);
+            this.Controls.Add(this.txtMedicalHistory);
             this.Controls.Add(this.btnPresent);
             this.Controls.Add(this.txtPatientNumber);
             this.Controls.Add(this.lblPatientNumber);
@@ -353,14 +353,10 @@
             this.Controls.Add(this.btnNewPrescription);
             this.Controls.Add(this.btnNewNote);
             this.Controls.Add(this.btnBookAppointment);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblTests);
-            this.Controls.Add(this.dgTests);
             this.Controls.Add(this.lblPrescriptions);
-            this.Controls.Add(this.dgPrescriptions);
             this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.dgNotes);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
@@ -369,9 +365,6 @@
             this.Controls.Add(this.lblDoctor);
             this.Name = "PatientMenu";
             this.Text = "Patient";
-            ((System.ComponentModel.ISupportInitialize)(this.dgNotes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPrescriptions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgTests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,23 +378,10 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.DataGridView dgNotes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNotes;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Label lblPrescriptions;
-        private System.Windows.Forms.DataGridView dgPrescriptions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrescriptions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Label lblTests;
-        private System.Windows.Forms.DataGridView dgTests;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmResults;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBookAppointment;
         private System.Windows.Forms.Button btnNewNote;
         private System.Windows.Forms.Button btnNewPrescription;
@@ -410,5 +390,18 @@
         private System.Windows.Forms.TextBox txtPatientNumber;
         private System.Windows.Forms.Label lblPatientNumber;
         private System.Windows.Forms.Button btnPresent;
+        private System.Windows.Forms.TextBox txtMedicalHistory;
+        private System.Windows.Forms.Label lblMedicalHistory;
+        private System.Windows.Forms.ListView lvPrescriptions;
+        private System.Windows.Forms.ColumnHeader clmDate;
+        private System.Windows.Forms.ColumnHeader clmMedicine;
+        private System.Windows.Forms.ListView lvNotes;
+        private System.Windows.Forms.ColumnHeader clmDate2;
+        private System.Windows.Forms.ColumnHeader clmNote;
+        private System.Windows.Forms.ListView lvTests;
+        private System.Windows.Forms.ColumnHeader clmDate3;
+        private System.Windows.Forms.ColumnHeader clmTest2;
+        private System.Windows.Forms.ColumnHeader clmResult;
+        private System.Windows.Forms.ColumnHeader clmNotes2;
     }
 }

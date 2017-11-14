@@ -13,9 +13,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Login : Form
     {
-        DoctorMenu dm;
-        ReceptionistMenu rm;
-        ManagerMenu mm;
+        Form f;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         public Login()
         {
@@ -25,17 +23,6 @@ namespace SoftwareEngineeringAssignment
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Submit();
-        }
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Submit();
-            }
-            if (e.KeyCode == Keys.Tab)
-            {
-                btnLogin.Focus();
-            }
         }
         private void Submit()
         {
@@ -49,41 +36,44 @@ namespace SoftwareEngineeringAssignment
                 Staff s;
                 
                 //Attempts to login with the provided StaffID and the encrypted version of the provided password.
-                s = instance.Login(txtStaffID.Text, txtPassword.Text);
+                s = instance.Login(int.Parse(txtStaffID.Text), txtPassword.Text);
                 //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
-                if (s.getType == "Doctor")
+                if (null != s)
                 {
-                    dm = new DoctorMenu(s);
-                    this.Hide();
-                    dm.ShowDialog();
-                    this.Show();
-                    txtPassword.Clear();
-                    txtStaffID.Clear();
-                    txtStaffID.Focus();
-                }
-                else if (s.getType == "Receptionist")
-                {
-                    rm = new ReceptionistMenu(s);
-                    this.Hide();
-                    rm.ShowDialog();
-                    this.Show();
-                    txtPassword.Clear();
-                    txtStaffID.Clear();
-                    txtStaffID.Focus();
-                }
-                else if (s.getType == "Manager")
-                {
-                    mm = new ManagerMenu(s);
-                    this.Hide();
-                    mm.ShowDialog();
-                    this.Show();
-                    txtPassword.Clear();
-                    txtStaffID.Clear();
-                    txtStaffID.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                    if (s.getType == "Doctor")
+                    {
+                        f = new DoctorMenu(s);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtStaffID.Clear();
+                        txtStaffID.Focus();
+                    }
+                    else if (s.getType == "Receptionist")
+                    {
+                        f = new ReceptionistMenu(s);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtStaffID.Clear();
+                        txtStaffID.Focus();
+                    }
+                    else if (s.getType == "Manager")
+                    {
+                        f = new ManagerMenu(s);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtStaffID.Clear();
+                        txtStaffID.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login Failed", "Invalid StaffID or Password");
+                    }
                 }
             }
         }
@@ -97,6 +87,17 @@ namespace SoftwareEngineeringAssignment
             if(e.KeyCode == Keys.Enter)
             {
                 Submit();
+            }
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Submit();
+            }
+            if (e.KeyCode == Keys.Tab)
+            {
+                btnLogin.Focus();
             }
         }
     }

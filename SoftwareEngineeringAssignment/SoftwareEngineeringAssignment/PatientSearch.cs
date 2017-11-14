@@ -13,7 +13,7 @@ namespace SoftwareEngineeringAssignment
     public partial class PatientSearch : Form
     {
         Staff m_s;
-        PatientMenu pm;
+        Form f;
         List<Patient> patientList;
         BusinessMetaLayer instance;
         public PatientSearch(Staff p_s)
@@ -25,22 +25,22 @@ namespace SoftwareEngineeringAssignment
             lblStaffType.Text = m_s.getType;
         }
 
-        private void btnSearch1_Click(object sender, EventArgs e)
+        private void btnSearch1_Click_1(object sender, EventArgs e)
         {
             patientList = instance.patientList();
             //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
-                if(p.getPatientID == txtPatientNumber.Text)
+                if (p.getPatientID == int.Parse(txtPatientNumber.Text))
                 {
-                    pm = new PatientMenu(p, m_s);
+                    f = new PatientMenu(p, m_s);
                     this.Hide();
-                    pm.ShowDialog();
+                    f.ShowDialog();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Patient not found.","A Patient with the provided details could not be found");
+                    MessageBox.Show("Patient not found.", "A Patient with the provided details could not be found");
                 }
             }
         }
@@ -51,11 +51,11 @@ namespace SoftwareEngineeringAssignment
             //checks to see if the textbox results match any of the database records
             foreach (Patient p in patientList)
             {
-                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart.ToString())
+                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart)
                 {
-                    pm = new PatientMenu(p,m_s);
+                    f = new PatientMenu(p,m_s);
                     this.Hide();
-                    pm.ShowDialog();
+                    f.ShowDialog();
                     this.Close();
                 }
                 else
@@ -73,9 +73,9 @@ namespace SoftwareEngineeringAssignment
             {
                 if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
                 {
-                    pm = new PatientMenu(p,m_s);
+                    f = new PatientMenu(p,m_s);
                     this.Hide();
-                    pm.ShowDialog();
+                    f.ShowDialog();
                     this.Close();
                 }
                 else
@@ -88,11 +88,6 @@ namespace SoftwareEngineeringAssignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnSearch1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

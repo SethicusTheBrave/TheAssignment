@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
-    public partial class AddNote : Form
+    public partial class AddPrescription : Form
     {
-        Staff m_s;
-        Patient m_p;
-        public AddNote(Staff p_s, Patient p_p)
+        public AddPrescription()
         {
             InitializeComponent();
-            m_s = p_s;
-            m_p = p_p;
-            
         }
     }
 }

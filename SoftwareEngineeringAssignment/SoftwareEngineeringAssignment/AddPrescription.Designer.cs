@@ -1,6 +1,6 @@
 ﻿namespace SoftwareEngineeringAssignment
 {
-    partial class AddNote
+    partial class AddPrescription
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // AddNote
+            // AddPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(554, 363);
-            this.Name = "AddNote";
-            this.Text = "AddNote";
+            this.ClientSize = new System.Drawing.Size(427, 377);
+            this.Name = "AddPrescription";
+            this.Text = "AddPrescription";
             this.ResumeLayout(false);
 
         }
