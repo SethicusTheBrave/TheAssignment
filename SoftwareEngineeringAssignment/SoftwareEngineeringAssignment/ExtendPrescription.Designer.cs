@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.dgExtention = new System.Windows.Forms.DataGridView();
-            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmExtend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblName = new System.Windows.Forms.Label();
             this.lblStaffType = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.txtDrugID = new System.Windows.Forms.TextBox();
+            this.clmDrugID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExtend = new System.Windows.Forms.Button();
+            this.lblDrugID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgExtention)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,34 +46,13 @@
             // 
             this.dgExtention.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgExtention.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmDrugID,
             this.clmDate,
-            this.clmName,
-            this.clmMedicine,
-            this.clmExtend});
+            this.clmMedicine});
             this.dgExtention.Location = new System.Drawing.Point(12, 98);
             this.dgExtention.Name = "dgExtention";
-            this.dgExtention.Size = new System.Drawing.Size(445, 150);
+            this.dgExtention.Size = new System.Drawing.Size(352, 150);
             this.dgExtention.TabIndex = 0;
-            // 
-            // clmDate
-            // 
-            this.clmDate.HeaderText = "Date";
-            this.clmDate.Name = "clmDate";
-            // 
-            // clmName
-            // 
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            // 
-            // clmMedicine
-            // 
-            this.clmMedicine.HeaderText = "Medicine";
-            this.clmMedicine.Name = "clmMedicine";
-            // 
-            // clmExtend
-            // 
-            this.clmExtend.HeaderText = "RequestExtention";
-            this.clmExtend.Name = "clmExtend";
             // 
             // lblName
             // 
@@ -104,6 +85,7 @@
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
@@ -115,12 +97,55 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
+            // txtDrugID
+            // 
+            this.txtDrugID.Location = new System.Drawing.Point(469, 98);
+            this.txtDrugID.Name = "txtDrugID";
+            this.txtDrugID.Size = new System.Drawing.Size(85, 20);
+            this.txtDrugID.TabIndex = 27;
+            // 
+            // clmDrugID
+            // 
+            this.clmDrugID.HeaderText = "Drug ID";
+            this.clmDrugID.Name = "clmDrugID";
+            // 
+            // clmDate
+            // 
+            this.clmDate.HeaderText = "Date";
+            this.clmDate.Name = "clmDate";
+            // 
+            // clmMedicine
+            // 
+            this.clmMedicine.HeaderText = "Medicine";
+            this.clmMedicine.Name = "clmMedicine";
+            // 
+            // btnExtend
+            // 
+            this.btnExtend.Location = new System.Drawing.Point(469, 124);
+            this.btnExtend.Name = "btnExtend";
+            this.btnExtend.Size = new System.Drawing.Size(85, 35);
+            this.btnExtend.TabIndex = 28;
+            this.btnExtend.Text = "Extend Presecription";
+            this.btnExtend.UseVisualStyleBackColor = true;
+            // 
+            // lblDrugID
+            // 
+            this.lblDrugID.AutoSize = true;
+            this.lblDrugID.Location = new System.Drawing.Point(419, 98);
+            this.lblDrugID.Name = "lblDrugID";
+            this.lblDrugID.Size = new System.Drawing.Size(44, 13);
+            this.lblDrugID.TabIndex = 29;
+            this.lblDrugID.Text = "Drug ID";
+            // 
             // ExtendPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(566, 257);
+            this.Controls.Add(this.lblDrugID);
+            this.Controls.Add(this.btnExtend);
+            this.Controls.Add(this.txtDrugID);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblName);
@@ -141,9 +166,11 @@
         private System.Windows.Forms.Label lblStaffType;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDrugID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmExtend;
+        private System.Windows.Forms.TextBox txtDrugID;
+        private System.Windows.Forms.Button btnExtend;
+        private System.Windows.Forms.Label lblDrugID;
     }
 }
