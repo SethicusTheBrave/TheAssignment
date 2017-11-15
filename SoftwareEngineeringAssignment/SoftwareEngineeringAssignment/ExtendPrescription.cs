@@ -12,6 +12,9 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ExtendPrescription : Form
     {
+        BusinessMetaLayer instance;
+        List<Patient> patientList;
+        Form f;
         public ExtendPrescription()
         {
             InitializeComponent();
@@ -20,6 +23,19 @@ namespace SoftwareEngineeringAssignment
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>
+        /// Upon double clicking a cell will open up a patient search with the details of the patient in question
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgExtention_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            patientList = instance.patientList();
+            foreach (Patient p in patientList)
+            {
+
+            }
         }
     }
 }
