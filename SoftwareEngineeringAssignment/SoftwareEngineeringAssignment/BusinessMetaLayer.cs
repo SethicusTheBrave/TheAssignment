@@ -214,6 +214,25 @@ namespace SoftwareEngineeringAssignment
             else
                 return null;
         }
+        public List<Medicine> getAllMedicine()
+        {
+            List<Medicine> medList = new List<Medicine>();
+            if(con.OpenConnection())
+            {
+                DbDataReader dr;
+                dr = con.Select("SELECT * FROM Medicine");
+                while(dr.Read())
+                {
+                    Medicine m = new Medicine();
+                    m.getMedicineID = dr.GetInt32(0);
+                    m.getMedicineName = dr.GetString(1);
+                    medList.Add(m);
+                }
+                dr.Close();
+                con.CloseConnection();
+            }
+            return medList;
+        }
         //Used to get all of the tests a patient has done and return them as a list.
         public List<Test> getPatientTests(int p_PatientID)
         {
