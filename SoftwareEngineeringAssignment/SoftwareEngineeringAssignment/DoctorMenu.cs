@@ -78,5 +78,10 @@ namespace SoftwareEngineeringAssignment
             //will close this menu and go back to the previous menu
             this.Close();
         }
+
+        private void btnAddDrug_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

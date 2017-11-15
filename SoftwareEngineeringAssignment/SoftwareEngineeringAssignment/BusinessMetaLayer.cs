@@ -165,13 +165,17 @@ namespace SoftwareEngineeringAssignment
                 List<Medicine> medicineList = new List<Medicine>();
                 List<Medicine> FinalList = new List<Medicine>();
                 List<MedicineLink> medicineLinkList = new List<MedicineLink>();
-                DbDataReader dr = con.Select("SELECT MedicineID, PatientID FROM MedicineLink");
+                DbDataReader dr = con.Select("SELECT StartDate, EndDate, MedicineID, PatientID FROM MedicineLink");
                 while (dr.Read())
                 {
-                    MedicineLink m = new MedicineLink();
-                    m.getMedicineID = dr.GetInt32(0);
-                    m.getPatientID = dr.GetInt32(1);
-                    medicineLinkList.Add(m);
+                    MedicineLink ml = new MedicineLink();
+                    ml.getMedicineID = dr.GetInt32(2);
+                    ml.getPatientID = dr.GetInt32(3);
+                    medicineLinkList.Add(ml);
+                    Medicine m = new Medicine();
+                    m.getStartDate = dr.GetDateTime(0);
+                    m.getEndDate = dr.GetDateTime(1);
+                    medicineList.Add(m);
                 }
                 dr.Close();
                 foreach (MedicineLink m in medicineLinkList)
@@ -182,15 +186,16 @@ namespace SoftwareEngineeringAssignment
                     }
                     i++;
                 }
-                dr = con.Select("SELECT MedicineID, MedicineName, StartDate, EndDate FROM medicine");
+                i = 0;
+                dr = con.Select("SELECT MedicineID, MedicineName FROM medicine");
                 while (dr.Read())
                 {
-                    Medicine m = new Medicine();
-                    m.getMedicineID = dr.GetInt32(0);
-                    m.getMedicineName = dr.GetString(1);
-                    m.getStartDate = dr.GetDateTime(2);
-                    m.getEndDate = dr.GetDateTime(3);
-                    medicineList.Add(m);
+                    if (medicineList.Count() >= i)
+                    {
+                        medicineList.ElementAt(i).getMedicineID = dr.GetInt32(0);
+                        medicineList.ElementAt(i).getMedicineName = dr.GetString(1);
+                        i++;
+                    }
                 }
                 foreach (MedicineLink ml in medicineLinkList)
                 {
@@ -218,13 +223,16 @@ namespace SoftwareEngineeringAssignment
                 List<Test> testList = new List<Test>();
                 List<Test> FinalList = new List<Test>();
                 List<TestLink> testLinkList = new List<TestLink>();
-                DbDataReader dr = con.Select("SELECT TestID, PatientID FROM TestLink");
+                DbDataReader dr = con.Select("SELECT Date, TestID, PatientID FROM TestLink");
                 while (dr.Read())
                 {
-                    TestLink t = new TestLink();
-                    t.getTestID = dr.GetInt32(0);
-                    t.getPatientID = dr.GetInt32(1);
-                    testLinkList.Add(t);
+                    TestLink tl = new TestLink();
+                    tl.getTestID = dr.GetInt32(1);
+                    tl.getPatientID = dr.GetInt32(2);
+                    testLinkList.Add(tl);
+                    Test t = new Test();
+                    t.getDate = dr.GetDateTime(0);
+                    testList.Add(t);
                 }
                 dr.Close();
                 foreach (TestLink t in testLinkList)
@@ -235,15 +243,17 @@ namespace SoftwareEngineeringAssignment
                     }
                     i++;
                 }
-                dr = con.Select("SELECT Date, TestID, TestName, Result FROM Tests");
+                i = 0;
+                dr = con.Select("SELECT TestID, TestName, Result FROM Tests");
                 while (dr.Read())
                 {
-                    Test t = new Test();
-                    t.getDate = dr.GetDateTime(0);
-                    t.getTestID = dr.GetInt32(1);
-                    t.getTestName = dr.GetString(2);
-                    t.getResult = dr.GetString(3);
-                    testList.Add(t);
+                    if (testList.Count() >= i)
+                    {
+                        testList.ElementAt(i).getTestID = dr.GetInt32(0);
+                        testList.ElementAt(i).getTestName = dr.GetString(1);
+                        testList.ElementAt(i).getResult = dr.GetString(2);
+                        i++;
+                    }
                 }
                 foreach (TestLink tl in testLinkList)
                 {

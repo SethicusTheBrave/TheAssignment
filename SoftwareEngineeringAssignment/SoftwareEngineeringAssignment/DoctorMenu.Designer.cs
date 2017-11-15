@@ -112,6 +112,7 @@
             this.btnAddDrug.TabIndex = 46;
             this.btnAddDrug.Text = "Drugs";
             this.btnAddDrug.UseVisualStyleBackColor = true;
+            this.btnAddDrug.Click += new System.EventHandler(this.btnAddDrug_Click);
             // 
             // DoctorMenu
             // 

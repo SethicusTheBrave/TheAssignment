@@ -86,6 +86,18 @@ namespace SoftwareEngineeringAssignment
                 if (isSoon)
                     btnPresent.Visible = true;
             }
+            if (m_s.getType == "Nurse")
+            {
+                btnBookAppointment.Visible = false;
+                btnNewNote.Visible = true;
+                btnNewPrescription.Visible = false;
+                btnNewTest.Visible = true;
+                btnPresent.Visible = false;
+                if (m_patientList != null)
+                    btnNext.Visible = true;
+                else
+                    btnNext.Visible = false;
+            }
         }
         private void loadPatientDetails()
         {
