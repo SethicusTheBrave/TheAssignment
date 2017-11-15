@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgExtention = new System.Windows.Forms.DataGridView();
+            this.clmDrugID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblName = new System.Windows.Forms.Label();
             this.lblStaffType = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtDrugID = new System.Windows.Forms.TextBox();
-            this.clmDrugID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExtend = new System.Windows.Forms.Button();
             this.lblDrugID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgExtention)).BeginInit();
@@ -53,6 +53,22 @@
             this.dgExtention.Name = "dgExtention";
             this.dgExtention.Size = new System.Drawing.Size(352, 150);
             this.dgExtention.TabIndex = 0;
+            this.dgExtention.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgExtention_CellContentDoubleClick);
+            // 
+            // clmDrugID
+            // 
+            this.clmDrugID.HeaderText = "Drug ID";
+            this.clmDrugID.Name = "clmDrugID";
+            // 
+            // clmDate
+            // 
+            this.clmDate.HeaderText = "Date";
+            this.clmDate.Name = "clmDate";
+            // 
+            // clmMedicine
+            // 
+            this.clmMedicine.HeaderText = "Medicine";
+            this.clmMedicine.Name = "clmMedicine";
             // 
             // lblName
             // 
@@ -103,21 +119,6 @@
             this.txtDrugID.Name = "txtDrugID";
             this.txtDrugID.Size = new System.Drawing.Size(85, 20);
             this.txtDrugID.TabIndex = 27;
-            // 
-            // clmDrugID
-            // 
-            this.clmDrugID.HeaderText = "Drug ID";
-            this.clmDrugID.Name = "clmDrugID";
-            // 
-            // clmDate
-            // 
-            this.clmDate.HeaderText = "Date";
-            this.clmDate.Name = "clmDate";
-            // 
-            // clmMedicine
-            // 
-            this.clmMedicine.HeaderText = "Medicine";
-            this.clmMedicine.Name = "clmMedicine";
             // 
             // btnExtend
             // 
