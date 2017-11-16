@@ -33,10 +33,19 @@ namespace SoftwareEngineeringAssignment
             else
             {
                 //required variables and objects to make the below code work correctly.
-                Staff s;
-                
+                Staff s = null;
                 //Attempts to login with the provided StaffID and the encrypted version of the provided password.
-                s = instance.Login(int.Parse(txtStaffID.Text), txtPassword.Text);
+                try
+                {
+                    s = instance.Login(int.Parse(txtStaffID.Text), txtPassword.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid User input. Please check your input and try again", "Invalid Input");
+                    txtPassword.Clear();
+                    txtStaffID.Clear();
+                    txtStaffID.Focus();
+                }
                 //if a result is found it will look at the returned staffType to determine what type of staff member logged in and show them the correct menu.
                 if (null != s)
                 {

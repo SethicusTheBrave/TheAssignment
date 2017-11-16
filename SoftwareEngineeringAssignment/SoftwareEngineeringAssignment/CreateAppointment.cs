@@ -47,7 +47,6 @@ namespace SoftwareEngineeringAssignment
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
             DateTime dt = Convert.ToDateTime(cbTime.Text);
-            //REDO THIS SHIT RYAN YOU'RE BETTER THAN THIS... -ryan
             instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, PatientID) values (NULL,'" + dt.ToString("yyyy-MM-dd h:mm") + "'," + m_p.getPatientID + ");");
         }
 

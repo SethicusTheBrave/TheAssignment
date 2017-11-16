@@ -86,6 +86,18 @@ namespace SoftwareEngineeringAssignment
                 if (isSoon)
                     btnPresent.Visible = true;
             }
+            if (m_s.getType == "Nurse")
+            {
+                btnBookAppointment.Visible = false;
+                btnNewNote.Visible = true;
+                btnNewPrescription.Visible = false;
+                btnNewTest.Visible = true;
+                btnPresent.Visible = false;
+                if (m_patientList != null)
+                    btnNext.Visible = true;
+                else
+                    btnNext.Visible = false;
+            }
         }
         private void loadPatientDetails()
         {
@@ -168,16 +180,18 @@ namespace SoftwareEngineeringAssignment
 
         private void btnNewNote_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(DateTime.Now);
             string newNote = Microsoft.VisualBasic.Interaction.InputBox("Enter Note", "New Note", "");
-            //Query needs fixing
-            instance.ExecuteQuery("INSERT INTO Notes (NotesID, Note, Date, PatientID) VALUES (NULL,'" + newNote + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," + m_p.getPatientID + ");");
-            loadPatientDetails();
+            if (newNote != null && newNote != "")
+            {
+                instance.ExecuteQuery("INSERT INTO Notes (NotesID, Note, Date, PatientID) VALUES (NULL,'" + newNote + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," + m_p.getPatientID + ");");
+                loadPatientDetails();
+            }
         }
 
         private void btnNewPrescription_Click(object sender, EventArgs e)
         {
-
+            f = new AddPrescription(m_p, m_s);
+            f.ShowDialog();
         }
 
         private void btnNewTest_Click(object sender, EventArgs e)

@@ -16,5 +16,10 @@ namespace SoftwareEngineeringAssignment
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
