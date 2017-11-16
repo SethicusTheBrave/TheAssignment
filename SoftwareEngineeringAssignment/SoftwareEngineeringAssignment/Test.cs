@@ -19,6 +19,8 @@ namespace SoftwareEngineeringAssignment
     }
     class TestLink
     {
+        private DateTime m_Date;
+        public DateTime getDate { get { return m_Date; } set { m_Date = value; } }
         private int m_TestID;
         public int getTestID { get { return m_TestID; } set { m_TestID = value; } }
         private int m_PatientID;

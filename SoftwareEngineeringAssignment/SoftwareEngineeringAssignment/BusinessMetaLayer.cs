@@ -159,60 +159,47 @@ namespace SoftwareEngineeringAssignment
         //Used to get all of the prescriptions that have been given to a specific patient and return them as a list.
         public List<Medicine> GetPrescriptions(int p_PatientID)
         {
-            if (con.OpenConnection())
+            if(con.OpenConnection())
             {
-                int i = 0;
-                List<Medicine> medicineList = new List<Medicine>();
-                List<Medicine> FinalList = new List<Medicine>();
                 List<MedicineLink> medicineLinkList = new List<MedicineLink>();
-                DbDataReader dr = con.Select("SELECT StartDate, EndDate, MedicineID, PatientID FROM MedicineLink");
-                while (dr.Read())
+                List<Medicine> medicineList = new List<Medicine>();
+                List<Medicine> finalList = new List<Medicine>();
+                DbDataReader dr = con.Select("SELECT MedicineID, PatientID, StartDate, EndDate FROM MedicineLink WHERE PatientID=" + p_PatientID + ";");
+                while(dr.Read())
                 {
                     MedicineLink ml = new MedicineLink();
-                    ml.getMedicineID = dr.GetInt32(2);
-                    ml.getPatientID = dr.GetInt32(3);
+                    ml.getMedicineID = dr.GetInt32(0);
+                    ml.getPatientID = dr.GetInt32(1);
+                    ml.getStartDate = dr.GetDateTime(2);
+                    ml.getEndDate = dr.GetDateTime(3);
                     medicineLinkList.Add(ml);
-                    Medicine m = new Medicine();
-                    m.getStartDate = dr.GetDateTime(0);
-                    m.getEndDate = dr.GetDateTime(1);
-                    medicineList.Add(m);
                 }
                 dr.Close();
-                foreach (MedicineLink m in medicineLinkList)
+                dr = con.Select("SELECT MedicineID, MedicineName from Medicine");
+                while(dr.Read())
                 {
-                    if (m.getPatientID != p_PatientID)
-                    {
-                        medicineLinkList.RemoveAt(i);
-                    }
-                    i++;
+                    Medicine m = new Medicine();
+                    m.getMedicineID = dr.GetInt32(0);
+                    m.getMedicineName = dr.GetString(1);
+                    medicineList.Add(m);
                 }
-                i = 0;
-                dr = con.Select("SELECT MedicineID, MedicineName FROM medicine");
-                while (dr.Read())
+                foreach(Medicine m in medicineList)
                 {
-                    if (medicineList.Count() >= i)
+                    foreach(MedicineLink ml in medicineLinkList)
                     {
-                        medicineList.ElementAt(i).getMedicineID = dr.GetInt32(0);
-                        medicineList.ElementAt(i).getMedicineName = dr.GetString(1);
-                        i++;
-                    }
-                }
-                foreach (MedicineLink ml in medicineLinkList)
-                {
-                    foreach (Medicine m in medicineList)
-                    {
-                        if (ml.getMedicineID == m.getMedicineID)
+                        if(ml.getMedicineID == m.getMedicineID)
                         {
-                            FinalList.Add(m);
+                            m.getStartDate = ml.getStartDate;
+                            m.getEndDate = ml.getEndDate;
+                            finalList.Add(m);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return FinalList;
+                return finalList;
             }
-            else
-                return null;
+            return null;
         }
         public List<Medicine> getAllMedicine()
         {
@@ -238,58 +225,44 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                int i = 0;
-                List<Test> testList = new List<Test>();
-                List<Test> FinalList = new List<Test>();
                 List<TestLink> testLinkList = new List<TestLink>();
-                DbDataReader dr = con.Select("SELECT Date, TestID, PatientID FROM TestLink");
+                List<Test> testList = new List<Test>();
+                List<Test> finalList = new List<Test>();
+                DbDataReader dr = con.Select("SELECT TestID, PatientID, Date FROM TestLink WHERE PatientID=" + p_PatientID + ";");
                 while (dr.Read())
                 {
-                    TestLink tl = new TestLink();
-                    tl.getTestID = dr.GetInt32(1);
-                    tl.getPatientID = dr.GetInt32(2);
+                    TestLink tl = new TestLink ();
+                    tl.getTestID = dr.GetInt32(0);
+                    tl.getPatientID = dr.GetInt32(1);
+                    tl.getDate = dr.GetDateTime(2);
                     testLinkList.Add(tl);
-                    Test t = new Test();
-                    t.getDate = dr.GetDateTime(0);
-                    testList.Add(t);
                 }
                 dr.Close();
-                foreach (TestLink t in testLinkList)
-                {
-                    if (t.getPatientID != p_PatientID)
-                    {
-                        testLinkList.RemoveAt(i);
-                    }
-                    i++;
-                }
-                i = 0;
-                dr = con.Select("SELECT TestID, TestName, Result FROM Tests");
+                dr = con.Select("SELECT TestID, TestName, Result from Tests");
                 while (dr.Read())
                 {
-                    if (testList.Count() >= i)
-                    {
-                        testList.ElementAt(i).getTestID = dr.GetInt32(0);
-                        testList.ElementAt(i).getTestName = dr.GetString(1);
-                        testList.ElementAt(i).getResult = dr.GetString(2);
-                        i++;
-                    }
+                    Test t = new Test();
+                    t.getTestID = dr.GetInt32(0);
+                    t.getTestName = dr.GetString(1);
+                    t.getResult = dr.GetString(2);
+                    testList.Add(t);
                 }
-                foreach (TestLink tl in testLinkList)
+                foreach (Test t in testList)
                 {
-                    foreach (Test t in testList)
+                    foreach (TestLink tl in testLinkList)
                     {
                         if (tl.getTestID == t.getTestID)
                         {
-                            FinalList.Add(t);
+                            t.getDate = tl.getDate;
+                            finalList.Add(t);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return FinalList;
+                return finalList;
             }
-            else
-                return null;
+            return null;
         }
         //Used to get all the notes a doctor has made on a patient and return it as a list
         public List<PatientNotes> getPatientNotes(int p_PatientID)
