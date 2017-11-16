@@ -270,7 +270,7 @@ namespace SoftwareEngineeringAssignment
             List<PatientNotes> pn = new List<PatientNotes>();
             if(con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT * FROM notes");
+                DbDataReader dr = con.Select("SELECT * FROM notes WHERE PatientID=" + p_PatientID + ";");
 
                 while(dr.Read())
                 {
@@ -280,15 +280,6 @@ namespace SoftwareEngineeringAssignment
                     p.getDate = dr.GetDateTime(2);
                     p.getPatientID = dr.GetInt32(3);
                     pn.Add(p);
-                }
-                int i = 0;
-                foreach(PatientNotes p in pn)
-                {
-                    if(p.getPatientID != p_PatientID)
-                    {
-                        pn.RemoveAt(i);
-                    }
-                    i++;
                 }
                 dr.Close();
                 con.CloseConnection();
