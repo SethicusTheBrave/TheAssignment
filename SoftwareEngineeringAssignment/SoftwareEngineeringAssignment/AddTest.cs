@@ -39,7 +39,6 @@ namespace SoftwareEngineeringAssignment
         }
         private void btnAddPrescription_Click(object sender, EventArgs e)
         {
-            DateTime dt = clDate.SelectionStart;
             int testID=0;
             foreach(Test t in testList)
             {
@@ -48,7 +47,7 @@ namespace SoftwareEngineeringAssignment
                     testID = t.getTestID;
                 }
             }
-            instance.ExecuteQuery("INSERT INTO testlink VALUES('" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + testID + "', '" + m_p.getPatientID + "','" + txtResults.Text + "');");
+            instance.ExecuteQuery("INSERT INTO testlink VALUES('" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + m_p.getPatientID + "', '" + testID + "','" + txtResults.Text + "');");
             this.Close();
         }
     }
