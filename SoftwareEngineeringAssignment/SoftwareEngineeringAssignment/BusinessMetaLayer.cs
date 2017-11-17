@@ -220,6 +220,25 @@ namespace SoftwareEngineeringAssignment
             }
             return medList;
         }
+        public List<Test> getAllTests()
+        {
+            List<Test> testList = new List<Test>();
+            if(con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT * FROM Tests");
+                while (dr.Read())
+                {
+                    Test t = new Test();
+                    t.getTestID = dr.GetInt32(0);
+                    t.getTestName = dr.GetString(1);
+                    testList.Add(t);
+                }
+                dr.Close();
+                con.CloseConnection();
+                return testList;
+            }
+            return null;
+        }
         //Used to get all of the tests a patient has done and return them as a list.
         public List<Test> getPatientTests(int p_PatientID)
         {
@@ -228,23 +247,23 @@ namespace SoftwareEngineeringAssignment
                 List<TestLink> testLinkList = new List<TestLink>();
                 List<Test> testList = new List<Test>();
                 List<Test> finalList = new List<Test>();
-                DbDataReader dr = con.Select("SELECT TestID, PatientID, Date FROM TestLink WHERE PatientID=" + p_PatientID + ";");
+                DbDataReader dr = con.Select("SELECT TestID, PatientID, Date , Result FROM TestLink WHERE PatientID=" + p_PatientID + ";");
                 while (dr.Read())
                 {
-                    TestLink tl = new TestLink ();
+                    TestLink tl = new TestLink();
                     tl.getTestID = dr.GetInt32(0);
                     tl.getPatientID = dr.GetInt32(1);
                     tl.getDate = dr.GetDateTime(2);
+                    tl.getResult = dr.GetString(3);
                     testLinkList.Add(tl);
                 }
                 dr.Close();
-                dr = con.Select("SELECT TestID, TestName, Result from Tests");
+                dr = con.Select("SELECT TestID, TestName from Tests");
                 while (dr.Read())
                 {
                     Test t = new Test();
                     t.getTestID = dr.GetInt32(0);
                     t.getTestName = dr.GetString(1);
-                    t.getResult = dr.GetString(2);
                     testList.Add(t);
                 }
                 foreach (Test t in testList)
@@ -254,6 +273,7 @@ namespace SoftwareEngineeringAssignment
                         if (tl.getTestID == t.getTestID)
                         {
                             t.getDate = tl.getDate;
+                            t.getResult = tl.getResult;
                             finalList.Add(t);
                         }
                     }

@@ -192,11 +192,14 @@ namespace SoftwareEngineeringAssignment
         {
             f = new AddPrescription(m_p, m_s);
             f.ShowDialog();
+            loadPatientDetails();
         }
 
         private void btnNewTest_Click(object sender, EventArgs e)
         {
-
+            f = new AddTest(m_p, m_s);
+            f.ShowDialog();
+            loadPatientDetails();
         }
     }
 }

@@ -62,6 +62,12 @@
     <Compile Include="AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTest.Designer.cs">
+      <DependentUpon>AddTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs" />
     <Compile Include="BusinessMetaLayer.cs" />
     <Compile Include="CreateAppointment.cs">
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTest.resx">
+      <DependentUpon>AddTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>

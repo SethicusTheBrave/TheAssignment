@@ -12,7 +12,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class ExtendPrescription : Form
     {
-        BusinessMetaLayer instance;
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Patient> patientList;
         Form f;
         public ExtendPrescription()
