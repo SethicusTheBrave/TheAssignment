@@ -51,9 +51,8 @@
             // 
             this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStaffID.Location = new System.Drawing.Point(135, 81);
-            this.txtStaffID.Multiline = true;
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(177, 26);
+            this.txtStaffID.Size = new System.Drawing.Size(177, 22);
             this.txtStaffID.TabIndex = 1;
             this.txtStaffID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStaffID_KeyDown);
             // 
@@ -93,10 +92,9 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(135, 131);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(177, 26);
+            this.txtPassword.Size = new System.Drawing.Size(177, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 

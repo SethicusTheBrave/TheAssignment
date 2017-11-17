@@ -14,7 +14,7 @@ namespace SoftwareEngineeringAssignment
     {
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Patient> patientList;
-        Form f;
+
         public ExtendPrescription()
         {
             InitializeComponent();

@@ -16,6 +16,11 @@ namespace SoftwareEngineeringAssignment
         List<Test> testList = new List<Test>();
         Patient m_p;
         Staff m_s;
+        /// <summary>
+        /// Loads the form used to add a test to the patient.
+        /// </summary>
+        /// <param name="p_p"></param>
+        /// <param name="p_s"></param>
         public AddTest(Patient p_p, Staff p_s)
         {
             InitializeComponent();
@@ -24,6 +29,9 @@ namespace SoftwareEngineeringAssignment
             lblName.Text = "Staff ID: " + m_s.getStaffID;
             loadDetails();
         }
+        /// <summary>
+        /// Used to load all of the details required for the form. All the Patient information and populates the combobox with all the tests in the database.
+        /// </summary>
         private void loadDetails()
         {
             txtPatientNumber.Text = m_p.getPatientID.ToString();
@@ -37,6 +45,11 @@ namespace SoftwareEngineeringAssignment
                 cbTest.Items.Add(t.getTestName);
             }
         }
+        /// <summary>
+        /// Used to send all of the given information to the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddPrescription_Click(object sender, EventArgs e)
         {
             int testID=0;

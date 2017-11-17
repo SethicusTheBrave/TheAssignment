@@ -13,9 +13,9 @@ namespace SoftwareEngineeringAssignment
     public partial class DoctorMenu : Form
     {
         Staff m_s;
+        Form f;
         List<Patient> m_patientList = new List<Patient>();
         PatientSearch frmPatientSearch;
-        DoctorTODO frmTODO = new DoctorTODO();
         PatientMenu frmPatientMenu;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         public DoctorMenu(Staff p_s)
@@ -38,8 +38,9 @@ namespace SoftwareEngineeringAssignment
         private void btnTodoList_Click(object sender, EventArgs e)
         {
             //Hides the doctor menu then displays the To Do list for the doctor
+            f = new DoctorTODO();
             this.Hide();
-            frmTODO.ShowDialog();
+            f.ShowDialog();
             this.Show();
         }
 
