@@ -47,7 +47,7 @@ namespace SoftwareEngineeringAssignment
                     testID = t.getTestID;
                 }
             }
-            instance.ExecuteQuery("INSERT INTO testlink VALUES(NULL, '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + m_p.getPatientID + "', '" + testID + "','" + txtResults.Text + "');");
+            instance.ExecuteQuery("INSERT INTO testlink VALUES('" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + m_p.getPatientID + "', '" + testID + "','" + txtResults.Text + "');");
             this.Close();
         }
     }
