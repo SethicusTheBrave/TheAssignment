@@ -87,26 +87,19 @@ namespace SoftwareEngineeringAssignment
             }
         }
 
-        private void txtStaffID_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Tab)
-            {
-                txtPassword.Focus();
-            }
-            if(e.KeyCode == Keys.Enter)
-            {
-                Submit();
-            }
-        }
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 Submit();
             }
+        }
+
+        private void txtStaffID_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.Tab)
             {
-                btnLogin.Focus();
+                txtPassword.Focus();
             }
         }
     }

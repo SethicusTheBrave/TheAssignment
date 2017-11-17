@@ -87,7 +87,7 @@ namespace SoftwareEngineeringAssignment
                 }
                 if (cbToDate.Text != null && cbToDate.Text != "")
                 {
-                    instance.ExecuteQuery("INSERT INTO MedicineLink (StartDate, EndDate, MedicineID, PatientID) VALUES ('" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + DateTime.Now.AddDays(weeks).ToString("yyyy-MM-dd HH:mm:ss") + "', '" + medID + "', '" + m_p.getPatientID + "');");
+                    instance.ExecuteQuery("INSERT INTO MedicineLink (StartDate, EndDate, MedicineID, PatientID) VALUES ('" + instance.sanitize(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + instance.sanitize(DateTime.Now.AddDays(weeks).ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + medID + "', '" + m_p.getPatientID + "');");
                     this.Close();
                 }
             }

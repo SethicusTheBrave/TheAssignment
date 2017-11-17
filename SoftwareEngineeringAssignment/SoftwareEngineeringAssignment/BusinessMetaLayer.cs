@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -43,6 +44,10 @@ namespace SoftwareEngineeringAssignment
             AES.Padding = PaddingMode.PKCS7;
             ICryptoTransform trans = AES.CreateEncryptor();
             return (BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(toBeEncrypted), 0, utf8.GetBytes(toBeEncrypted).Length)));
+        }
+        public string sanitize(string str)
+        {
+            return str = Regex.Replace(str, " \" \' " , "");
         }
         /// <summary>
         /// Uses the passed variables and checks it against the database to see if there is a match and if there is returns the staff member object.
@@ -117,7 +122,9 @@ namespace SoftwareEngineeringAssignment
                     p.getCountry = dr.GetString(5);
                     p.getDOB = dr.GetDateTime(6);
                     p.getMedicalHistory = dr.GetString(7);
-                    p.getPresent = dr.GetBoolean(8);
+                    p.getEmail = dr.GetString(8);
+                    p.getPhoneNumber = dr.GetString(9);
+                    p.getPresent = dr.GetBoolean(10);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
