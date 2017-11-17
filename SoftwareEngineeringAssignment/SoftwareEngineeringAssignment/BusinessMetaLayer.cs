@@ -161,43 +161,31 @@ namespace SoftwareEngineeringAssignment
         {
             if(con.OpenConnection())
             {
-                List<MedicineLink> medicineLinkList = new List<MedicineLink>();
                 List<Medicine> medicineList = new List<Medicine>();
-                List<Medicine> finalList = new List<Medicine>();
-                DbDataReader dr = con.Select("SELECT MedicineID, PatientID, StartDate, EndDate FROM MedicineLink WHERE PatientID=" + p_PatientID + ";");
+                DbDataReader dr = con.Select("SELECT MedicineID, StartDate, EndDate FROM MedicineLink WHERE PatientID=" + p_PatientID + ";");
                 while(dr.Read())
                 {
-                    MedicineLink ml = new MedicineLink();
-                    ml.getMedicineID = dr.GetInt32(0);
-                    ml.getPatientID = dr.GetInt32(1);
-                    ml.getStartDate = dr.GetDateTime(2);
-                    ml.getEndDate = dr.GetDateTime(3);
-                    medicineLinkList.Add(ml);
+                    Medicine m = new Medicine();
+                    m.getMedicineID = dr.GetInt32(0);
+                    m.getStartDate = dr.GetDateTime(1);
+                    m.getEndDate = dr.GetDateTime(2);
+                    medicineList.Add(m);
                 }
                 dr.Close();
                 dr = con.Select("SELECT MedicineID, MedicineName from Medicine");
                 while(dr.Read())
                 {
-                    Medicine m = new Medicine();
-                    m.getMedicineID = dr.GetInt32(0);
-                    m.getMedicineName = dr.GetString(1);
-                    medicineList.Add(m);
-                }
-                foreach(Medicine m in medicineList)
-                {
-                    foreach(MedicineLink ml in medicineLinkList)
+                    foreach(Medicine m in medicineList)
                     {
-                        if(ml.getMedicineID == m.getMedicineID)
+                        if(m.getMedicineID == dr.GetInt32(0))
                         {
-                            m.getStartDate = ml.getStartDate;
-                            m.getEndDate = ml.getEndDate;
-                            finalList.Add(m);
+                            m.getMedicineName = dr.GetString(1);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return finalList;
+                return medicineList;
             }
             return null;
         }
@@ -244,43 +232,31 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                List<TestLink> testLinkList = new List<TestLink>();
                 List<Test> testList = new List<Test>();
-                List<Test> finalList = new List<Test>();
-                DbDataReader dr = con.Select("SELECT TestID, PatientID, Date , Result FROM TestLink WHERE PatientID=" + p_PatientID + ";");
+                DbDataReader dr = con.Select("SELECT Date, TestID, Result FROM TestLink WHERE PatientID=" + p_PatientID + ";");
                 while (dr.Read())
                 {
-                    TestLink tl = new TestLink();
-                    tl.getTestID = dr.GetInt32(0);
-                    tl.getPatientID = dr.GetInt32(1);
-                    tl.getDate = dr.GetDateTime(2);
-                    tl.getResult = dr.GetString(3);
-                    testLinkList.Add(tl);
+                    Test t = new Test();
+                    t.getDate = dr.GetDateTime(0);
+                    t.getTestID = dr.GetInt32(1);
+                    t.getResult = dr.GetString(2);
+                    testList.Add(t);
                 }
                 dr.Close();
                 dr = con.Select("SELECT TestID, TestName from Tests");
                 while (dr.Read())
                 {
-                    Test t = new Test();
-                    t.getTestID = dr.GetInt32(0);
-                    t.getTestName = dr.GetString(1);
-                    testList.Add(t);
-                }
-                foreach (Test t in testList)
-                {
-                    foreach (TestLink tl in testLinkList)
+                    foreach(Test t in testList)
                     {
-                        if (tl.getTestID == t.getTestID)
+                        if(t.getTestID == dr.GetInt32(0))
                         {
-                            t.getDate = tl.getDate;
-                            t.getResult = tl.getResult;
-                            finalList.Add(t);
+                            t.getTestName = dr.GetString(1);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return finalList;
+                return testList ;
             }
             return null;
         }
