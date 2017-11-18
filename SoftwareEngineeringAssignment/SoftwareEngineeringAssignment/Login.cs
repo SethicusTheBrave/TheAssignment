@@ -19,11 +19,18 @@ namespace SoftwareEngineeringAssignment
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// When the button is pressed submit is called to check the login information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Submit();
         }
+        /// <summary>
+        /// Will check the staffID and passwords written in the textboxes with the version in the database.
+        /// </summary>
         private void Submit()
         {
             if (txtStaffID.Text == null || txtStaffID.Text == "" || txtPassword.Text == null || txtPassword.Text == "")
@@ -86,7 +93,11 @@ namespace SoftwareEngineeringAssignment
                 }
             }
         }
-
+        /// <summary>
+        /// Of the focus is on the password textbox and enter is pressed will submit the information.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -94,7 +105,11 @@ namespace SoftwareEngineeringAssignment
                 Submit();
             }
         }
-
+        /// <summary>
+        /// if the focus is on the staffID textbox and tab is pressed will go to the password textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtStaffID_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Tab)
