@@ -366,12 +366,5 @@ namespace SoftwareEngineeringAssignment
         {
             return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
         }
-        public void CreateAppointments(int pID, int dID)
-        {
-            var createAppointments = "Insert appointments (AppointmentID, AppointmentDate, PatientID, DoctorID) VALUES(patientID, doctorID)";
-            con.executeQuery(createAppointments);
-        }
-    
-
     }
 }

@@ -117,6 +117,7 @@ namespace SoftwareEngineeringAssignment
             txtPatientNumber.Text = m_p.getPatientID.ToString();
             txtFirstName.Text = m_p.getFirstName;
             txtLastName.Text = m_p.getLastName;
+            txtDoB.Text = m_p.getDOB.ToShortDateString();
             txtMedicalHistory.Text = m_p.getMedicalHistory;
 
             notesList = instance.getPatientNotes(m_p.getPatientID);

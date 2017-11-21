@@ -40,11 +40,13 @@
             this.btnCreateAppointment = new System.Windows.Forms.Button();
             this.cbTime = new System.Windows.Forms.ComboBox();
             this.lblTime = new System.Windows.Forms.Label();
+            this.lblStaffMember = new System.Windows.Forms.Label();
+            this.cbStaffMember = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // calDate
             // 
-            this.calDate.Location = new System.Drawing.Point(14, 328);
+            this.calDate.Location = new System.Drawing.Point(89, 297);
             this.calDate.MaxSelectionCount = 1;
             this.calDate.Name = "calDate";
             this.calDate.TabIndex = 30;
@@ -52,7 +54,7 @@
             // 
             // txtPatientNumber
             // 
-            this.txtPatientNumber.Location = new System.Drawing.Point(52, 87);
+            this.txtPatientNumber.Location = new System.Drawing.Point(126, 84);
             this.txtPatientNumber.Multiline = true;
             this.txtPatientNumber.Name = "txtPatientNumber";
             this.txtPatientNumber.ReadOnly = true;
@@ -63,7 +65,7 @@
             // 
             this.lblPatientNumber.AutoSize = true;
             this.lblPatientNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientNumber.Location = new System.Drawing.Point(69, 68);
+            this.lblPatientNumber.Location = new System.Drawing.Point(143, 65);
             this.lblPatientNumber.Name = "lblPatientNumber";
             this.lblPatientNumber.Size = new System.Drawing.Size(100, 16);
             this.lblPatientNumber.TabIndex = 63;
@@ -80,7 +82,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(52, 207);
+            this.txtLastName.Location = new System.Drawing.Point(219, 145);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
@@ -91,7 +93,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(76, 188);
+            this.lblLastName.Location = new System.Drawing.Point(243, 126);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 60;
@@ -123,7 +125,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(185, 9);
+            this.lblName.Location = new System.Drawing.Point(348, 9);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 66;
@@ -131,7 +133,7 @@
             // 
             // btnCreateAppointment
             // 
-            this.btnCreateAppointment.Location = new System.Drawing.Point(72, 502);
+            this.btnCreateAppointment.Location = new System.Drawing.Point(151, 499);
             this.btnCreateAppointment.Name = "btnCreateAppointment";
             this.btnCreateAppointment.Size = new System.Drawing.Size(92, 27);
             this.btnCreateAppointment.TabIndex = 67;
@@ -142,7 +144,7 @@
             // cbTime
             // 
             this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(52, 275);
+            this.cbTime.Location = new System.Drawing.Point(126, 205);
             this.cbTime.Name = "cbTime";
             this.cbTime.Size = new System.Drawing.Size(136, 21);
             this.cbTime.TabIndex = 68;
@@ -151,18 +153,38 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(76, 256);
+            this.lblTime.Location = new System.Drawing.Point(150, 186);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(65, 16);
             this.lblTime.TabIndex = 69;
             this.lblTime.Text = "Time Slot";
+            // 
+            // lblStaffMember
+            // 
+            this.lblStaffMember.AutoSize = true;
+            this.lblStaffMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffMember.Location = new System.Drawing.Point(156, 245);
+            this.lblStaffMember.Name = "lblStaffMember";
+            this.lblStaffMember.Size = new System.Drawing.Size(87, 16);
+            this.lblStaffMember.TabIndex = 71;
+            this.lblStaffMember.Text = "Staff Member";
+            // 
+            // cbStaffMember
+            // 
+            this.cbStaffMember.FormattingEnabled = true;
+            this.cbStaffMember.Location = new System.Drawing.Point(126, 264);
+            this.cbStaffMember.Name = "cbStaffMember";
+            this.cbStaffMember.Size = new System.Drawing.Size(136, 21);
+            this.cbStaffMember.TabIndex = 70;
             // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(253, 538);
+            this.ClientSize = new System.Drawing.Size(416, 538);
+            this.Controls.Add(this.lblStaffMember);
+            this.Controls.Add(this.cbStaffMember);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.cbTime);
             this.Controls.Add(this.btnCreateAppointment);
@@ -196,5 +218,7 @@
         private System.Windows.Forms.Button btnCreateAppointment;
         private System.Windows.Forms.ComboBox cbTime;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblStaffMember;
+        private System.Windows.Forms.ComboBox cbStaffMember;
     }
 }

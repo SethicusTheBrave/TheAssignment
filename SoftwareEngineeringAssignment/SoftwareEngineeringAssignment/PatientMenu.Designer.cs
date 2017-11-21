@@ -59,6 +59,8 @@
             this.clmTest2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmNotes2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtDoB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblName
@@ -247,7 +249,7 @@
             // 
             // txtMedicalHistory
             // 
-            this.txtMedicalHistory.Location = new System.Drawing.Point(9, 231);
+            this.txtMedicalHistory.Location = new System.Drawing.Point(9, 188);
             this.txtMedicalHistory.Multiline = true;
             this.txtMedicalHistory.Name = "txtMedicalHistory";
             this.txtMedicalHistory.ReadOnly = true;
@@ -258,7 +260,7 @@
             // 
             this.lblMedicalHistory.AutoSize = true;
             this.lblMedicalHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicalHistory.Location = new System.Drawing.Point(95, 212);
+            this.lblMedicalHistory.Location = new System.Drawing.Point(101, 169);
             this.lblMedicalHistory.Name = "lblMedicalHistory";
             this.lblMedicalHistory.Size = new System.Drawing.Size(101, 16);
             this.lblMedicalHistory.TabIndex = 61;
@@ -334,12 +336,33 @@
             // 
             this.clmNotes2.Text = "Notes";
             // 
+            // txtDoB
+            // 
+            this.txtDoB.Location = new System.Drawing.Point(170, 69);
+            this.txtDoB.Multiline = true;
+            this.txtDoB.Name = "txtDoB";
+            this.txtDoB.ReadOnly = true;
+            this.txtDoB.Size = new System.Drawing.Size(136, 28);
+            this.txtDoB.TabIndex = 66;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(194, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Date of Birth";
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.txtDoB);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lvTests);
             this.Controls.Add(this.lvNotes);
             this.Controls.Add(this.lvPrescriptions);
@@ -403,5 +426,7 @@
         private System.Windows.Forms.ColumnHeader clmTest2;
         private System.Windows.Forms.ColumnHeader clmResult;
         private System.Windows.Forms.ColumnHeader clmNotes2;
+        private System.Windows.Forms.TextBox txtDoB;
+        private System.Windows.Forms.Label label1;
     }
 }
