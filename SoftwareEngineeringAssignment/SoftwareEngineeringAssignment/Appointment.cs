@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineeringAssignment
 {
+    /// <summary>
+    /// A property based class for storing all the details required for an appointment.
+    /// </summary>
     class Appointment
     {
         int m_AppointmentID;

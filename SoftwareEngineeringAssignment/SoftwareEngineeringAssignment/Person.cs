@@ -8,30 +8,30 @@ namespace SoftwareEngineeringAssignment
 {
     public abstract class Person
     {
-        string m_firstName;
+        protected string m_firstName;
         public string getFirstName{ get { return m_firstName; } set { m_firstName = value; } }
-        string m_lastName;
+        protected string m_lastName;
         public string getLastName { get { return m_lastName; } set { m_lastName = value; } }
-        string m_email;
+        protected string m_email;
         public string getEmail { get { return m_email; } set { m_email = value; } }
-        string m_phoneNumber;
+        protected string m_phoneNumber;
         public string getPhoneNumber { get { return m_phoneNumber; } set { m_phoneNumber = value; } }
-        string m_address;
+        protected string m_address;
         public string getAddress { get { return m_address; } set { m_address = value; } }
-        string m_postcode;
+        protected string m_postcode;
         public string getPostcode { get { return m_postcode; } set { m_postcode = value; } }
-        string m_country;
+        protected string m_country;
         public string getCountry { get { return m_country; } set { m_country = value; } }
-        DateTime m_DOB;
+        protected DateTime m_DOB;
         public DateTime getDOB { get { return m_DOB; } set { m_DOB = value; } }
     }
     public class Patient : Person
     {
-        int m_patientID;
+        private int m_patientID;
         public int getPatientID { get { return m_patientID; } set { m_patientID = value; } }
-        bool m_present;
+        private bool m_present;
         public bool getPresent { get { return m_present; } set { m_present = value; } }
-        string m_medicalHistory;
+        private string m_medicalHistory;
         public string getMedicalHistory { get { return m_medicalHistory; } set { m_medicalHistory = value; } }
     }
     public class Staff : Person

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreateAppointment = new System.Windows.Forms.Button();
             this.btnEditAppointment = new System.Windows.Forms.Button();
             this.btnRegisterPatient = new System.Windows.Forms.Button();
             this.btnExtendPerscription = new System.Windows.Forms.Button();
@@ -37,17 +36,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnCreateAppointment
-            // 
-            this.btnCreateAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAppointment.Location = new System.Drawing.Point(12, 108);
-            this.btnCreateAppointment.Name = "btnCreateAppointment";
-            this.btnCreateAppointment.Size = new System.Drawing.Size(116, 43);
-            this.btnCreateAppointment.TabIndex = 0;
-            this.btnCreateAppointment.Text = "Book Appointment";
-            this.btnCreateAppointment.UseVisualStyleBackColor = true;
-            this.btnCreateAppointment.Click += new System.EventHandler(this.btnCreateAppointment_Click);
             // 
             // btnEditAppointment
             // 
@@ -119,7 +107,7 @@
             // btnFindPatient
             // 
             this.btnFindPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindPatient.Location = new System.Drawing.Point(148, 108);
+            this.btnFindPatient.Location = new System.Drawing.Point(12, 108);
             this.btnFindPatient.Name = "btnFindPatient";
             this.btnFindPatient.Size = new System.Drawing.Size(116, 43);
             this.btnFindPatient.TabIndex = 47;
@@ -140,7 +128,6 @@
             this.Controls.Add(this.btnExtendPerscription);
             this.Controls.Add(this.btnRegisterPatient);
             this.Controls.Add(this.btnEditAppointment);
-            this.Controls.Add(this.btnCreateAppointment);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReceptionistMenu";
             this.Text = "Receptionist Menu";
@@ -150,8 +137,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreateAppointment;
         private System.Windows.Forms.Button btnEditAppointment;
         private System.Windows.Forms.Button btnRegisterPatient;
         private System.Windows.Forms.Button btnExtendPerscription;

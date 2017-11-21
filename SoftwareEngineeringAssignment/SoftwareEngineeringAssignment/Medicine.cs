@@ -17,11 +17,4 @@ namespace SoftwareEngineeringAssignment
         private DateTime m_EndDate;
         public DateTime getEndDate { get { return m_EndDate; } set { m_EndDate = value; } }
     }
-    class MedicineLink
-    {
-        private int m_MedicineID;
-        public int getMedicineID { get { return m_MedicineID; } set { m_MedicineID = value; } }
-        private int m_PatientiD;
-        public int getPatientID { get { return m_PatientiD; } set { m_PatientiD = value; } }
-    }
 }
