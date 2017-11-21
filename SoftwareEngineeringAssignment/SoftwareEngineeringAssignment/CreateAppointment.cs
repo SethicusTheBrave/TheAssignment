@@ -16,6 +16,7 @@ namespace SoftwareEngineeringAssignment
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         Staff m_s;
         Patient m_p;
+        List<DateTime> dateList = new List<DateTime>();
         public CreateAppointment(Staff p_s, Patient p_p)
         {
             InitializeComponent();
@@ -26,23 +27,23 @@ namespace SoftwareEngineeringAssignment
         }
         private void LoadDetails()
         {
-            lblName.Text = m_s.getStaffID.ToString();
+            lblName.Text = "StaffID: " + m_s.getStaffID.ToString();
             txtFirstName.Text = m_p.getFirstName;
             txtLastName.Text = m_p.getLastName;
             txtPatientNumber.Text = m_p.getPatientID.ToString();
             ComboBoxTimes();
         }
         private void ComboBoxTimes()
-
         {
             DateTime startTime = calDate.SelectionStart.AddHours(7);
             DateTime endTime = calDate.SelectionStart.AddHours(19);
 
             while(startTime < endTime)
             {
-                cbTime.Items.Add(startTime);
+                dateList.Add(startTime);
                 startTime = startTime.AddMinutes(10);
             }
+            instance.getAppointments();
         }
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {

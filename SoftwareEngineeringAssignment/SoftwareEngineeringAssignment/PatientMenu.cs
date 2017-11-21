@@ -192,7 +192,6 @@ namespace SoftwareEngineeringAssignment
         private void btnBookAppointment_Click(object sender, EventArgs e)
         {
             f = new CreateAppointment(m_s, m_p);
-            this.Hide();
             f.ShowDialog();
             this.Show();
         }
@@ -205,6 +204,7 @@ namespace SoftwareEngineeringAssignment
         {
             m_p.getPresent = true;
             instance.PatientStatusUpdate(m_p.getPatientID, true);
+            MessageBox.Show("This Patient has been marked as present","Patient is now Present");
         }
         /// <summary>
         /// Will create a new note on the patient and upload it to the database. Before refreshing the patient information.
