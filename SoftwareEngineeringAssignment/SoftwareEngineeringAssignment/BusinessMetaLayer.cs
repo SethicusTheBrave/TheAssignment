@@ -47,7 +47,7 @@ namespace SoftwareEngineeringAssignment
         }
         public string sanitize(string str)
         {
-            return str = Regex.Replace(str, " \" \' " , "");
+            return str = Regex.Replace(str, " \" \' " , "\'");
         }
         /// <summary>
         /// Uses the passed variables and checks it against the database to see if there is a match and if there is returns the staff member object.
@@ -159,6 +159,8 @@ namespace SoftwareEngineeringAssignment
                     a.getDescription = dr.GetString(4);
                     appointmentList.Add(a);
                 }
+                dr.Close();
+                con.CloseConnection();
             }
             return appointmentList;
         }
@@ -342,12 +344,5 @@ namespace SoftwareEngineeringAssignment
         {
             return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
         }
-        public void CreateAppointments(int pID, int dID)
-        {
-            var createAppointments = "Insert appointments (AppointmentID, AppointmentDate, PatientID, DoctorID) VALUES(patientID, doctorID)";
-            con.executeQuery(createAppointments);
-        }
-    
-
     }
 }

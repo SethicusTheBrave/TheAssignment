@@ -141,3 +141,5 @@ C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\S
 \\klstu1\1415\HS\365394\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
 \\klstu1\1415\HS\365394\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AddTest.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AddPrescription.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AddTest.resources

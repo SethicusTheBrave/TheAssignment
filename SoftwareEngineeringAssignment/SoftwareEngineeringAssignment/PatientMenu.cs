@@ -117,6 +117,7 @@ namespace SoftwareEngineeringAssignment
             txtPatientNumber.Text = m_p.getPatientID.ToString();
             txtFirstName.Text = m_p.getFirstName;
             txtLastName.Text = m_p.getLastName;
+            txtDoB.Text = m_p.getDOB.ToShortDateString();
             txtMedicalHistory.Text = m_p.getMedicalHistory;
 
             notesList = instance.getPatientNotes(m_p.getPatientID);
@@ -192,7 +193,6 @@ namespace SoftwareEngineeringAssignment
         private void btnBookAppointment_Click(object sender, EventArgs e)
         {
             f = new CreateAppointment(m_s, m_p);
-            this.Hide();
             f.ShowDialog();
             this.Show();
         }
@@ -205,6 +205,7 @@ namespace SoftwareEngineeringAssignment
         {
             m_p.getPresent = true;
             instance.PatientStatusUpdate(m_p.getPatientID, true);
+            MessageBox.Show("This Patient has been marked as present","Patient is now Present");
         }
         /// <summary>
         /// Will create a new note on the patient and upload it to the database. Before refreshing the patient information.
