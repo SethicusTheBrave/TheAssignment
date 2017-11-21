@@ -13,11 +13,15 @@ namespace SoftwareEngineeringAssignment
     public partial class DoctorMenu : Form
     {
         Staff m_s;
+        Form f;
         List<Patient> m_patientList = new List<Patient>();
         PatientSearch frmPatientSearch;
-        DoctorTODO frmTODO = new DoctorTODO();
         PatientMenu frmPatientMenu;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
+        /// <summary>
+        /// The main menu for a doctor.
+        /// </summary>
+        /// <param name="p_s"></param>
         public DoctorMenu(Staff p_s)
         {
             InitializeComponent();
@@ -25,7 +29,11 @@ namespace SoftwareEngineeringAssignment
             lblName.Text = "StaffID: " + m_s.getStaffID;
             lblDoctor.Text = m_s.getType;
         }
-
+        /// <summary>
+        /// Will open up the form used to search for a patient
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPatientSearch_Click(object sender, EventArgs e)
         {
             frmPatientSearch = new PatientSearch(m_s);
@@ -34,15 +42,24 @@ namespace SoftwareEngineeringAssignment
             frmPatientSearch.ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// Will open up the doctors ToDo list. Which is a list of prescriptions that have had extension requests.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTodoList_Click(object sender, EventArgs e)
         {
             //Hides the doctor menu then displays the To Do list for the doctor
+            f = new DoctorTODO();
             this.Hide();
-            frmTODO.ShowDialog();
+            f.ShowDialog();
             this.Show();
         }
-
+         /// <summary>
+         /// Will start consoltation mode which will allow you to go through patient by patient depending on who is currently here waiting to be seen.
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
             //will create a list of all the patients that are currently here and had an appointment with the logged in doctor.
@@ -72,13 +89,21 @@ namespace SoftwareEngineeringAssignment
             else
                 MessageBox.Show("There are no Patients currently waiting to be seen", "No Patients");
         }
-
+        /// <summary>
+        /// Will log you out and allow someone else to login to the system.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             //will close this menu and go back to the previous menu
             this.Close();
         }
-
+        /// <summary>
+        /// Will allow the doctor to add another type of drug to the system.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddDrug_Click(object sender, EventArgs e)
         {
 

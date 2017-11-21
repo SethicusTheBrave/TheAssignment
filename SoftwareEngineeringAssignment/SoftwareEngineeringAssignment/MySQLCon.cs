@@ -122,13 +122,6 @@ namespace SoftwareEngineeringAssignment
             }
         }
 
-        /*
-        //Update statement
-        public void Delete()
-        {
-        }
-        */
-
         //Delete statement
         public void Delete(string query)
         {
@@ -139,9 +132,6 @@ namespace SoftwareEngineeringAssignment
             }
         }
          
-        
-
-
         //Select statement
         public DbDataReader Select(String query)
         {

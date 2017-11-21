@@ -23,7 +23,11 @@ namespace SoftwareEngineeringAssignment
         Staff m_s;
         List<Patient> m_patientList;
 
-        //This constructor will be entered if you come from consoltation in the doctor menu
+        /// <summary>
+        /// This constructor will be entered if the doctor clicks the consoltation button 
+        /// </summary>
+        /// <param name="p_patientList">The list of patients that need to be seen</param>
+        /// <param name="p_s">The currently signed in staff member</param>
         public PatientMenu(List<Patient> p_patientList, Staff p_s)
         {
             InitializeComponent();
@@ -33,7 +37,11 @@ namespace SoftwareEngineeringAssignment
             loadMenuDetails();
             loadPatientDetails();
         }
-        //This constructor will be entered if you come from the patient search part of the doctor or receptionist menu's
+        /// <summary>
+        /// This constructor is entered if the doctor or receptionist enters this menu through the patient search form.
+        /// </summary>
+        /// <param name="p_p">The patient that was searched for.</param>
+        /// <param name="p_s">The currently signed in staff member.</param>
         public PatientMenu(Patient p_p, Staff p_s)
         {
             InitializeComponent();
@@ -44,7 +52,9 @@ namespace SoftwareEngineeringAssignment
             loadMenuDetails();
             loadPatientDetails();
         }
-        //This will hide buttons that certain users are not supposed to have access to 
+        /// <summary>
+        /// hides all of the buttons and information that the signed in staff member shouldn't see.
+        /// </summary>
         private void loadMenuDetails()
         {
             WindowState = FormWindowState.Maximized;
@@ -99,6 +109,9 @@ namespace SoftwareEngineeringAssignment
                     btnNext.Visible = false;
             }
         }
+        /// <summary>
+        /// Will load all of the patients information to the textfiles and get all of the needed information from the database.
+        /// </summary>
         private void loadPatientDetails()
         {
             txtPatientNumber.Text = m_p.getPatientID.ToString();
@@ -147,12 +160,20 @@ namespace SoftwareEngineeringAssignment
                 lvTests.Items.Add(lvi);
             }
         }
-
+        /// <summary>
+        /// Closes the current form and goes back to the previous form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Will go to the next patient if the doctor is in consoltation mode.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             instance.PatientStatusUpdate(m_patientList.ElementAt(0).getPatientID, false);
@@ -163,7 +184,11 @@ namespace SoftwareEngineeringAssignment
                 loadPatientDetails();
             }
         }
-
+        /// <summary>
+        /// The book appointment button that the receptionist can press at any time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBookAppointment_Click(object sender, EventArgs e)
         {
             f = new CreateAppointment(m_s, m_p);
@@ -171,13 +196,21 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// Can mark a patient as currently present if they have an appointment within the next hour.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPresent_Click(object sender, EventArgs e)
         {
             m_p.getPresent = true;
             instance.PatientStatusUpdate(m_p.getPatientID, true);
         }
-
+        /// <summary>
+        /// Will create a new note on the patient and upload it to the database. Before refreshing the patient information.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewNote_Click(object sender, EventArgs e)
         {
             string newNote = Microsoft.VisualBasic.Interaction.InputBox("Enter Note", "New Note", "");
@@ -187,16 +220,27 @@ namespace SoftwareEngineeringAssignment
                 loadPatientDetails();
             }
         }
-
+        /// <summary>
+        /// Will open up a form to assign a new prescription to the patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewPrescription_Click(object sender, EventArgs e)
         {
             f = new AddPrescription(m_p, m_s);
             f.ShowDialog();
+            loadPatientDetails();
         }
-
+        /// <summary>
+        /// Will open up a form to assign a new test to the patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewTest_Click(object sender, EventArgs e)
         {
-
+            f = new AddTest(m_p, m_s);
+            f.ShowDialog();
+            loadPatientDetails();
         }
     }
 }

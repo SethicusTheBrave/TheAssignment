@@ -47,7 +47,7 @@ namespace SoftwareEngineeringAssignment
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
             DateTime dt = Convert.ToDateTime(cbTime.Text);
-            instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, PatientID) values (NULL,'" + dt.ToString("yyyy-MM-dd h:mm") + "'," + m_p.getPatientID + ");");
+            instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, PatientID) values (NULL,'" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm")) + "'," + m_p.getPatientID + ");");
         }
 
         private void calDate_DateChanged(object sender, DateRangeEventArgs e)

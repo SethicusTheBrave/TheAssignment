@@ -16,6 +16,11 @@ namespace SoftwareEngineeringAssignment
         private Patient m_p;
         private Staff m_s;
         private List<Medicine> medList = new List<Medicine>();
+        /// <summary>
+        /// The menu used to add a prescription to a patient.
+        /// </summary>
+        /// <param name="p_p"></param>
+        /// <param name="p_s"></param>
         public AddPrescription(Patient p_p, Staff p_s)
         {
             InitializeComponent();
@@ -25,6 +30,9 @@ namespace SoftwareEngineeringAssignment
             fillPatientDetails();
             fillDrugs();
         }
+        /// <summary>
+        /// Used to fill the textboxes with the patient Information.
+        /// </summary>
         private void fillPatientDetails()
         {
             txtFirstName.Text = m_p.getFirstName;
@@ -32,6 +40,9 @@ namespace SoftwareEngineeringAssignment
             txtFromDate.Text = DateTime.Now.ToShortDateString();
             txtPatientNumber.Text = m_p.getPatientID.ToString();
         }
+        /// <summary>
+        /// Fills the combobox with all of the medicines from the database.
+        /// </summary>
         private void fillDrugs()
         {
             medList = instance.getAllMedicine();
@@ -40,6 +51,11 @@ namespace SoftwareEngineeringAssignment
                 cbDrug.Items.Add(m.getMedicineName);
             }
         }
+        /// <summary>
+        /// Will update the database with a new prescription for the patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddPrescription_Click(object sender, EventArgs e)
         {
             double weeks = 0, medID=0;
@@ -71,7 +87,7 @@ namespace SoftwareEngineeringAssignment
                 }
                 if (cbToDate.Text != null && cbToDate.Text != "")
                 {
-                    instance.ExecuteQuery("INSERT INTO MedicineLink (StartDate, EndDate, MedicineID, PatientID) VALUES ('" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + DateTime.Now.AddDays(weeks).ToString("yyyy-MM-dd HH:mm:ss") + "', '" + medID + "', '" + m_p.getPatientID + "');");
+                    instance.ExecuteQuery("INSERT INTO MedicineLink (StartDate, EndDate, MedicineID, PatientID) VALUES ('" + instance.sanitize(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + instance.sanitize(DateTime.Now.AddDays(weeks).ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + medID + "', '" + m_p.getPatientID + "');");
                     this.Close();
                 }
             }

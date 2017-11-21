@@ -168,11 +168,11 @@
             // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(195, 181);
+            this.lblEndDate.Location = new System.Drawing.Point(211, 181);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(64, 16);
+            this.lblEndDate.Size = new System.Drawing.Size(48, 16);
             this.lblEndDate.TabIndex = 72;
-            this.lblEndDate.Text = "End Date";
+            this.lblEndDate.Text = "Length";
             // 
             // lblStartDate
             // 

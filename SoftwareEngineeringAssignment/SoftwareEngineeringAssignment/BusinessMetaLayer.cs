@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -31,14 +32,29 @@ namespace SoftwareEngineeringAssignment
             return m_instance;
 
         }
+        /// <summary>
+        /// encrypts whatever string is sent to it. Such as a password.
+        /// </summary>
+        /// <param name="toBeEncrypted"></param>
+        /// <returns></returns>
         public string encrypt(string toBeEncrypted)
         {
-            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1"));
+            AES.Key = md5.ComputeHash(utf8.GetBytes("SUPERsecureKEY1")); //key used to encrypt everything
             AES.Mode = CipherMode.ECB;
             AES.Padding = PaddingMode.PKCS7;
             ICryptoTransform trans = AES.CreateEncryptor();
             return (BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(toBeEncrypted), 0, utf8.GetBytes(toBeEncrypted).Length)));
         }
+        public string sanitize(string str)
+        {
+            return str = Regex.Replace(str, " \" \' " , "");
+        }
+        /// <summary>
+        /// Uses the passed variables and checks it against the database to see if there is a match and if there is returns the staff member object.
+        /// </summary>
+        /// <param name="p_StaffID">The entered StaffID number</param>
+        /// <param name="p_Password">The entered password.</param>
+        /// <returns></returns>
         public Staff Login(int p_StaffID, string p_Password)
         {
             string encrypted;
@@ -84,7 +100,10 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
-        //This method wwill get all of the patients in the database and return them as a list of patients.
+        /// <summary>
+        /// Returns a list of all the patients in the database.
+        /// </summary>
+        /// <returns></returns>
         public List<Patient> patientList()
         {
             List<Patient> patientList = new List<Patient>();
@@ -103,7 +122,9 @@ namespace SoftwareEngineeringAssignment
                     p.getCountry = dr.GetString(5);
                     p.getDOB = dr.GetDateTime(6);
                     p.getMedicalHistory = dr.GetString(7);
-                    p.getPresent = dr.GetBoolean(8);
+                    p.getEmail = dr.GetString(8);
+                    p.getPhoneNumber = dr.GetString(9);
+                    p.getPresent = dr.GetBoolean(10);
                     patientList.Add(p);
                 }
                 con.CloseConnection();
@@ -118,7 +139,10 @@ namespace SoftwareEngineeringAssignment
                 return null;
             }
         }
-        //this method will get all the appointments from the database and return them as a list of appointments
+        /// <summary>
+        /// Returns a list of all the appointments in the database.
+        /// </summary>
+        /// <returns></returns>
         public List<Appointment> getAppointments()
         {
             List<Appointment> appointmentList = new List<Appointment>();
@@ -138,7 +162,11 @@ namespace SoftwareEngineeringAssignment
             }
             return appointmentList;
         }
-        //Simply changes the value in the database to either here or not here.
+        /// <summary>
+        /// Updates the status of the given Patient with their given status
+        /// </summary>
+        /// <param name="patientID">the ID of a Patient</param>
+        /// <param name="present">True, False whether or not their are currently present.</param>
         public void PatientStatusUpdate(int patientID, bool present)
         {
             if (con.OpenConnection())
@@ -147,7 +175,10 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
         }
-        //Will execute the query given to it. Mainly used for INSERT queries into the database. This method will not return any values.
+        /// <summary>
+        /// Executes whatever query is given to it. Does not return any values.
+        /// </summary>
+        /// <param name="query">The full query you want to send the database.</param>
         public void ExecuteQuery(string query)
         {
             if (con.OpenConnection())
@@ -156,64 +187,47 @@ namespace SoftwareEngineeringAssignment
                 con.CloseConnection();
             }
         }
-        //Used to get all of the prescriptions that have been given to a specific patient and return them as a list.
+        /// <summary>
+        /// Get's a given Patients Prescriptions
+        /// </summary>
+        /// <param name="p_PatientID">The patientsID</param>
+        /// <returns></returns>
         public List<Medicine> GetPrescriptions(int p_PatientID)
         {
-            if (con.OpenConnection())
+            if(con.OpenConnection())
             {
-                int i = 0;
                 List<Medicine> medicineList = new List<Medicine>();
-                List<Medicine> FinalList = new List<Medicine>();
-                List<MedicineLink> medicineLinkList = new List<MedicineLink>();
-                DbDataReader dr = con.Select("SELECT StartDate, EndDate, MedicineID, PatientID FROM MedicineLink");
-                while (dr.Read())
+                DbDataReader dr = con.Select("SELECT MedicineID, StartDate, EndDate FROM MedicineLink WHERE PatientID=" + p_PatientID + ";");
+                while(dr.Read())
                 {
-                    MedicineLink ml = new MedicineLink();
-                    ml.getMedicineID = dr.GetInt32(2);
-                    ml.getPatientID = dr.GetInt32(3);
-                    medicineLinkList.Add(ml);
                     Medicine m = new Medicine();
-                    m.getStartDate = dr.GetDateTime(0);
-                    m.getEndDate = dr.GetDateTime(1);
+                    m.getMedicineID = dr.GetInt32(0);
+                    m.getStartDate = dr.GetDateTime(1);
+                    m.getEndDate = dr.GetDateTime(2);
                     medicineList.Add(m);
                 }
                 dr.Close();
-                foreach (MedicineLink m in medicineLinkList)
+                dr = con.Select("SELECT MedicineID, MedicineName from Medicine");
+                while(dr.Read())
                 {
-                    if (m.getPatientID != p_PatientID)
+                    foreach(Medicine m in medicineList)
                     {
-                        medicineLinkList.RemoveAt(i);
-                    }
-                    i++;
-                }
-                i = 0;
-                dr = con.Select("SELECT MedicineID, MedicineName FROM medicine");
-                while (dr.Read())
-                {
-                    if (medicineList.Count() >= i)
-                    {
-                        medicineList.ElementAt(i).getMedicineID = dr.GetInt32(0);
-                        medicineList.ElementAt(i).getMedicineName = dr.GetString(1);
-                        i++;
-                    }
-                }
-                foreach (MedicineLink ml in medicineLinkList)
-                {
-                    foreach (Medicine m in medicineList)
-                    {
-                        if (ml.getMedicineID == m.getMedicineID)
+                        if(m.getMedicineID == dr.GetInt32(0))
                         {
-                            FinalList.Add(m);
+                            m.getMedicineName = dr.GetString(1);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return FinalList;
+                return medicineList;
             }
-            else
-                return null;
+            return null;
         }
+        /// <summary>
+        /// Gets a list of all the medication from the database.
+        /// </summary>
+        /// <returns></returns>
         public List<Medicine> getAllMedicine()
         {
             List<Medicine> medList = new List<Medicine>();
@@ -233,71 +247,77 @@ namespace SoftwareEngineeringAssignment
             }
             return medList;
         }
-        //Used to get all of the tests a patient has done and return them as a list.
+        /// <summary>
+        /// gets a list of all the tests that are in the database.
+        /// </summary>
+        /// <returns></returns>
+        public List<Test> getAllTests()
+        {
+            List<Test> testList = new List<Test>();
+            if(con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT * FROM Tests");
+                while (dr.Read())
+                {
+                    Test t = new Test();
+                    t.getTestID = dr.GetInt32(0);
+                    t.getTestName = dr.GetString(1);
+                    testList.Add(t);
+                }
+                dr.Close();
+                con.CloseConnection();
+                return testList;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Get's all a list of all the tests a specific patient has taken.
+        /// </summary>
+        /// <param name="p_PatientID">the ID of the Patient</param>
+        /// <returns></returns>
         public List<Test> getPatientTests(int p_PatientID)
         {
             if (con.OpenConnection())
             {
-                int i = 0;
                 List<Test> testList = new List<Test>();
-                List<Test> FinalList = new List<Test>();
-                List<TestLink> testLinkList = new List<TestLink>();
-                DbDataReader dr = con.Select("SELECT Date, TestID, PatientID FROM TestLink");
+                DbDataReader dr = con.Select("SELECT Date, TestID, Result FROM TestLink WHERE PatientID=" + p_PatientID + ";");
                 while (dr.Read())
                 {
-                    TestLink tl = new TestLink();
-                    tl.getTestID = dr.GetInt32(1);
-                    tl.getPatientID = dr.GetInt32(2);
-                    testLinkList.Add(tl);
                     Test t = new Test();
                     t.getDate = dr.GetDateTime(0);
+                    t.getTestID = dr.GetInt32(1);
+                    t.getResult = dr.GetString(2);
                     testList.Add(t);
                 }
                 dr.Close();
-                foreach (TestLink t in testLinkList)
-                {
-                    if (t.getPatientID != p_PatientID)
-                    {
-                        testLinkList.RemoveAt(i);
-                    }
-                    i++;
-                }
-                i = 0;
-                dr = con.Select("SELECT TestID, TestName, Result FROM Tests");
+                dr = con.Select("SELECT TestID, TestName from Tests");
                 while (dr.Read())
                 {
-                    if (testList.Count() >= i)
+                    foreach(Test t in testList)
                     {
-                        testList.ElementAt(i).getTestID = dr.GetInt32(0);
-                        testList.ElementAt(i).getTestName = dr.GetString(1);
-                        testList.ElementAt(i).getResult = dr.GetString(2);
-                        i++;
-                    }
-                }
-                foreach (TestLink tl in testLinkList)
-                {
-                    foreach (Test t in testList)
-                    {
-                        if (tl.getTestID == t.getTestID)
+                        if(t.getTestID == dr.GetInt32(0))
                         {
-                            FinalList.Add(t);
+                            t.getTestName = dr.GetString(1);
                         }
                     }
                 }
                 dr.Close();
                 con.CloseConnection();
-                return FinalList;
+                return testList ;
             }
-            else
-                return null;
+            return null;
         }
-        //Used to get all the notes a doctor has made on a patient and return it as a list
+        /// <summary>
+        /// gets a list of notes on a particular patient
+        /// </summary>
+        /// <param name="p_PatientID">The ID of a patient</param>
+        /// <returns></returns>
         public List<PatientNotes> getPatientNotes(int p_PatientID)
         {
             List<PatientNotes> pn = new List<PatientNotes>();
             if(con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT * FROM notes");
+                DbDataReader dr = con.Select("SELECT * FROM notes WHERE PatientID=" + p_PatientID + ";");
 
                 while(dr.Read())
                 {
@@ -308,76 +328,19 @@ namespace SoftwareEngineeringAssignment
                     p.getPatientID = dr.GetInt32(3);
                     pn.Add(p);
                 }
-                int i = 0;
-                foreach(PatientNotes p in pn)
-                {
-                    if(p.getPatientID != p_PatientID)
-                    {
-                        pn.RemoveAt(i);
-                    }
-                    i++;
-                }
                 dr.Close();
                 con.CloseConnection();
                 return pn;
             }
             return null;
         }
-        //used to get a DATASET (to be displayed in a table) of all of the staff members currently in the database.
+        /// <summary>
+        /// Used to get a DATASET of all the members of staff.
+        /// </summary>
+        /// <returns></returns>
         public DataSet getStaff()
         {
             return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
-        }
-       
-        // Patient registration not finished but working. will be improved.
-        public void RegisterPatients(Dictionary<string, string> patientInfo, string[] keys)
-        {
-            var queryAddress = "Insert patient_address (HouseNumber, StreetName, Town, Country, PostCode) VALUES ('" + patientInfo["houseNumber"] + "', '" + patientInfo["street"] + "', '" + patientInfo["town"] + "', '" + patientInfo["country"] + "', '" + patientInfo["postcode"] + "')";
-            con.executeQuery(queryAddress);
-
-            DbDataReader getAddressID = con.Select("SELECT AddressID FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '" + patientInfo["street"] + "' AND Town = '" + patientInfo["town"] + "' AND Country = '" + patientInfo["country"] + "' AND PostCode = '" + patientInfo["postcode"] + "'");
-
-            if (getAddressID.Read())
-            {
-           
-                var addressID = getAddressID.GetString(0);
-                MessageBox.Show("AddressID found" + addressID); con.CloseConnection();
-                var queryDetails = "Insert patient_details (FirstName, LastName, DateOfBirth, Religion, Email, PhoneNumber, AddressID) VALUES('" + patientInfo["firstName"] + "', '" + patientInfo["lastName"] + "', '" + patientInfo["DOB"] + "', '" + patientInfo["religion"] + "', '" + patientInfo["email"] + "', '" + patientInfo["phone"] + "',  '" + addressID + "')";
-                con.executeQuery(queryDetails);
-
-                DbDataReader getPatientID = con.Select("SELECT PatientID FROM patient_details WHERE AddressID = '" + addressID + "'");
-                if (getPatientID.Read())
-                {
-                    var patientID = getPatientID.GetString(0);
-
-                    MessageBox.Show("PatientID found" + patientID);
-                    var queryAdditionalInfo = "Insert patient_additional_info (PatientID, Tests, Allergies, MedicalHistory, Notes) VALUES ('" + patientID + "', '" + patientInfo["tests"] + "', '" + patientInfo["allergies"] + "', '" + patientInfo["medicalHistory"] + "', '" + patientInfo["notes"] + "')";
-                    con.CloseConnection();
-                    con.executeQuery(queryAdditionalInfo);
-                    if (con.CheckIfQuerySuccessful())
-                    {
-
-                        MessageBox.Show("The patient was registered successfully!!!");
-                    }
-                    else
-                    {
-
-                         MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
-                    }
-                }
-                    else
-                    {
-                        string deleteDetails = "DELETE FROM patient_address WHERE AddressID = '" + addressID + "'";
-                        con.executeQuery(deleteDetails);
-                        MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
-                    }
-            }
-            else
-            {
-                MessageBox.Show("Registration failed! Please make sure you are providing correct data and try again.Contact administrator if needed.");
-                string deleteAddress = "DELETE FROM patient_address WHERE HouseNumber = '" + patientInfo["houseNumber"] + "' AND StreetName = '"+ patientInfo["street"] + "', Town = '"+ patientInfo["town"] + "' , Country = '" + patientInfo["country"] +"',  PostCode = '"+ patientInfo["postcode"] + "'";
-                con.executeQuery(deleteAddress);
-            }
         }
         public void CreateAppointments(int pID, int dID)
         {
@@ -388,7 +351,3 @@ namespace SoftwareEngineeringAssignment
 
     }
 }
-
-
-    
-
