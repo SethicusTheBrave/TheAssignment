@@ -12,6 +12,9 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class StaffSchedule : Form
     {
+        /// <summary>
+        /// View the staff schedule.
+        /// </summary>
         public StaffSchedule()
         {
             InitializeComponent();

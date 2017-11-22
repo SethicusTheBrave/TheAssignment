@@ -86,6 +86,16 @@ namespace SoftwareEngineeringAssignment
                         txtStaffID.Clear();
                         txtStaffID.Focus();
                     }
+                    else if (s.getType == "Nurse")
+                    {
+                        f = new DoctorMenu(s);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtStaffID.Clear();
+                        txtStaffID.Focus();
+                    }
                     else
                     {
                         MessageBox.Show("Login Failed", "Invalid StaffID or Password");
