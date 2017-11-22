@@ -243,5 +243,11 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             loadPatientDetails();
         }
+
+        private void btnExtend_Click(object sender, EventArgs e)
+        {
+            f = new ExtendPrescription();
+            f.ShowDialog();
+        }
     }
 }
