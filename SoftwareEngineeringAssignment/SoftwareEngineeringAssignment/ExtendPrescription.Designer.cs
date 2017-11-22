@@ -36,6 +36,8 @@
             this.btnExtend = new System.Windows.Forms.Button();
             this.lblDrugID = new System.Windows.Forms.Label();
             this.lvDrugs = new System.Windows.Forms.ListView();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.cbWeeks = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -63,7 +65,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(469, 182);
+            this.btnSave.Location = new System.Drawing.Point(542, 181);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 29);
             this.btnSave.TabIndex = 25;
@@ -74,7 +76,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(469, 219);
+            this.btnExit.Location = new System.Drawing.Point(542, 216);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 26;
@@ -83,14 +85,14 @@
             // 
             // txtDrugID
             // 
-            this.txtDrugID.Location = new System.Drawing.Point(469, 98);
+            this.txtDrugID.Location = new System.Drawing.Point(505, 52);
             this.txtDrugID.Name = "txtDrugID";
-            this.txtDrugID.Size = new System.Drawing.Size(85, 20);
+            this.txtDrugID.Size = new System.Drawing.Size(122, 20);
             this.txtDrugID.TabIndex = 27;
             // 
             // btnExtend
             // 
-            this.btnExtend.Location = new System.Drawing.Point(469, 124);
+            this.btnExtend.Location = new System.Drawing.Point(542, 124);
             this.btnExtend.Name = "btnExtend";
             this.btnExtend.Size = new System.Drawing.Size(85, 35);
             this.btnExtend.TabIndex = 28;
@@ -101,7 +103,7 @@
             // lblDrugID
             // 
             this.lblDrugID.AutoSize = true;
-            this.lblDrugID.Location = new System.Drawing.Point(419, 98);
+            this.lblDrugID.Location = new System.Drawing.Point(409, 59);
             this.lblDrugID.Name = "lblDrugID";
             this.lblDrugID.Size = new System.Drawing.Size(44, 13);
             this.lblDrugID.TabIndex = 29;
@@ -109,18 +111,38 @@
             // 
             // lvDrugs
             // 
-            this.lvDrugs.Location = new System.Drawing.Point(13, 52);
+            this.lvDrugs.Location = new System.Drawing.Point(3, 52);
             this.lvDrugs.Name = "lvDrugs";
             this.lvDrugs.Size = new System.Drawing.Size(400, 193);
             this.lvDrugs.TabIndex = 30;
             this.lvDrugs.UseCompatibleStateImageBehavior = false;
+            this.lvDrugs.View = System.Windows.Forms.View.Details;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(409, 86);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(90, 13);
+            this.lblTime.TabIndex = 31;
+            this.lblTime.Text = "Extention Desired";
+            // 
+            // cbWeeks
+            // 
+            this.cbWeeks.FormattingEnabled = true;
+            this.cbWeeks.Location = new System.Drawing.Point(505, 86);
+            this.cbWeeks.Name = "cbWeeks";
+            this.cbWeeks.Size = new System.Drawing.Size(122, 21);
+            this.cbWeeks.TabIndex = 32;
             // 
             // ExtendPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(566, 257);
+            this.ClientSize = new System.Drawing.Size(639, 257);
+            this.Controls.Add(this.cbWeeks);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lvDrugs);
             this.Controls.Add(this.lblDrugID);
             this.Controls.Add(this.btnExtend);
@@ -145,5 +167,7 @@
         private System.Windows.Forms.Button btnExtend;
         private System.Windows.Forms.Label lblDrugID;
         private System.Windows.Forms.ListView lvDrugs;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.ComboBox cbWeeks;
     }
 }
