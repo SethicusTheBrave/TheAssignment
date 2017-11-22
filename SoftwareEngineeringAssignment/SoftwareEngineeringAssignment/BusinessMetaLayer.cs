@@ -227,6 +227,28 @@ namespace SoftwareEngineeringAssignment
             return null;
         }
         /// <summary>
+        /// Gets a list of all medication that requires a doctors approval to extend
+        /// </summary>
+        public List<Medicine> getExtentions()
+        {
+            List<Medicine> medicineList = new List<Medicine>();
+            if(con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT * FROM medicinelink WHERE RequestExtention = 1");
+                while(dr.Read())
+                {
+                    Patient p = new Patient();
+                    Medicine m = new Medicine();
+                    p.getPatientID = dr.GetInt32(0);
+                    m.getMedicineID = dr.GetInt32(1);
+                    m.getMedicineName = dr.GetString(2);
+                }
+                dr.Close();
+                con.CloseConnection();
+            }
+            return medicineList;
+        }
+        /// <summary>
         /// Gets a list of all the medication from the database.
         /// </summary>
         /// <returns></returns>
