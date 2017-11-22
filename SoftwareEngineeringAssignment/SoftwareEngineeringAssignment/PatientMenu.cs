@@ -246,7 +246,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnExtend_Click(object sender, EventArgs e)
         {
-            f = new ExtendPrescription();
+            f = new ExtendPrescription(m_s, m_p);
             f.ShowDialog();
         }
     }
