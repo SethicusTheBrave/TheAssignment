@@ -17,6 +17,7 @@ namespace SoftwareEngineeringAssignment
         Patient m_p;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Medicine> medicineList = new List<Medicine>();
+        List<DateTime> dt = new List<DateTime>();
 
         public ExtendPrescription(Staff p_Staff, Patient p_Patient)
         {
@@ -53,7 +54,11 @@ namespace SoftwareEngineeringAssignment
 
         private void btnExtend_Click(object sender, EventArgs e)
         {
+            if ((txtDrugID != null) && (txtPatientID != null))
+            {
+                DateTime dt = Convert.ToDateTime(calDate);
 
+            }
         }
     }
 }
