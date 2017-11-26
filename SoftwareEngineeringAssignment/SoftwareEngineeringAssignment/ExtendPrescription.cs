@@ -29,7 +29,7 @@ namespace SoftwareEngineeringAssignment
         }
         private void loadPerscriptions()
         {
-            medicineList = instance.GetPrescriptions(m_p.getPatientID);
+            //medicineList = instance.GetPrescriptions(m_p.getPatientID);
             lvDrugs.Clear();
             lvDrugs.Columns.Add("Start Date", 100);
             lvDrugs.Columns.Add("End Date", 100);
