@@ -14,6 +14,7 @@ namespace SoftwareEngineeringAssignment
     {
         Staff m_s;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
+        List<Staff> staffList = new List<Staff>();
         public ViewStaff(Staff p_s)
         {
             InitializeComponent();
@@ -23,9 +24,19 @@ namespace SoftwareEngineeringAssignment
         }
         private void LoadStaff()
         {
-            DataSet ds = instance.getStaff();
-            DataTable table = ds.Tables[0];
-            this.dgvStaff.DataSource = table;
+            staffList = instance.getStaff();
+            lstStaff.Items.Clear();
+
+            foreach(Staff s in staffList)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = s.getFirstName;
+                lvi.SubItems.Add(s.getLastName);
+                lvi.SubItems.Add(s.getType);
+                lvi.SubItems.Add(s.getEmail);
+                lvi.SubItems.Add(s.getPhoneNumber);
+                lstStaff.Items.Add(lvi);
+            }
         }
         private void btnBack_Click(object sender, EventArgs e)
         {

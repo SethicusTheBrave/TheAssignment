@@ -9,7 +9,7 @@ namespace SoftwareEngineeringAssignment
     /// <summary>
     /// A property based class for storing all the details required for an appointment.
     /// </summary>
-    class Appointment
+    public class Appointment
     {
         int m_AppointmentID;
         public int getAppointmentID { get { return m_AppointmentID; } set { m_AppointmentID = value; } }

@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblManager = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            this.lstStaff = new System.Windows.Forms.ListView();
+            this.clmFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmStaffType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // dgvStaff
-            // 
-            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(12, 107);
-            this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.Size = new System.Drawing.Size(700, 281);
-            this.dgvStaff.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -76,29 +72,72 @@
             this.lblManager.TabIndex = 49;
             this.lblManager.Text = "Manager";
             // 
+            // lstStaff
+            // 
+            this.lstStaff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmFirstName,
+            this.clmLastName,
+            this.clmStaffType,
+            this.clmEmail,
+            this.clmPhoneNumber});
+            this.lstStaff.Location = new System.Drawing.Point(12, 82);
+            this.lstStaff.Name = "lstStaff";
+            this.lstStaff.Size = new System.Drawing.Size(700, 321);
+            this.lstStaff.TabIndex = 50;
+            this.lstStaff.UseCompatibleStateImageBehavior = false;
+            this.lstStaff.View = System.Windows.Forms.View.Details;
+            // 
+            // clmFirstName
+            // 
+            this.clmFirstName.Text = "First Name";
+            this.clmFirstName.Width = 100;
+            // 
+            // clmLastName
+            // 
+            this.clmLastName.Text = "Last Name";
+            this.clmLastName.Width = 120;
+            // 
+            // clmStaffType
+            // 
+            this.clmStaffType.Text = "Role";
+            this.clmStaffType.Width = 100;
+            // 
+            // clmEmail
+            // 
+            this.clmEmail.Text = "Email Address";
+            this.clmEmail.Width = 215;
+            // 
+            // clmPhoneNumber
+            // 
+            this.clmPhoneNumber.Text = "Phone Number";
+            this.clmPhoneNumber.Width = 160;
+            // 
             // ViewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(724, 450);
+            this.Controls.Add(this.lstStaff);
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dgvStaff);
             this.Name = "ViewStaff";
             this.Text = "ViewStaff";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblManager;
+        private System.Windows.Forms.ListView lstStaff;
+        private System.Windows.Forms.ColumnHeader clmFirstName;
+        private System.Windows.Forms.ColumnHeader clmLastName;
+        private System.Windows.Forms.ColumnHeader clmStaffType;
+        private System.Windows.Forms.ColumnHeader clmEmail;
+        private System.Windows.Forms.ColumnHeader clmPhoneNumber;
     }
 }

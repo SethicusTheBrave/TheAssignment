@@ -167,3 +167,5 @@ F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\T
 F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
 F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
 F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.EditAppointment.resources
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AppointmentSearch.resources
