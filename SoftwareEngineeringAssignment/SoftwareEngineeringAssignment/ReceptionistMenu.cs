@@ -28,7 +28,10 @@ namespace SoftwareEngineeringAssignment
         /// <param name="e"></param>
         private void btnEditAppointment_Click(object sender, EventArgs e)
         {
-
+            f = new AppointmentSearch(m_s);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
         /// <summary>
         /// Will take you to the form to register a patient

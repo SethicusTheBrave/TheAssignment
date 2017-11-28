@@ -63,7 +63,7 @@ namespace SoftwareEngineeringAssignment
         private void btnConsoltation_Click(object sender, EventArgs e)
         {
             //will create a list of all the patients that are currently here and had an appointment with the logged in doctor.
-            List<Patient> temp = instance.patientList();
+            List<Patient> temp = instance.getPatientList();
             List<Appointment> appointmentList = instance.getAppointments();
             foreach(Patient p in temp)
             {

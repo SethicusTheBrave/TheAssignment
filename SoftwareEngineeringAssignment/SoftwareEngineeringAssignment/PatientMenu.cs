@@ -217,7 +217,7 @@ namespace SoftwareEngineeringAssignment
             string newNote = Microsoft.VisualBasic.Interaction.InputBox("Enter Note", "New Note", "");
             if (newNote != null && newNote != "")
             {
-                instance.ExecuteQuery("INSERT INTO Notes (NotesID, Note, Date, PatientID) VALUES (NULL,'" + newNote + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," + m_p.getPatientID + ");");
+                instance.ExecuteQuery("INSERT INTO Notes (NotesID, Note, Date, PatientID) VALUES (NULL,'" + instance.sanitize(newNote) + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," + m_p.getPatientID + ");");
                 loadPatientDetails();
             }
         }

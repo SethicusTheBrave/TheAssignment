@@ -69,6 +69,12 @@
       <DependentUpon>AddTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointment.cs" />
+    <Compile Include="AppointmentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentSearch.Designer.cs">
+      <DependentUpon>AppointmentSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessMetaLayer.cs" />
     <Compile Include="CreateAppointment.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="DoctorTODO.Designer.cs">
       <DependentUpon>DoctorTODO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAppointment.Designer.cs">
+      <DependentUpon>EditAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="ExtendPrescription.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,9 @@
     <EmbeddedResource Include="AddTest.resx">
       <DependentUpon>AddTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentSearch.resx">
+      <DependentUpon>AppointmentSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorTODO.resx">
       <DependentUpon>DoctorTODO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAppointment.resx">
+      <DependentUpon>EditAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExtendPrescription.resx">
       <DependentUpon>ExtendPrescription.cs</DependentUpon>
