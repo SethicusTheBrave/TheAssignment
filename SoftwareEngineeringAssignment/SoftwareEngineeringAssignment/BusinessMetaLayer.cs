@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace SoftwareEngineeringAssignment
 {
-    class BusinessMetaLayer
+    public class BusinessMetaLayer
     {
         private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
@@ -151,7 +151,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE patient_details SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
                 con.CloseConnection();
             }
         }
