@@ -12,6 +12,9 @@ using System.Text.RegularExpressions;
 
 namespace SoftwareEngineeringAssignment
 {
+    /// <summary>
+    /// Used to interact with the database.
+    /// </summary>
     class BusinessMetaLayer
     {
         private DbConection con = DbFactory.instance();

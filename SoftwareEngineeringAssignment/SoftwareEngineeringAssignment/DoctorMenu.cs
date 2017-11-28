@@ -50,7 +50,7 @@ namespace SoftwareEngineeringAssignment
         private void btnTodoList_Click(object sender, EventArgs e)
         {
             //Hides the doctor menu then displays the To Do list for the doctor
-            f = new DoctorTODO();
+            f = new DoctorTODO(m_s);
             this.Hide();
             f.ShowDialog();
             this.Show();

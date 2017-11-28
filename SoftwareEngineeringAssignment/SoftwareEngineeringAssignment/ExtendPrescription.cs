@@ -14,13 +14,16 @@ namespace SoftwareEngineeringAssignment
     {
         Form f;
         Staff m_s;
+        Patient m_p;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Patient> patientList;
         List<Medicine> medicineList = new List<Medicine>();
 
-        public ExtendPrescription()
+        public ExtendPrescription(Staff p_s, Patient p_p)
         {
             InitializeComponent();
+            m_s = p_s;
+            m_p = p_p;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
