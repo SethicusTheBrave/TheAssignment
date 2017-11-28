@@ -65,6 +65,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = true;
                 btnNewTest.Visible = true;
+                btnExtend.Visible = false;
                 btnPresent.Visible = false;
                 if (m_patientList != null)
                     btnNext.Visible = true;
@@ -77,6 +78,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = false;
                 btnNewPrescription.Visible = false;
                 btnNewTest.Visible = false;
+                btnExtend.Visible = true;
                 btnNext.Visible = false;
 
                 //Only show the button if they have an appointment in the next hour.
@@ -102,6 +104,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = false;
                 btnNewTest.Visible = true;
+                btnExtend.Visible = false;
                 btnPresent.Visible = false;
                 if (m_patientList != null)
                     btnNext.Visible = true;

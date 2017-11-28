@@ -30,7 +30,6 @@ F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignmen
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csproj.GenerateResource.Cache
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
 F:\My Documents\Repos\softwareengineeringAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb
-F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csprojResolveAssemblyReference.cache
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorMenu.resources
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorTODO.resources
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.ExtendPrescription.resources
@@ -47,7 +46,6 @@ F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngin
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe.config
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.pdb
-F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csprojResolveAssemblyReference.cache
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorMenu.resources
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.DoctorTODO.resources
@@ -169,3 +167,5 @@ F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\T
 F:\My Documents\Uni Work\BSC Year 2\Software Engineering\Assignment\Assignment\TheAssignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\MySql.Data.xml
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.EditAppointment.resources
 C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AppointmentSearch.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AppointmentSearch.resources
+F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.EditAppointment.resources

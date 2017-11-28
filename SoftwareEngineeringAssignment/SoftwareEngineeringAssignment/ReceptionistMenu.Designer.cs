@@ -35,6 +35,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFindPatient = new System.Windows.Forms.Button();
+            this.btnAvailable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditAppointment
@@ -115,12 +116,24 @@
             this.btnFindPatient.UseVisualStyleBackColor = true;
             this.btnFindPatient.Click += new System.EventHandler(this.btnFindPatient_Click);
             // 
+            // btnAvailable
+            // 
+            this.btnAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvailable.Location = new System.Drawing.Point(150, 108);
+            this.btnAvailable.Name = "btnAvailable";
+            this.btnAvailable.Size = new System.Drawing.Size(116, 43);
+            this.btnAvailable.TabIndex = 48;
+            this.btnAvailable.Text = "Available Staff";
+            this.btnAvailable.UseVisualStyleBackColor = true;
+            this.btnAvailable.Click += new System.EventHandler(this.btnAvailable_Click);
+            // 
             // ReceptionistMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 318);
+            this.Controls.Add(this.btnAvailable);
             this.Controls.Add(this.btnFindPatient);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblName);
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFindPatient;
+        private System.Windows.Forms.Button btnAvailable;
     }
 }

@@ -15,7 +15,7 @@ namespace SoftwareEngineeringAssignment
     /// <summary>
     /// Used to interact with the database.
     /// </summary>
-    class BusinessMetaLayer
+    public class BusinessMetaLayer
     {
         private DbConection con = DbFactory.instance();
         static private BusinessMetaLayer m_instance = null;
