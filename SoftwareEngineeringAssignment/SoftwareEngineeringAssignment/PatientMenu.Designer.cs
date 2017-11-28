@@ -62,6 +62,7 @@
             this.txtDoB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExtend = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -359,7 +360,7 @@
             // btnExtend
             // 
             this.btnExtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtend.Location = new System.Drawing.Point(694, 20);
+            this.btnExtend.Location = new System.Drawing.Point(669, 20);
             this.btnExtend.Name = "btnExtend";
             this.btnExtend.Size = new System.Drawing.Size(85, 29);
             this.btnExtend.TabIndex = 67;
@@ -367,12 +368,24 @@
             this.btnExtend.UseVisualStyleBackColor = true;
             this.btnExtend.Click += new System.EventHandler(this.btnExtend_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(1204, 20);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(85, 29);
+            this.btnPrint.TabIndex = 68;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // PatientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnExtend);
             this.Controls.Add(this.txtDoB);
             this.Controls.Add(this.label1);
@@ -442,5 +455,6 @@
         private System.Windows.Forms.TextBox txtDoB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExtend;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

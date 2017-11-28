@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+using System.IO;
 
 namespace SoftwareEngineeringAssignment
 {
@@ -65,6 +67,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = true;
                 btnNewTest.Visible = true;
+                btnExtend.Visible = false;
                 btnPresent.Visible = false;
                 if (m_patientList != null)
                     btnNext.Visible = true;
@@ -77,6 +80,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = false;
                 btnNewPrescription.Visible = false;
                 btnNewTest.Visible = false;
+                btnExtend.Visible = true;
                 btnNext.Visible = false;
 
                 //Only show the button if they have an appointment in the next hour.
@@ -102,6 +106,7 @@ namespace SoftwareEngineeringAssignment
                 btnNewNote.Visible = true;
                 btnNewPrescription.Visible = false;
                 btnNewTest.Visible = true;
+                btnExtend.Visible = false;
                 btnPresent.Visible = false;
                 if (m_patientList != null)
                     btnNext.Visible = true;
@@ -179,11 +184,13 @@ namespace SoftwareEngineeringAssignment
         {
             instance.PatientStatusUpdate(m_patientList.ElementAt(0).getPatientID, false);
             m_patientList.RemoveAt(0);
-            if(null != m_patientList.ElementAt(0))
+            if(m_patientList.Count != 0)
             {
                 m_p = m_patientList.ElementAt(0);
                 loadPatientDetails();
             }
+            MessageBox.Show("No more patients are waiting to see you.");
+            this.Close();
         }
         /// <summary>
         /// The book appointment button that the receptionist can press at any time.
@@ -248,6 +255,42 @@ namespace SoftwareEngineeringAssignment
         {
             f = new ExtendPrescription(m_s, m_p);
             f.ShowDialog();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Print();
+        }
+        private void Print()
+        {
+            string PrinterName="";
+            PrintDocument print = new PrintDocument();
+            PrintPreviewDialog preview = new PrintPreviewDialog();
+            PrintDialog pd = new PrintDialog();
+
+            if (PrinterName != "")
+                pd.PrinterSettings.PrinterName = PrinterName;
+            if (pd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                PrinterName = pd.PrinterSettings.PrinterName;
+            }
+            print.PrintPage += (object sender, PrintPageEventArgs e) =>
+            {
+                Font font = new Font("Arial", 12);
+                float offset = e.MarginBounds.Top;
+                foreach (ListViewItem Item in lvTests.Items)
+                {
+                    // The 5.0f is to add a small space between lines
+                    offset += (font.GetHeight() + 5.0f);
+                    PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
+                    e.Graphics.DrawString(Item.Text, font, Brushes.Black, location);
+                }
+            };
+            if (PrinterName != null || PrinterName != "")
+            {
+                print.PrinterSettings.PrinterName = PrinterName;
+                print.Print();
+            }
         }
     }
 }
