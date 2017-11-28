@@ -13,7 +13,6 @@ namespace SoftwareEngineeringAssignment
     public partial class ReceptionistMenu : Form
     {
         Staff m_s;
-        PatientSearch ps;
         Form f;
         public ReceptionistMenu(Staff p_s)
         {
@@ -62,9 +61,17 @@ namespace SoftwareEngineeringAssignment
 
         private void btnFindPatient_Click(object sender, EventArgs e)
         {
-            ps = new PatientSearch(m_s);
+            f = new PatientSearch(m_s);
             this.Hide();
-            ps.ShowDialog();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnAvailable_Click(object sender, EventArgs e)
+        {
+            f = new ViewStaff(m_s);
+            this.Hide();
+            f.ShowDialog();
             this.Show();
         }
     }

@@ -20,6 +20,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            lblManager.Text = m_s.getType;
             LoadStaff();
         }
         private void LoadStaff()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineeringAssignment
 {
-    class Medicine
+    public class Medicine
     {
         private int m_MedicineID;
         public int getMedicineID { get { return m_MedicineID; } set { m_MedicineID = value; } }

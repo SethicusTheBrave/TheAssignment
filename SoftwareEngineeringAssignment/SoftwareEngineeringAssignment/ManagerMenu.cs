@@ -20,7 +20,11 @@ namespace SoftwareEngineeringAssignment
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
         }
-
+        /// <summary>
+        /// Will show all of the staff that currently exist in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViewCurrentStaff_Click(object sender, EventArgs e)
         {
             f = new ViewStaff(m_s);
@@ -38,7 +42,11 @@ namespace SoftwareEngineeringAssignment
         {
 
         }
-
+        /// <summary>
+        /// Will take you to a form to add a staff member to the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             f = new AddStaff();

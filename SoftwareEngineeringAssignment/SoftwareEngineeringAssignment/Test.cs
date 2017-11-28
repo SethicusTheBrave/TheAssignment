@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineeringAssignment
 {
-    class Test
+    public class Test
     {
         private DateTime m_Date;
         public DateTime getDate { get { return m_Date; } set { m_Date = value; } }
