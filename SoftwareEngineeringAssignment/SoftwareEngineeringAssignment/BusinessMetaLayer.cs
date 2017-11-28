@@ -57,42 +57,20 @@ namespace SoftwareEngineeringAssignment
         /// <returns></returns>
         public Staff Login(int p_StaffID, string p_Password)
         {
-            string encrypted;
-            encrypted = encrypt(p_Password);
-            List<Staff> staffList = new List<Staff>();
-            //Will attempt to make a connection with the database.
-            if (con.OpenConnection())
+            if(con.OpenConnection())
             {
-                //Will select all of the staffID's and Passwords in the Staff table.
-                DbDataReader dr = con.Select("SELECT StaffID, Password, StaffType FROM staff"); 
-
-                //Will create a Staff object for each entry in the table.
-                while (dr.Read())
+                Staff User = new Staff();
+                string encrypted = encrypt(p_Password);
+                DbDataReader dr = con.Select("SELECT StaffID, StaffType FROM staff WHERE StaffID='" + p_StaffID + "' AND Password='" + encrypted + "';");
+                
+                while(dr.Read())
                 {
-                    Staff s = new Staff();
-                    s.getStaffID = dr.GetInt32(0);
-                    s.getpassword = dr.GetString(1);
-                    s.getType = dr.GetString(2);
-                    staffList.Add(s);
+                    User.getStaffID = dr.GetInt32(0);
+                    User.getType = dr.GetString(1);
                 }
-                //Closes the database reader and the connection to the database.
-                con.CloseConnection();
                 dr.Close();
-                //Compares the password from the textbox with each entry in the database. 
-                if (staffList.Count() > 0)
-                {
-                    foreach (Staff s in staffList)
-                    {
-                        if (p_StaffID == s.getStaffID && encrypted == s.getpassword)
-                        {
-                            Staff loginStaff = new Staff();
-                            loginStaff.getStaffID = s.getStaffID;
-                            loginStaff.getType = s.getType;
-                            return loginStaff;
-                        }
-                    }
-                }
-                return null;
+                con.CloseConnection();
+                return User;
             }
             else
             {
@@ -104,7 +82,7 @@ namespace SoftwareEngineeringAssignment
         /// Returns a list of all the patients in the database.
         /// </summary>
         /// <returns></returns>
-        public List<Patient> patientList()
+        public List<Patient> getPatientList()
         {
             List<Patient> patientList = new List<Patient>();
             if (con.OpenConnection())
@@ -362,9 +340,32 @@ namespace SoftwareEngineeringAssignment
         /// Used to get a DATASET of all the members of staff.
         /// </summary>
         /// <returns></returns>
-        public DataSet getStaff()
+        public List<Staff> getStaff()
         {
-            return con.getDataSet("SELECT StaffID, FirstName, LastName, EmailAddress, StaffType, PhoneNumber FROM Staff");
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT * FROM Staff");
+                List<Staff> staffList = new List<Staff>();
+
+                while (dr.Read())
+                {
+                    Staff s = new Staff();
+                    s.getStaffID = dr.GetInt32(0);
+                    s.getFirstName = dr.GetString(1);
+                    s.getLastName = dr.GetString(2);
+                    s.getAddress = dr.GetString(3);
+                    s.getPostcode = dr.GetString(4);
+                    s.getpassword = dr.GetString(5);
+                    s.getEmail = dr.GetString(6);
+                    s.getType = dr.GetString(7);
+                    s.getPhoneNumber = dr.GetString(8);
+                    staffList.Add(s);
+                }
+                dr.Close();
+                con.CloseConnection();
+                return staffList;
+            }
+            return null;
         }
     }
 }

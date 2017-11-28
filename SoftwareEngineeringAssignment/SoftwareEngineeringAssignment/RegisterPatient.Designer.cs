@@ -190,9 +190,8 @@
             this.txtMedicalHistory.Multiline = true;
             this.txtMedicalHistory.Name = "txtMedicalHistory";
             this.txtMedicalHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMedicalHistory.Size = new System.Drawing.Size(356, 80);
+            this.txtMedicalHistory.Size = new System.Drawing.Size(356, 162);
             this.txtMedicalHistory.TabIndex = 77;
-            this.txtMedicalHistory.Text = "None";
             // 
             // lblMedicalHistory
             // 

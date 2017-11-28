@@ -27,61 +27,78 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSearch1_Click_1(object sender, EventArgs e)
         {
-            patientList = instance.patientList();
+            patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
-            foreach (Patient p in patientList)
+            try
             {
-                if (p.getPatientID == int.Parse(txtPatientNumber.Text))
+                foreach (Patient p in patientList)
                 {
-                    f = new PatientMenu(p, m_s);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Close();
+
+                    if (p.getPatientID == int.Parse(txtPatientNumber.Text))
+                    {
+                        f = new PatientMenu(p, m_s);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Patient not found.", "A Patient with the provided details could not be found");
-                }
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Input, Please check your input.", "Invalid User Input");
+                txtPatientNumber.Clear();
             }
         }
 
         private void btnSearch2_Click(object sender, EventArgs e)
         {
-            patientList = instance.patientList();
+            patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
-            foreach (Patient p in patientList)
+            try
             {
-                if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart)
+                foreach (Patient p in patientList)
                 {
-                    f = new PatientMenu(p,m_s);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Close();
+                    if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart)
+                    {
+                        f = new PatientMenu(p, m_s);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Patient not found.", "A Patient with the provided details could not be found");
-                }
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Input, Please check your input.", "Invalid User Input");
+                txtFirstName.Clear();
+                txtLastName.Clear();
             }
         }
 
         private void btnSearch3_Click(object sender, EventArgs e)
         {
-            patientList = instance.patientList();
+            patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
-            foreach (Patient p in patientList)
+            try
             {
-                if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
+                foreach (Patient p in patientList)
                 {
-                    f = new PatientMenu(p,m_s);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Close();
+                    if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
+                    {
+                        f = new PatientMenu(p, m_s);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("PatientID not found.", "A Patient with the provided details could not be found");
-                }
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Input, Please check your input.", "Invalid User Input");
+                txtFirstName2.Clear();
+                txtLastName2.Clear();
+                txtAddress.Clear();
+                txtPostcode.Clear();
             }
         }
 

@@ -16,7 +16,11 @@ namespace SoftwareEngineeringAssignment
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         Staff m_s;
         Patient m_p;
+        int staffID = 0;
         List<DateTime> dateList = new List<DateTime>();
+        //You can't remove any values from the datelist inside the foreach so i'm storing the values that need to be removed in a list and removing them afterwards
+        List<DateTime> removeList = new List<DateTime>();
+        List<Staff> staffList = new List<Staff>();
         /// <summary>
         /// The form used to create an appointment
         /// </summary>
@@ -27,8 +31,8 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_s;
             m_p = p_p;
+            staffList = instance.getStaff();
             LoadDetails();
-            
         }
         /// <summary>
         /// Used to load all the form data. Such as the Patients details.
@@ -39,6 +43,11 @@ namespace SoftwareEngineeringAssignment
             txtFirstName.Text = m_p.getFirstName;
             txtLastName.Text = m_p.getLastName;
             txtPatientNumber.Text = m_p.getPatientID.ToString();
+
+            foreach(Staff s in staffList)
+            {
+                cbStaffMember.Items.Add(s.getFirstName + " " + s.getLastName);
+            }
             ComboBoxTimes();
         }
         /// <summary>
@@ -49,36 +58,42 @@ namespace SoftwareEngineeringAssignment
             DateTime startTime = calDate.SelectionStart.AddHours(7);
             DateTime endTime = calDate.SelectionStart.AddHours(19);
 
-            while(startTime < endTime)
+            while (startTime < endTime)
             {
                 dateList.Add(startTime);
                 startTime = startTime.AddMinutes(10);
             }
             List<Appointment> databaseAppointments = instance.getAppointments();
-            //You can't remove any values from the datelist inside the foreach so i'm storing the values that need to be removed in a list and removing them afterwards
-            List<DateTime> removeList = new List<DateTime>();
-            foreach(Appointment a in databaseAppointments)
+            removeList.Clear();
+            foreach (Staff s in staffList)
+            {
+                if (cbStaffMember.Text == s.getFirstName + " " + s.getLastName)
+                {
+                    staffID = s.getStaffID;
+                }
+            }
+            foreach (Appointment a in databaseAppointments)
             {
                 foreach (DateTime d in dateList)
                 {
                     if (a.getDateTime.ToString() == d.ToString())
                     {
-                        if (a.getStaffID == m_s.getStaffID)
+                        if (a.getStaffID == staffID)
                         {
                             removeList.Add(d);
                         }
                     }
-                    else
-                    {
-                        cbTime.Items.Add(d);
-                    }
                 }
             }
-            foreach(DateTime d in removeList)
+            foreach (DateTime d in removeList)
             {
                 dateList.Remove(d);
             }
             removeList.Clear();
+            foreach (DateTime d in dateList)
+            {
+                cbTime.Items.Add(d.ToShortTimeString());
+            }
         }
         /// <summary>
         /// Takes all of the information given and adds it to the database.
@@ -89,8 +104,16 @@ namespace SoftwareEngineeringAssignment
         {
             if (cbTime.Text != null || cbTime.Text != "")
             {
+                int staffNum=0;
+                foreach(Staff s in staffList)
+                {
+                    if (cbStaffMember.Text == s.getFirstName + " " + s.getLastName)
+                    {
+                        staffNum = s.getStaffID;
+                    }
+                }
                 DateTime dt = Convert.ToDateTime(cbTime.Text);
-                instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, StaffID, PatientID) values (NULL,'" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm")) + "'," + m_s.getStaffID + "', '" + m_p.getPatientID + ");");
+                instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, StaffID, PatientID) values (NULL,'" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm")) + "'," + staffNum + "', '" + m_p.getPatientID + ");");
                 this.Close();
             }
             MessageBox.Show("Invalid Data Entered. Please check your input.", "Invalid Input");
@@ -103,6 +126,22 @@ namespace SoftwareEngineeringAssignment
         private void calDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             cbTime.Items.Clear();
+            dateList.Clear();
+            ComboBoxTimes();
+        }
+
+        private void cbStaffMember_TextChanged(object sender, EventArgs e)
+        {
+            foreach(Staff s in staffList)
+            {
+                if (cbStaffMember.Text == s.getFirstName + " " + s.getLastName)
+                {
+                    lblDate.Visible = true;
+                    lblTime.Visible = true;
+                    cbTime.Visible = true;
+                    calDate.Visible = true;
+                }
+            }
             dateList.Clear();
             ComboBoxTimes();
         }

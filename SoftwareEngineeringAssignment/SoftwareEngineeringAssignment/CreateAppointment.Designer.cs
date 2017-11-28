@@ -42,14 +42,16 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblStaffMember = new System.Windows.Forms.Label();
             this.cbStaffMember = new System.Windows.Forms.ComboBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // calDate
             // 
-            this.calDate.Location = new System.Drawing.Point(89, 297);
+            this.calDate.Location = new System.Drawing.Point(89, 315);
             this.calDate.MaxSelectionCount = 1;
             this.calDate.Name = "calDate";
             this.calDate.TabIndex = 30;
+            this.calDate.Visible = false;
             this.calDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDate_DateChanged);
             // 
             // txtPatientNumber
@@ -144,26 +146,28 @@
             // cbTime
             // 
             this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(126, 205);
+            this.cbTime.Location = new System.Drawing.Point(126, 264);
             this.cbTime.Name = "cbTime";
             this.cbTime.Size = new System.Drawing.Size(136, 21);
             this.cbTime.TabIndex = 68;
+            this.cbTime.Visible = false;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(150, 186);
+            this.lblTime.Location = new System.Drawing.Point(156, 245);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(65, 16);
             this.lblTime.TabIndex = 69;
             this.lblTime.Text = "Time Slot";
+            this.lblTime.Visible = false;
             // 
             // lblStaffMember
             // 
             this.lblStaffMember.AutoSize = true;
             this.lblStaffMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffMember.Location = new System.Drawing.Point(156, 245);
+            this.lblStaffMember.Location = new System.Drawing.Point(156, 197);
             this.lblStaffMember.Name = "lblStaffMember";
             this.lblStaffMember.Size = new System.Drawing.Size(87, 16);
             this.lblStaffMember.TabIndex = 71;
@@ -172,10 +176,22 @@
             // cbStaffMember
             // 
             this.cbStaffMember.FormattingEnabled = true;
-            this.cbStaffMember.Location = new System.Drawing.Point(126, 264);
+            this.cbStaffMember.Location = new System.Drawing.Point(126, 216);
             this.cbStaffMember.Name = "cbStaffMember";
             this.cbStaffMember.Size = new System.Drawing.Size(136, 21);
             this.cbStaffMember.TabIndex = 70;
+            this.cbStaffMember.TextChanged += new System.EventHandler(this.cbStaffMember_TextChanged);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(178, 290);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(37, 16);
+            this.lblDate.TabIndex = 72;
+            this.lblDate.Text = "Date";
+            this.lblDate.Visible = false;
             // 
             // CreateAppointment
             // 
@@ -183,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(416, 538);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblStaffMember);
             this.Controls.Add(this.cbStaffMember);
             this.Controls.Add(this.lblTime);
@@ -220,5 +237,6 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblStaffMember;
         private System.Windows.Forms.ComboBox cbStaffMember;
+        private System.Windows.Forms.Label lblDate;
     }
 }
