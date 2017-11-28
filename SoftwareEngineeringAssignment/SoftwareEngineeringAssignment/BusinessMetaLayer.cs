@@ -154,7 +154,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (con.OpenConnection())
             {
-                con.executeQuery("UPDATE patient_details SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
+                con.executeQuery("UPDATE Patient SET CurrentlyPresent = " + present + " WHERE PatientID = " + patientID);
                 con.CloseConnection();
             }
         }

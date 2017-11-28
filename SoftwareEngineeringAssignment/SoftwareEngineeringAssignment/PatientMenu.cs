@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 
@@ -185,11 +184,13 @@ namespace SoftwareEngineeringAssignment
         {
             instance.PatientStatusUpdate(m_patientList.ElementAt(0).getPatientID, false);
             m_patientList.RemoveAt(0);
-            if(null != m_patientList.ElementAt(0))
+            if(m_patientList.Count != 0)
             {
                 m_p = m_patientList.ElementAt(0);
                 loadPatientDetails();
             }
+            MessageBox.Show("No more patients are waiting to see you.");
+            this.Close();
         }
         /// <summary>
         /// The book appointment button that the receptionist can press at any time.
