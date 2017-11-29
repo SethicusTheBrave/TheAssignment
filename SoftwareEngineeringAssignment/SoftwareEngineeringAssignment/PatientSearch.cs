@@ -27,6 +27,7 @@ namespace SoftwareEngineeringAssignment
 
         private void btnSearch1_Click_1(object sender, EventArgs e)
         {
+            bool cont=false;
             patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
             try
@@ -37,21 +38,26 @@ namespace SoftwareEngineeringAssignment
                     if (p.getPatientID == int.Parse(txtPatientNumber.Text))
                     {
                         f = new PatientMenu(p, m_s);
+                        cont = true;
                     }
                 }
-                this.Hide();
-                f.ShowDialog();
-                this.Close();
             }
             catch
             {
                 MessageBox.Show("Invalid Input, Please check your input.", "Invalid User Input");
                 txtPatientNumber.Clear();
             }
+            if(cont)
+            {
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnSearch2_Click(object sender, EventArgs e)
         {
+            bool cont=false;
             patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
             try
@@ -61,6 +67,7 @@ namespace SoftwareEngineeringAssignment
                     if (p.getFirstName == txtFirstName.Text && p.getLastName == txtLastName.Text && p.getDOB == calDOB.SelectionStart)
                     {
                         f = new PatientMenu(p, m_s);
+                        cont = true;
                     }
                 }
                 this.Hide();
@@ -73,10 +80,17 @@ namespace SoftwareEngineeringAssignment
                 txtFirstName.Clear();
                 txtLastName.Clear();
             }
+            if (cont)
+            {
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnSearch3_Click(object sender, EventArgs e)
         {
+            bool cont = false;
             patientList = instance.getPatientList();
             //checks to see if the textbox results match any of the database records
             try
@@ -86,11 +100,10 @@ namespace SoftwareEngineeringAssignment
                     if (p.getFirstName == txtFirstName2.Text && p.getLastName == txtLastName2.Text && p.getPostcode == txtPostcode.Text && p.getAddress == txtAddress.Text)
                     {
                         f = new PatientMenu(p, m_s);
+                        cont = true;
                     }
                 }
-                this.Hide();
-                f.ShowDialog();
-                this.Close();
+                
             }
             catch
             {
@@ -99,6 +112,12 @@ namespace SoftwareEngineeringAssignment
                 txtLastName2.Clear();
                 txtAddress.Clear();
                 txtPostcode.Clear();
+            }
+            if(cont)
+            {
+                this.Hide();
+                f.ShowDialog();
+                this.Close();
             }
         }
 

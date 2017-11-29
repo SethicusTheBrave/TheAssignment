@@ -278,12 +278,14 @@ namespace SoftwareEngineeringAssignment
             {
                 Font font = new Font("Arial", 12);
                 float offset = e.MarginBounds.Top;
+                PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
+                e.Graphics.DrawString("DATE               TEST               RESULT", font, Brushes.Black, location);
                 foreach (ListViewItem Item in lvTests.Items)
                 {
                     // The 5.0f is to add a small space between lines
                     offset += (font.GetHeight() + 5.0f);
-                    PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
-                    e.Graphics.DrawString(Item.Text, font, Brushes.Black, location);
+                    location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
+                    e.Graphics.DrawString(Item.Text + "        " + Item.SubItems[1].Text + "        " + Item.SubItems[2].Text, font, Brushes.Black, location);
                 }
             };
             if (PrinterName != null || PrinterName != "")
