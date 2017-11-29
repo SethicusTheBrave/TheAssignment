@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SoftwareEngineeringAssignment;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UnitTest
 {
@@ -57,7 +59,14 @@ namespace UnitTest
             Assert.AreEqual("999", p.getPhoneNumber);
             Assert.AreEqual(true, p.getPresent);
             Assert.AreEqual("College of West Anglia", p.getAddress);
-            Assert.AreEqual("PE13 2J3", p.getPostcode);
+            Assert.AreEqual("PE13 2JE", p.getPostcode);
+
+            string test = instance.encrypt("test");
+            Assert.AreEqual(test, instance.encrypt("test"));
+            List<Medicine> medlist = instance.getAllMedicine();
+            string iString = "2017-11-08 22:12 PM";
+            dt = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
+            Assert.AreEqual(dt, medlist.ElementAt(0).getEndDate);
         }
     }
 }
