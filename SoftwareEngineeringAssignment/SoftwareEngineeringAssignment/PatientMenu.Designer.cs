@@ -58,7 +58,6 @@
             this.clmDate3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmTest2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmNotes2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtDoB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExtend = new System.Windows.Forms.Button();
@@ -313,8 +312,7 @@
             this.lvTests.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmDate3,
             this.clmTest2,
-            this.clmResult,
-            this.clmNotes2});
+            this.clmResult});
             this.lvTests.Location = new System.Drawing.Point(843, 58);
             this.lvTests.Name = "lvTests";
             this.lvTests.Size = new System.Drawing.Size(446, 390);
@@ -333,10 +331,6 @@
             // clmResult
             // 
             this.clmResult.Text = "Result";
-            // 
-            // clmNotes2
-            // 
-            this.clmNotes2.Text = "Notes";
             // 
             // txtDoB
             // 
@@ -451,7 +445,6 @@
         private System.Windows.Forms.ColumnHeader clmDate3;
         private System.Windows.Forms.ColumnHeader clmTest2;
         private System.Windows.Forms.ColumnHeader clmResult;
-        private System.Windows.Forms.ColumnHeader clmNotes2;
         private System.Windows.Forms.TextBox txtDoB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExtend;
