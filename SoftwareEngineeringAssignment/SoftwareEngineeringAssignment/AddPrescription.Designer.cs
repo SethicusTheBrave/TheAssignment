@@ -126,6 +126,8 @@
             // 
             // cbToDate
             // 
+            this.cbToDate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbToDate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbToDate.FormattingEnabled = true;
             this.cbToDate.Items.AddRange(new object[] {
             "1 Week",
