@@ -34,6 +34,7 @@ namespace SoftwareEngineeringAssignment
             lblName.Text = "StaffID: " + m_s.getStaffID;
             staffList = instance.getStaff();
             UpdateDetails();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void UpdateDetails()

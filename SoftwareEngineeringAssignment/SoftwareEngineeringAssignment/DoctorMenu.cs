@@ -28,6 +28,7 @@ namespace SoftwareEngineeringAssignment
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
             lblDoctor.Text = m_s.getType;
+            WindowState = FormWindowState.Maximized;
         }
         /// <summary>
         /// Will open up the form used to search for a patient

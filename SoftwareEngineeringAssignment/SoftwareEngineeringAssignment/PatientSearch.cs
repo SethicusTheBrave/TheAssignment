@@ -23,6 +23,7 @@ namespace SoftwareEngineeringAssignment
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
             lblStaffType.Text = m_s.getType;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnSearch1_Click_1(object sender, EventArgs e)

@@ -104,6 +104,19 @@ namespace UnitTest
             dt = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
             Assert.AreEqual(dt, appointmentList[0].getDateTime);
             Assert.AreEqual("ScreamAid just increased his screaming", appointmentList[0].getDescription);
+            Assert.AreEqual(2, appointmentList[0].getPatientID);
+            Assert.AreEqual(1, appointmentList[0].getStaffID);
+            Assert.AreEqual(2, appointmentList.Count());
+
+            //notes
+            List<PatientNotes> notesList = instance.getPatientNotes(2);
+            Assert.AreEqual(6, notesList.Count());
+            iString = "2017-08-15 00:00 AM";
+            dt = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
+            Assert.AreEqual(dt ,notesList[0].getDate);
+            Assert.AreEqual(1, notesList[0].getNoteID);
+            Assert.AreEqual("dead", notesList[0].getNote);
+            Assert.AreEqual(2, notesList[0].getPatientID);
         }
     }
 }

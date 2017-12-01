@@ -18,6 +18,7 @@ namespace SoftwareEngineeringAssignment
         public Login()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
         }
         /// <summary>
         /// When the button is pressed submit is called to check the login information

@@ -19,6 +19,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            WindowState = FormWindowState.Maximized;
         }
         /// <summary>
         /// Will take you to the form to edit an existing appointment
