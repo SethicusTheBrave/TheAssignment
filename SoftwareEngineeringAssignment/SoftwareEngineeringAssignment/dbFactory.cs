@@ -41,8 +41,6 @@ namespace SoftwareEngineeringAssignment
                 string provider = m_properties["Provider"];
                 if (provider.Equals("MySQL"))
                     connection = new MySQLCon(m_properties);
-                else if (provider.Equals("Microsoft.ACE.OLEDB.16.0"))
-                    connection = new OleDatabaseConnection(m_properties);
                 else
                 {
                     // should throw unsupport exception here

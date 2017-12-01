@@ -130,6 +130,14 @@ namespace UnitTest
             instance.PatientStatusUpdate(p.getPatientID, false);
             string san = instance.sanitize("'test'");
             Assert.AreEqual("test", san);
+
+            staffList = instance.getStaff();
+            instance.ExecuteQuery("INSERT INTO STAFF (StaffID, FirstName, LastName) VALUES (" + 99 + ", 'test', 'testington');");
+            List<Staff> newStaffList = instance.getStaff();
+            Assert.AreNotEqual(staffList.Count(), newStaffList.Count());
+            instance.deleteStaff("test", "testington");
+            newStaffList = instance.getStaff();
+            Assert.AreEqual(staffList.Count(), newStaffList.Count());
         }
     }
 }
