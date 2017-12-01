@@ -377,5 +377,20 @@ namespace SoftwareEngineeringAssignment
             }
             return null;
         }
+        public void deleteStaff(string p_FirstName, string p_LastName)
+        {
+            int staffID = 0;
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT StaffID FROM Staff WHERE FirstName='" + p_FirstName + "' AND LastName='" + p_LastName + "';");
+                while(dr.Read())
+                {
+                    staffID = dr.GetInt32(0);
+                }
+                dr.Close();
+                con.CloseConnection();
+            }
+            ExecuteQuery("DELETE FROM Staff WHERE StaffID=" + staffID);
+        }
     }
 }

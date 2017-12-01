@@ -43,5 +43,16 @@ namespace SoftwareEngineeringAssignment
         {
             this.Close();
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            string FirstName = Microsoft.VisualBasic.Interaction.InputBox("Enter First Name", "First Name", "");
+            string LastName = Microsoft.VisualBasic.Interaction.InputBox("Enter Last Name", "Last Name", "");
+            if (FirstName != null && FirstName != "" && LastName != null && LastName != "")
+            {
+                instance.deleteStaff(instance.sanitize(FirstName), instance.sanitize(LastName));
+            }
+            LoadStaff();
+        }
     }
 }

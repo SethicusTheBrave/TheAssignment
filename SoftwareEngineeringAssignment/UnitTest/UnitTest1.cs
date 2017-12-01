@@ -36,7 +36,7 @@ namespace UnitTest
             Assert.AreEqual("Doctor", s.getType);
 
             Patient p = new Patient();
-            p.getPatientID = 25;
+            p.getPatientID = 2;
             p.getFirstName = "Dan";
             p.getLastName = "Purdy";
             dt = DateTime.Now.AddYears(-21);
@@ -49,7 +49,7 @@ namespace UnitTest
             p.getAddress = "College of West Anglia";
             p.getPostcode = "PE13 2JE";
 
-            Assert.AreEqual(25, p.getPatientID);
+            Assert.AreEqual(2, p.getPatientID);
             Assert.AreEqual("Dan", p.getFirstName);
             Assert.AreEqual("Purdy", p.getLastName);
             Assert.AreEqual(dt.ToString(), p.getDOB.ToString());
@@ -63,8 +63,8 @@ namespace UnitTest
 
             string test = instance.encrypt("test");
             Assert.AreEqual(test, instance.encrypt("test"));
-            List<Medicine> medlist = instance.getAllMedicine();
-            string iString = "2017-11-08 22:12 PM";
+            List<Medicine> medlist = instance.GetPrescriptions(p.getPatientID);
+            string iString = "2017-11-08 00:00 AM";
             dt = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
             Assert.AreEqual(dt, medlist.ElementAt(0).getEndDate);
         }
