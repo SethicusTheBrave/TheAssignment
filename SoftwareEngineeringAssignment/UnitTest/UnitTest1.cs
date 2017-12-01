@@ -110,13 +110,26 @@ namespace UnitTest
 
             //notes
             List<PatientNotes> notesList = instance.getPatientNotes(2);
-            Assert.AreEqual(6, notesList.Count());
+            Assert.AreEqual(7, notesList.Count());
             iString = "2017-08-15 00:00 AM";
             dt = DateTime.ParseExact(iString, "yyyy-MM-dd HH:mm tt", null);
             Assert.AreEqual(dt ,notesList[0].getDate);
             Assert.AreEqual(1, notesList[0].getNoteID);
             Assert.AreEqual("dead", notesList[0].getNote);
             Assert.AreEqual(2, notesList[0].getPatientID);
+
+            //other Instance things
+            instance.ExecuteQuery("UPDATE STAFF SET StaffID=" + 25 + " WHERE StaffID=" + 2 + ";");
+            List<Staff> staffList = instance.getStaff();
+            Assert.AreEqual(25, staffList[3].getStaffID);
+            instance.ExecuteQuery("UPDATE STAFF SET StaffID=" + 2 + " WHERE StaffID=" + 25 + ";");
+            staffList = instance.getStaff();
+            Assert.AreEqual(2, staffList[1].getStaffID);
+            instance.PatientStatusUpdate(p.getPatientID, true);
+            Assert.AreEqual(true, p.getPresent);
+            instance.PatientStatusUpdate(p.getPatientID, false);
+            string san = instance.sanitize("'test'");
+            Assert.AreEqual("test", san);
         }
     }
 }
