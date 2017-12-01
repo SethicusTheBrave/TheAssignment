@@ -113,7 +113,7 @@ namespace SoftwareEngineeringAssignment
                     }
                 }
                 DateTime dt = Convert.ToDateTime(cbTime.Text);
-                instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, StaffID, PatientID) values (NULL,'" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm")) + "'," + staffNum + "', '" + m_p.getPatientID + ");");
+                instance.ExecuteQuery("INSERT INTO Appointments(AppointmentID, AppointmentDate, StaffID, PatientID, Description) values (NULL,'" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm")) + "'," + staffNum + "'," + m_p.getPatientID + ", " + instance.sanitize(txtDescription.Text) + ");");
                 this.Close();
             }
             MessageBox.Show("Invalid Data Entered. Please check your input.", "Invalid Input");
