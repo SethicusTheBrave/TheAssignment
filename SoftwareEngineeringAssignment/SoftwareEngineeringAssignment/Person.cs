@@ -42,5 +42,19 @@ namespace SoftwareEngineeringAssignment
         public string getpassword { get { return m_password; } set { m_password = value; } }
         private string m_staffType;
         public string getType { get { return m_staffType; } set { m_staffType = value; } }
+        private string m_staffMonday;
+        public string getMonday{ get { return m_staffMonday; } set { m_staffMonday = value; } }
+        private string m_staffTuesday;
+        public string getTuesday { get { return m_staffTuesday; } set { m_staffTuesday = value; } }
+        private string m_staffWednesday;
+        public string getWednesday { get { return m_staffWednesday; } set { m_staffWednesday = value; } }
+        private string m_staffThursday;
+        public string getThursday { get { return m_staffThursday; } set { m_staffThursday = value; } }
+        private string m_staffFriday;
+        public string getFriday { get { return m_staffFriday; } set { m_staffFriday = value; } }
+        private string m_staffSaturday;
+        public string getSaturday { get { return m_staffSaturday; } set { m_staffSaturday = value; } }
+        private string m_staffSunday;
+        public string getSunday { get { return m_staffSunday; } set { m_staffSunday = value; } }
     }
 }
