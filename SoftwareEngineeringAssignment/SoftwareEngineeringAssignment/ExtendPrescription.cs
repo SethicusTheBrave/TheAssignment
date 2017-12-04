@@ -33,7 +33,7 @@ namespace SoftwareEngineeringAssignment
         }
         private void loadPerscriptions()
         {
-            //medicineList = instance.GetPrescriptions(m_p.getPatientID);
+            medicineList = instance.GetPrescriptions(m_p.getPatientID);
             lvDrugs.Clear();
             lvDrugs.Columns.Add("PatientID", 100);
             lvDrugs.Columns.Add("MecicineID", 100);
@@ -56,7 +56,12 @@ namespace SoftwareEngineeringAssignment
         {
             if ((txtDrugID != null) && (txtPatientID != null))
             {
-                DateTime dt = Convert.ToDateTime(calDate);
+                if (m_s.getType == "Doctor")
+                {
+                    DateTime dt = Convert.ToDateTime(calDate);
+                    instance.ExecuteQuery("UPDATE 'MedicineLink' SET End Date = '" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm") "WHERE 'MedicineId' = txtDrugID AND 'PatientID' = txtPatientID"));
+                }
+                
 
             }
         }

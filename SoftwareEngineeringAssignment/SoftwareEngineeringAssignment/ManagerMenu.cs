@@ -33,10 +33,17 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// will take you to the staff schedule
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViewStaffSchedule_Click(object sender, EventArgs e)
         {
-
+            f = new StaffSchedule(m_s);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void btnEditStaffSchedule_Click(object sender, EventArgs e)
