@@ -28,85 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgSchedule = new System.Windows.Forms.DataGridView();
-            this.clmFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmStaffType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmWednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmThursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSaturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblManager = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSchedule)).BeginInit();
+            this.LstStaffSchedule = new System.Windows.Forms.ListView();
+            this.clmStaffID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmMonday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmTuesday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmWednesday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cllmThursday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmFriday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmSaturday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmSunday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // dgSchedule
-            // 
-            this.dgSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmFullName,
-            this.clmStaffType,
-            this.clmMonday,
-            this.clmTuesday,
-            this.clmWednesday,
-            this.clmThursday,
-            this.clmFriday,
-            this.clmSaturday,
-            this.clmSunday});
-            this.dgSchedule.Location = new System.Drawing.Point(11, 73);
-            this.dgSchedule.Name = "dgSchedule";
-            this.dgSchedule.Size = new System.Drawing.Size(950, 280);
-            this.dgSchedule.TabIndex = 0;
-            // 
-            // clmFullName
-            // 
-            this.clmFullName.HeaderText = "Full_Name";
-            this.clmFullName.Name = "clmFullName";
-            // 
-            // clmStaffType
-            // 
-            this.clmStaffType.HeaderText = "StaffType";
-            this.clmStaffType.Name = "clmStaffType";
-            // 
-            // clmMonday
-            // 
-            this.clmMonday.HeaderText = "Monday";
-            this.clmMonday.Name = "clmMonday";
-            // 
-            // clmTuesday
-            // 
-            this.clmTuesday.HeaderText = "Tuesday";
-            this.clmTuesday.Name = "clmTuesday";
-            // 
-            // clmWednesday
-            // 
-            this.clmWednesday.HeaderText = "Wednesday";
-            this.clmWednesday.Name = "clmWednesday";
-            // 
-            // clmThursday
-            // 
-            this.clmThursday.HeaderText = "Thursday";
-            this.clmThursday.Name = "clmThursday";
-            // 
-            // clmFriday
-            // 
-            this.clmFriday.HeaderText = "Friday";
-            this.clmFriday.Name = "clmFriday";
-            // 
-            // clmSaturday
-            // 
-            this.clmSaturday.HeaderText = "Saturday";
-            this.clmSaturday.Name = "clmSaturday";
-            // 
-            // clmSunday
-            // 
-            this.clmSunday.HeaderText = "Sunday";
-            this.clmSunday.Name = "clmSunday";
             // 
             // btnSave
             // 
@@ -150,40 +87,98 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
+            // LstStaffSchedule
+            // 
+            this.LstStaffSchedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmStaffID,
+            this.clmFirstName,
+            this.clmLastName,
+            this.clmMonday,
+            this.clmTuesday,
+            this.clmWednesday,
+            this.cllmThursday,
+            this.clmFriday,
+            this.clmSaturday,
+            this.clmSunday});
+            this.LstStaffSchedule.Location = new System.Drawing.Point(10, 28);
+            this.LstStaffSchedule.Name = "LstStaffSchedule";
+            this.LstStaffSchedule.Size = new System.Drawing.Size(951, 335);
+            this.LstStaffSchedule.TabIndex = 55;
+            this.LstStaffSchedule.UseCompatibleStateImageBehavior = false;
+            // 
+            // clmStaffID
+            // 
+            this.clmStaffID.Text = "Staff ID";
+            // 
+            // clmFirstName
+            // 
+            this.clmFirstName.Text = "First Name";
+            // 
+            // clmLastName
+            // 
+            this.clmLastName.Text = "Last Name";
+            // 
+            // clmMonday
+            // 
+            this.clmMonday.Text = "Monday";
+            // 
+            // clmTuesday
+            // 
+            this.clmTuesday.Text = "Tuesday";
+            // 
+            // clmWednesday
+            // 
+            this.clmWednesday.Text = "Wednesday";
+            // 
+            // cllmThursday
+            // 
+            this.cllmThursday.Text = "Thursday";
+            // 
+            // clmFriday
+            // 
+            this.clmFriday.Text = "Friday";
+            // 
+            // clmSaturday
+            // 
+            this.clmSaturday.Text = "Saturday";
+            // 
+            // clmSunday
+            // 
+            this.clmSunday.Text = "Sundqay";
+            // 
             // StaffSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(974, 410);
+            this.Controls.Add(this.LstStaffSchedule);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dgSchedule);
             this.Name = "StaffSchedule";
             this.Text = "StaffSchedule";
-            ((System.ComponentModel.ISupportInitialize)(this.dgSchedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgSchedule;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmStaffType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMonday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTuesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmWednesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmThursday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFriday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSaturday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSunday;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblManager;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListView LstStaffSchedule;
+        private System.Windows.Forms.ColumnHeader clmStaffID;
+        private System.Windows.Forms.ColumnHeader clmFirstName;
+        private System.Windows.Forms.ColumnHeader clmLastName;
+        private System.Windows.Forms.ColumnHeader clmMonday;
+        private System.Windows.Forms.ColumnHeader clmTuesday;
+        private System.Windows.Forms.ColumnHeader clmWednesday;
+        private System.Windows.Forms.ColumnHeader cllmThursday;
+        private System.Windows.Forms.ColumnHeader clmFriday;
+        private System.Windows.Forms.ColumnHeader clmSaturday;
+        private System.Windows.Forms.ColumnHeader clmSunday;
     }
 }

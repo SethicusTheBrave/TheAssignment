@@ -169,3 +169,6 @@ C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\S
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.AppointmentSearch.resources
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.EditAppointment.resources
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.csprojResolveAssemblyReference.cache
+E:\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\bin\Debug\SoftwareEngineeringAssignment.exe.config
+E:\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.exe
+E:\Software Engineering\Assignment\SoftwareEngineeringAssignment\SoftwareEngineeringAssignment\obj\Debug\SoftwareEngineeringAssignment.pdb

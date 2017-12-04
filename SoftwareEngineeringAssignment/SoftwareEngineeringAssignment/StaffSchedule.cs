@@ -12,12 +12,22 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class StaffSchedule : Form
     {
+        BusinessMetaLayer instance = BusinessMetaLayer.instance();
+        List<Staff> StaffList = new List<Staff>;
+        Staff m_s;
         /// <summary>
         /// View the staff schedule.
         /// </summary>
-        public StaffSchedule()
+        public StaffSchedule(Staff p_s)
         {
             InitializeComponent();
+            m_s = p_s;
+
+
+        }
+        private void loadSchedule()
+        {
+
         }
     }
 }
