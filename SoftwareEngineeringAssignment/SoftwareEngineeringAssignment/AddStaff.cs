@@ -22,6 +22,7 @@ namespace SoftwareEngineeringAssignment
             cbStaffType.Items.Add("Doctor");
             cbStaffType.Items.Add("Receptionist");
             cbStaffType.Items.Add("Manager");
+            WindowState = FormWindowState.Maximized;
         }
         /// <summary>
         /// Uploads all of the given information to the database to create a new staff member.

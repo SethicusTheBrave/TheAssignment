@@ -121,7 +121,6 @@
     </Compile>
     <Compile Include="Medicine.cs" />
     <Compile Include="MySQLCon.cs" />
-    <Compile Include="OleDatabaseConnection.cs" />
     <Compile Include="PatientNotes.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PatientMenu.cs">

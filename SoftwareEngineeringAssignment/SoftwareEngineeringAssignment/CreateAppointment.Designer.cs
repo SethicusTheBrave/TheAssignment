@@ -43,6 +43,8 @@
             this.lblStaffMember = new System.Windows.Forms.Label();
             this.cbStaffMember = new System.Windows.Forms.ComboBox();
             this.lblDate = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // calDate
@@ -146,7 +148,7 @@
             // cbTime
             // 
             this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(126, 264);
+            this.cbTime.Location = new System.Drawing.Point(52, 253);
             this.cbTime.Name = "cbTime";
             this.cbTime.Size = new System.Drawing.Size(136, 21);
             this.cbTime.TabIndex = 68;
@@ -156,7 +158,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(156, 245);
+            this.lblTime.Location = new System.Drawing.Point(82, 234);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(65, 16);
             this.lblTime.TabIndex = 69;
@@ -167,7 +169,7 @@
             // 
             this.lblStaffMember.AutoSize = true;
             this.lblStaffMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffMember.Location = new System.Drawing.Point(156, 197);
+            this.lblStaffMember.Location = new System.Drawing.Point(82, 186);
             this.lblStaffMember.Name = "lblStaffMember";
             this.lblStaffMember.Size = new System.Drawing.Size(87, 16);
             this.lblStaffMember.TabIndex = 71;
@@ -176,7 +178,7 @@
             // cbStaffMember
             // 
             this.cbStaffMember.FormattingEnabled = true;
-            this.cbStaffMember.Location = new System.Drawing.Point(126, 216);
+            this.cbStaffMember.Location = new System.Drawing.Point(52, 205);
             this.cbStaffMember.Name = "cbStaffMember";
             this.cbStaffMember.Size = new System.Drawing.Size(136, 21);
             this.cbStaffMember.TabIndex = 70;
@@ -193,12 +195,33 @@
             this.lblDate.Text = "Date";
             this.lblDate.Visible = false;
             // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(219, 205);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(136, 69);
+            this.txtDescription.TabIndex = 73;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(243, 186);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(76, 16);
+            this.lblDescription.TabIndex = 74;
+            this.lblDescription.Text = "Description";
+            // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(416, 538);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblStaffMember);
             this.Controls.Add(this.cbStaffMember);
@@ -238,5 +261,7 @@
         private System.Windows.Forms.Label lblStaffMember;
         private System.Windows.Forms.ComboBox cbStaffMember;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label lblDescription;
     }
 }

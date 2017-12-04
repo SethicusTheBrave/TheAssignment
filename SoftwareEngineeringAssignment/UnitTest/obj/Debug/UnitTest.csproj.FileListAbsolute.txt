@@ -17,3 +17,21 @@ F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngin
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\obj\Debug\UnitTest.pdb
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.dll.CodeAnalysisLog.xml
 F:\My Documents\@University\Bsc Y2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.dll.lastcodeanalysissucceeded
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.dll.CodeAnalysisLog.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\UnitTest.dll.lastcodeanalysissucceeded
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\SoftwareEngineeringAssignment.exe
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\SoftwareEngineeringAssignment.pdb
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\SoftwareEngineeringAssignment.exe.config
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\bin\Debug\MySql.Data.xml
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\PursDios\Documents\@University\Year 2\Software Engineering\Assignment\SoftwareEngineeringAssignment\UnitTest\obj\Debug\UnitTest.pdb

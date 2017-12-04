@@ -37,6 +37,7 @@
             this.clmStaffType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -112,12 +113,24 @@
             this.clmPhoneNumber.Text = "Phone Number";
             this.clmPhoneNumber.Width = 160;
             // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Location = new System.Drawing.Point(307, 409);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(95, 29);
+            this.BtnDelete.TabIndex = 51;
+            this.BtnDelete.Text = "Delete Staff";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
             // ViewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(724, 450);
+            this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.lstStaff);
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.lblName);
@@ -139,5 +152,6 @@
         private System.Windows.Forms.ColumnHeader clmStaffType;
         private System.Windows.Forms.ColumnHeader clmEmail;
         private System.Windows.Forms.ColumnHeader clmPhoneNumber;
+        private System.Windows.Forms.Button BtnDelete;
     }
 }

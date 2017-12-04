@@ -19,6 +19,7 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_s;
             lblName.Text = "StaffID: " + m_s.getStaffID;
+            WindowState = FormWindowState.Maximized;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

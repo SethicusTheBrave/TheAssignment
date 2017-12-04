@@ -28,6 +28,7 @@ namespace SoftwareEngineeringAssignment
             patientList = instance.getPatientList();
             appointmentList = instance.getAppointments();
             staffList = instance.getStaff();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)

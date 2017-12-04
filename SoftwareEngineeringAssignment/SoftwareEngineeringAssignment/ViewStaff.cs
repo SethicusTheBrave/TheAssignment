@@ -22,6 +22,7 @@ namespace SoftwareEngineeringAssignment
             lblName.Text = "StaffID: " + m_s.getStaffID;
             lblManager.Text = m_s.getType;
             LoadStaff();
+            WindowState = FormWindowState.Maximized;
         }
         private void LoadStaff()
         {
@@ -42,6 +43,17 @@ namespace SoftwareEngineeringAssignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            string FirstName = Microsoft.VisualBasic.Interaction.InputBox("Enter First Name", "First Name", "");
+            string LastName = Microsoft.VisualBasic.Interaction.InputBox("Enter Last Name", "Last Name", "");
+            if (FirstName != null && FirstName != "" && LastName != null && LastName != "")
+            {
+                instance.deleteStaff(instance.sanitize(FirstName), instance.sanitize(LastName));
+            }
+            LoadStaff();
         }
     }
 }

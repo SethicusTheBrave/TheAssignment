@@ -50,7 +50,14 @@ namespace SoftwareEngineeringAssignment
         }
         public string sanitize(string str)
         {
-            return str = Regex.Replace(str, " \" \' " , "\'");
+            const string removeChars = "&^$#@+-,:;<>’\'-_*";
+            // specify capacity of StringBuilder to avoid resizing
+            StringBuilder sb = new StringBuilder(str.Length);
+            foreach (char x in str.Where(c => !removeChars.Contains(c)))
+            {
+                sb.Append(x);
+            }
+            return sb.ToString();
         }
         /// <summary>
         /// Uses the passed variables and checks it against the database to see if there is a match and if there is returns the staff member object.
@@ -369,6 +376,21 @@ namespace SoftwareEngineeringAssignment
                 return staffList;
             }
             return null;
+        }
+        public void deleteStaff(string p_FirstName, string p_LastName)
+        {
+            int staffID = 0;
+            if (con.OpenConnection())
+            {
+                DbDataReader dr = con.Select("SELECT StaffID FROM Staff WHERE FirstName='" + p_FirstName + "' AND LastName='" + p_LastName + "';");
+                while(dr.Read())
+                {
+                    staffID = dr.GetInt32(0);
+                }
+                dr.Close();
+                con.CloseConnection();
+            }
+            ExecuteQuery("DELETE FROM Staff WHERE StaffID=" + staffID);
         }
     }
 }
