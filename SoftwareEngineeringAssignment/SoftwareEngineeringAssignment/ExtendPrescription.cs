@@ -59,7 +59,7 @@ namespace SoftwareEngineeringAssignment
                 if (m_s.getType == "Doctor")
                 {
                     DateTime dt = Convert.ToDateTime(calDate);
-                    instance.ExecuteQuery("UPDATE 'MedicineLink' SET End Date = '" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm") "WHERE 'MedicineId' = txtDrugID AND 'PatientID' = txtPatientID"));
+                    instance.ExecuteQuery("UPDATE 'MedicineLink' SET End Date = '" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm") + "WHERE 'MedicineId' = txtDrugID AND 'PatientID' = txtPatientID"));
                 }
                 
 
